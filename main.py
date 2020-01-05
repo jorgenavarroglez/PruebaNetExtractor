@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from tst import testUnitarios
 from src import Controlador
 import unittest
 
