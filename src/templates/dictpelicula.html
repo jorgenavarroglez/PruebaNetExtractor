@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="{{ _('es') }}">
+<head>
+	<title>Ububooknet</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+	<header id="header" class="sticky-top">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky-top">
+			<a class="navbar-brand" href="#"><h2><img src="{{ url_for('static', filename='img/NetExtractor2.png') }}" width="200" height="100" id="politecnica"></h2></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarColor01">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+				  <a class="nav-link" href="{{ url_for('inicio') }}"><h5>{{ _('Inicio') }}</h5></a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="https://github.com/lca0037/GII18.0U-Ububooknet" target="_blank"><h5>{{ _('Repositorio') }}</h5></a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
+				</li>
+			  </ul>
+			  <div class="banderas">
+				  <img src="{{ url_for('static', filename='img/esp.png') }}" id="esp" onclick="idioma('es','{{ g.locale }}')">
+				  <img src="{{ url_for('static', filename='img/uk.png') }}" id="uk" onclick="idioma('en','{{ g.locale }}')">
+			  </div>
+			</div>
+		  </nav>
+	</header>
+	<div class="container-fluid">
+		<div id="content" class="d-flex align-items-stretch min-vh-100">
+			<div id="form-content" class="d-flex align-items-center w-100">
+				<form id="form" class="m-auto" action="" method="post" enctype=multipart/form-data>
+					<h5>{{ _('Introduzca la dirección url donde se encuentren los personajes a obtener') }}</h5>
+					<input type="text" id="url" name="txt txt-url1" size="70" placeholder="{{ _('Url perteneciente a imsdb.com/scripts/*') }}">
+					<input type="button" class="btn btn-primary p-2 btn-block" style="margin-bottom: 25rem !important;" onclick="sendForm()" name="btn btn-scrape1" value="{{ _('Obtener') }}">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="fixed-bottom" style="background-color:white">
+		<div id="indice">
+			<button type="button" class="btn btn-primary float-left btn-lg p-3 px-5" name="btn btn-volver" onclick="atras()">{{ _('Volver') }}</button>
+			<button type="button" class="btn btn-primary float-right btn-lg p-3 px-5" name="btn btn-sig" onclick="next()">{{ _('Siguiente') }}</button>
+		</div>
+	</div>
+	<footer></footer>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="{{ url_for('static', filename='js/language.js') }}" type="text/javascript"></script>
+	<script type="text/javascript">
+		var validNavigation = false;
+		var perso = {{ perso | safe }}
+		function atras() {
+			validNavigation = true;
+			window.location.href='{{ url_for('inicio') }}'
+		}
+		
+		function next() {
+			if (perso == 1) {
+				validNavigation = true;
+				window.location.href='{{ url_for('moddict') }}'
+			}else {
+				//TRADUCCION
+				alert("{{ _('No se ha creado ningún diccionario') }}")
+			}
+		}
+		
+		function sendForm(){
+			var x = document.getElementById("url");
+			x.value = x.value.trim()
+			if(x.value.length == 0){
+				alert("{{ _('Introduzca una url') }}")
+			} else {
+				if(x.value.includes("imsdb")){
+					validNavigation = true;
+					//document.getElementById("form").submit();
+					document.getElementById("form").submit();
+					alert("{{ _('Personajes que aparecen en la página introducidos') }}")
+				} else {
+					alert("{{ _('Introduzca una url perteneciente a *.fandom.com/wiki/Category:Characters') }}")
+				}
+			}
+		}
+		//https://eureka.ykyuen.info/2011/02/22/jquery-javascript-capture-the-browser-or-tab-closed-event/
+		
+
+		function endSession() {
+			$.ajax({
+		      type: "POST",
+		      contentType: "application/json;charset=utf-8",
+		      url: "/Fin-Sesion",
+		      traditional: "true",
+		      data: JSON.stringify({{ g.usuario }}),
+		      dataType: "json",
+		      success: function(response){
+          			location.reload();
+         		 }
+		    });
+		}
+		 
+		function wireUpEvents() {
+			  /*
+			  * For a list of events that triggers onbeforeunload on IE
+			  * check http://msdn.microsoft.com/en-us/library/ms536907(VS.85).aspx
+			  */
+			  window.onbeforeunload = function(event) {
+				  if (!validNavigation) {
+					 endSession();
+				  }
+			  }
+			 
+			  // Attach the event keypress to exclude the F5 refresh
+			  $(document).bind('keydown', function(e) {
+				if (e.keyCode == 116){
+				  validNavigation = true;
+				}
+			  });
+
+			 
+			  // Attach the event click for all links in the page
+			  $("a").bind("click", function() {
+				validNavigation = true;
+			  });
+			 
+			  // Attach the event submit for all forms in the page
+			  $("form").bind("submit", function() {
+				validNavigation = true;
+			  });
+			 
+			  // Attach the event click for all inputs in the page
+			  $("input[type=submit]").bind("click", function() {
+				validNavigation = true;
+			  });
+
+			  $("input[type=button]").bind("click", function() {
+					validNavigation = true;
+			  });
+			}
+			 
+			// Wire up the events as soon as the DOM tree is ready
+			$(document).ready(function() {
+			  wireUpEvents();  
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="{{ _('es') }}">
+<head>
+	<title>Ububooknet</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+	<header id="header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky-top">
+			<a class="navbar-brand" href="#"><h2><img src="{{ url_for('static', filename='img/NetExtractor2.png') }}" width="200" height="100" id="politecnica"></h2></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarColor01">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+				  <a class="nav-link" href="{{ url_for('inicio') }}"><h5>{{ _('Inicio') }}</h5></a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="https://github.com/lca0037/GII18.0U-Ububooknet" target="_blank"><h5>{{ _('Repositorio') }}</h5></a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
+				</li>
+			  </ul>
+			  <div class="banderas">
+				  <img src="{{ url_for('static', filename='img/esp.png') }}" id="esp" onclick="idioma('es','{{ g.locale }}')">
+				  <img src="{{ url_for('static', filename='img/uk.png') }}" id="uk" onclick="idioma('en','{{ g.locale }}')">
+			  </div>
+			</div>
+		  </nav>
+	</header>
+	<div class="fixed-bottom" style="background-color:white">
+		<div id="indice">
+			<button type="button" class="btn btn-primary float-left btn-lg p-3 px-5" name="btn btn-volver" onclick="atras()">{{ _('Volver') }}</button>
+			<button type="button" class="btn btn-primary float-right btn-lg p-3 px-5" name="btn btn-parseo" onclick="sendForm()">{{ _('Obtener red') }}</button>
+		</div>
+	</div>
+	<div id="indice" class="sticky-top float-left" style="margin-left:1rem;">
+		<form action="" id="form-menu" method="post">
+			<h5>{{ _('Introduzca el número <br />mínimo de apariciones <br />en el libro') }}</h5>
+			<input type="text" id="apar" name="txt txt-apar" size="25" placeholder="{{ _('Número mínimo de apariciones') }}">
+		</form>
+	</div>
+	<div id="content">
+		<table class="table table-hover" style="margin-bottom: 3.75rem; margin-left: 14rem;">
+			<thead>
+				<tr class="table-primary">
+				<th scope="col">{{ _('ID Personaje') }}</th>
+				<th scope="col">{{ _('Referencias personaje') }}</th>
+				<th scope="col">{{ _('Número Apariciones') }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in pers.keys() %}
+				<tr style="padding-bottom: 150rem;">
+				<div class="Personaje" idp="{{ i }}" numapa="{{ pers[i].getNumApariciones()[0] }}">
+					<div class="IdPersonaje" idpers="{{ i }}">
+						<td>{{ i }}</td>
+					</div>
+				<td>
+				{% for n in pers[i].getPersonaje().keys() %}
+				{{ n }}<br />
+				{% endfor %}
+				</td>
+				{% if pers[i].getNumApariciones()[1]%}
+					<div class="NumApar" parse="true">
+					<td>{{ pers[i].getNumApariciones()[0] }}</td>
+				{% elif pers[i].getNumApariciones()[0] == 0 %}
+					<div class="NumApar" parse="false">
+					<td>N/A</td>
+				{% else %}
+					<div class="NumApar" parse="false">
+					<td>{{ pers[i].getNumApariciones()[0] }}</td>
+				{% endif %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>  
+	</div>
+	<footer></footer>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="{{ url_for('static', filename='js/language.js') }}" type="text/javascript"></script>
+	<script src="{{ url_for('static', filename='js/orden.js') }}" type="text/javascript"></script>
+	<script type="text/javascript">
+		var validNavigation = false;
+		function atras() {
+			validNavigation = true;
+			window.location.href='{{ url_for('moddict') }}'
+		}
+		
+		function sendForm(){
+			var apar = document.getElementById("apar");
+			apar.value = apar.value.trim()
+			if(apar.value.length == 0){
+				alert("{{ _('Introduzca un número mínimo de apariciones') }}")
+			}
+			else{
+				if(isNaN(apar.value)){
+					alert("{{ _('Introduzca un valor numérico para el número mínimo de apariciones') }}")
+				}else{
+					validNavigation = true;
+					document.getElementById("form-menu").submit();
+				}
+			}
+		}
+		//https://eureka.ykyuen.info/2011/02/22/jquery-javascript-capture-the-browser-or-tab-closed-event/
+
+		function endSession() {
+			$.ajax({
+		      type: "POST",
+		      contentType: "application/json;charset=utf-8",
+		      url: "/Fin-Sesion",
+		      traditional: "true",
+		      data: JSON.stringify({{ g.usuario }}),
+		      dataType: "json",
+		      success: function(response){
+          			location.reload();
+         		 }
+		    });
+		}
+		 
+		function wireUpEvents() {
+			  /*
+			  * For a list of events that triggers onbeforeunload on IE
+			  * check http://msdn.microsoft.com/en-us/library/ms536907(VS.85).aspx
+			  */
+			  window.onbeforeunload = function(event) {
+				  if (!validNavigation) {
+					 endSession();
+				  }
+			  }
+			 
+			  // Attach the event keypress to exclude the F5 refresh
+			  $(document).bind('keydown', function(e) {
+				if (e.keyCode == 116){
+				  validNavigation = true;
+				}
+			  });
+
+			 
+			  // Attach the event click for all links in the page
+			  $("a").bind("click", function() {
+				validNavigation = true;
+			  });
+			 
+			  // Attach the event submit for all forms in the page
+			  $("form").bind("submit", function() {
+				validNavigation = true;
+			  });
+			 
+			  // Attach the event click for all inputs in the page
+			  $("input[type=submit]").bind("click", function() {
+				validNavigation = true;
+			  });
+
+			  $("input[type=button]").bind("click", function() {
+					validNavigation = true;
+			  });
+			}
+			 
+			// Wire up the events as soon as the DOM tree is ready
+			$(document).ready(function() {
+			  wireUpEvents();  
+		});
+	</script>
+</body>
+</html>
