@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-16 17:35+0100\n"
-"PO-Revision-Date: 2019-12-16 17:36+0100\n"
+"POT-Creation-Date: 2020-01-05 16:41+0100\n"
+"PO-Revision-Date: 2020-01-05 16:44+0100\n"
 "Last-Translator: \n"
 "Language: en_GB\n"
 "Language-Team: \n"
@@ -35,8 +35,8 @@ msgstr "Degree histogram"
 msgid "N nodos"
 msgstr "N nodes"
 
-#: src/Modelo/Modelo.py:662 src/templates/visinforme.html:219
-#: src/templates/visinforme.html:242
+#: src/Modelo/Modelo.py:662 src/templates/visinforme.html:222
+#: src/templates/visinforme.html:245
 msgid "Grado"
 msgstr "Degree"
 
@@ -112,9 +112,9 @@ msgid ""
 "más relevantes de una forma sencilla."
 msgstr ""
 "NetExtractor is a tool developed by University of Burgos that allows you to "
-"automatically generate the carácter interactions network in novels or movies "
-"and analyze the networks obtained to capture their most relevant metrics in a "
-"simple way."
+"automatically generate the carácter interactions network in novels or movies and "
+"analyze the networks obtained to capture their most relevant metrics in a simple "
+"way."
 
 #: src/templates/about.html:50
 msgid "¿Quién integra el proyecto?"
@@ -122,11 +122,11 @@ msgstr "Who integrates the Project?"
 
 #: src/templates/about.html:51
 msgid ""
-"El proyecto de NetExtractor fue iniciado por el alumno del grado de "
-"Ingeniería Informática Luis Miguel Cabrejas, tutorizado por D. Jose Manuel "
-"Galán -info de jose manuel- y D. Luis Rodrigo Izquierdo -info de luis-; y ha "
-"sido continuado por el alumno de Ingeniería Informática Jorge Navarro, "
-"tutorizado por D. Jose Manuel Galán y Dña. Virginia Ahedo -info de virginia-."
+"El proyecto de NetExtractor fue iniciado por el alumno del grado de Ingeniería "
+"Informática Luis Miguel Cabrejas, tutorizado por D. Jose Manuel Galán -info de "
+"jose manuel- y D. Luis Rodrigo Izquierdo -info de luis-; y ha sido continuado "
+"por el alumno de Ingeniería Informática Jorge Navarro, tutorizado por D. Jose "
+"Manuel Galán y Dña. Virginia Ahedo -info de virginia-."
 msgstr ""
 
 #: src/templates/about.html:53
@@ -135,9 +135,9 @@ msgstr "Acknowledgment"
 
 #: src/templates/about.html:54
 msgid ""
-"A los alumnos del grado de Ingeniería Informática Alicia Olivares y Yi Peng "
-"por su colaboración en la extracción de características de la red para la "
-"generación del informe en el apartado de \"Detección de roles\"."
+"A los alumnos del grado de Ingeniería Informática Alicia Olivares y Yi Peng por "
+"su colaboración en la extracción de características de la red para la generación "
+"del informe en el apartado de \"Detección de roles\"."
 msgstr ""
 
 #: src/templates/about.html:57
@@ -235,8 +235,8 @@ msgid "Siguiente"
 msgstr "Next"
 
 #: src/templates/dictaut.html:78
-msgid "Diccionario creado correctamente"
-msgstr "Dictionary was successfully created"
+msgid "Diccionario creado correctamente. Para avanzar pulsa siguiente."
+msgstr "Dictionary was created successfully. To advance press next."
 
 #: src/templates/dictaut.html:84
 msgid "Diccionario borrado correctamente"
@@ -264,8 +264,9 @@ msgid "Introduzca una url"
 msgstr "Enter a url"
 
 #: src/templates/dictpelicula.html:83 src/templates/obtdict.html:83
-msgid "Personajes que aparecen en la página introducidos"
-msgstr "The characters that appear in the introduced url were succesfully added"
+msgid ""
+"Personajes que aparecen en la página introducidos. Para avanzar pulsa siguiente."
+msgstr "Characters that appear on the entered page. To advance press next."
 
 #: src/templates/dictpelicula.html:85 src/templates/obtdict.html:86
 msgid "Introduzca una url perteneciente a *.fandom.com/wiki/Category:Characters"
@@ -275,7 +276,7 @@ msgstr "Enter a url from *.fandom.com/wiki/Category:Characters"
 msgid "¡Bienvenido a NetExtractor!"
 msgstr "Welcome to NetExtractor!"
 
-#: src/templates/home.html:56
+#: src/templates/home.html:54
 msgid "¡Empezar!"
 msgstr "Start!"
 
@@ -296,8 +297,8 @@ msgid "No se ha creado un diccionario"
 msgstr "There is no dictionary created"
 
 #: src/templates/impdict.html:82
-msgid "Fichero introducido correctamente"
-msgstr "File was properly uploaded"
+msgid "Fichero introducido correctamente. Para avanzar pulsa siguiente."
+msgstr "File entered correctly. To advance press next."
 
 #: src/templates/impdict.html:85 src/templates/index.html:69
 msgid "Formato de archivo equivocado"
@@ -320,67 +321,67 @@ msgid "Extracción de datos para el informe"
 msgstr "Report data extraction"
 
 #: src/templates/informe.html:48 src/templates/visinforme.html:55
-#: src/templates/visinforme.html:153
+#: src/templates/visinforme.html:156
 msgid "Medidas básicas"
 msgstr "Basic metrics"
 
 #: src/templates/informe.html:50 src/templates/visinforme.html:58
-#: src/templates/visinforme.html:156
+#: src/templates/visinforme.html:159
 msgid "Número Nodos"
 msgstr "Number of Nodes"
 
 #: src/templates/informe.html:53 src/templates/visinforme.html:61
-#: src/templates/visinforme.html:161
+#: src/templates/visinforme.html:164
 msgid "Número Enlaces"
 msgstr "Number of Edges"
 
 #: src/templates/informe.html:56 src/templates/visinforme.html:64
-#: src/templates/visinforme.html:166
+#: src/templates/visinforme.html:169
 msgid "Número Interacciones"
 msgstr "Number of Interactions"
 
 #: src/templates/informe.html:59 src/templates/visinforme.html:67
-#: src/templates/visinforme.html:170
+#: src/templates/visinforme.html:173
 msgid "Medidas de grado"
 msgstr "Degree metrics"
 
 #: src/templates/informe.html:61 src/templates/visinforme.html:70
-#: src/templates/visinforme.html:175
+#: src/templates/visinforme.html:178
 msgid "Grado Nodos Sin Peso"
 msgstr "Nodes Degree Unweighted"
 
 #: src/templates/informe.html:64 src/templates/visinforme.html:73
-#: src/templates/visinforme.html:195
+#: src/templates/visinforme.html:198
 msgid "Grado Nodos Con Peso"
 msgstr "Nodes Degree Weighted"
 
 #: src/templates/informe.html:67 src/templates/visinforme.html:76
-#: src/templates/visinforme.html:215
+#: src/templates/visinforme.html:218
 msgid "Distribución Grado Sin Peso"
 msgstr "Degree Distribution Unweighted"
 
 #: src/templates/informe.html:70 src/templates/visinforme.html:79
-#: src/templates/visinforme.html:238
+#: src/templates/visinforme.html:241
 msgid "Distribución Grado Con Peso"
 msgstr "Degree Distribution Weighted"
 
 #: src/templates/informe.html:73 src/templates/visinforme.html:82
-#: src/templates/visinforme.html:261
+#: src/templates/visinforme.html:264
 msgid "Densidad"
 msgstr "Density"
 
 #: src/templates/informe.html:78 src/templates/visinforme.html:85
-#: src/templates/visinforme.html:266
+#: src/templates/visinforme.html:269
 msgid "Medidas de Distancia"
 msgstr "Distance Metrics"
 
 #: src/templates/informe.html:80 src/templates/visinforme.html:88
-#: src/templates/visinforme.html:269
+#: src/templates/visinforme.html:272
 msgid "Componentes Conectados"
 msgstr "Connected Components"
 
 #: src/templates/informe.html:83 src/templates/visinforme.html:91
-#: src/templates/visinforme.html:291 src/templates/visinforme.html:297
+#: src/templates/visinforme.html:294 src/templates/visinforme.html:300
 msgid "Excentricidad"
 msgstr "Eccentricity"
 
@@ -389,17 +390,17 @@ msgid "Diámetro"
 msgstr "Diameter"
 
 #: src/templates/informe.html:89 src/templates/visinforme.html:97
-#: src/templates/visinforme.html:317
+#: src/templates/visinforme.html:320
 msgid "Radio"
 msgstr "Radius"
 
 #: src/templates/informe.html:92 src/templates/visinforme.html:100
-#: src/templates/visinforme.html:322
+#: src/templates/visinforme.html:325
 msgid "Distancia Media"
 msgstr "Average Distance"
 
 #: src/templates/informe.html:95 src/templates/visinforme.html:103
-#: src/templates/visinforme.html:326
+#: src/templates/visinforme.html:329
 msgid "Medidas de Clustering"
 msgstr "Clustering Metrics"
 
@@ -412,27 +413,27 @@ msgid "Coeficiente de Clustering Local Medio"
 msgstr "Average Local Clustering Coefficient"
 
 #: src/templates/informe.html:103 src/templates/visinforme.html:112
-#: src/templates/visinforme.html:351
+#: src/templates/visinforme.html:354
 msgid "Transitividad"
 msgstr "Transitivity"
 
 #: src/templates/informe.html:108 src/templates/visinforme.html:115
-#: src/templates/visinforme.html:356
+#: src/templates/visinforme.html:359
 msgid "Medidas de Centralidad"
 msgstr "Centrality Metrics"
 
 #: src/templates/informe.html:110 src/templates/visinforme.html:118
-#: src/templates/visinforme.html:359 src/templates/visinforme.html:365
+#: src/templates/visinforme.html:362 src/templates/visinforme.html:368
 msgid "Centralidad Grado"
 msgstr "Degree Centrality"
 
 #: src/templates/informe.html:113 src/templates/visinforme.html:121
-#: src/templates/visinforme.html:383 src/templates/visinforme.html:389
+#: src/templates/visinforme.html:386 src/templates/visinforme.html:392
 msgid "Centralidad Cercanía"
 msgstr "Closeness Centrality"
 
 #: src/templates/informe.html:116 src/templates/visinforme.html:124
-#: src/templates/visinforme.html:405 src/templates/visinforme.html:411
+#: src/templates/visinforme.html:408 src/templates/visinforme.html:414
 msgid "Centralidad Intermediación"
 msgstr "Betweenness Centrality"
 
@@ -441,21 +442,21 @@ msgid "Intermediación Camino Aleatorio"
 msgstr "Random Path Betweenness Centrality"
 
 #: src/templates/informe.html:122 src/templates/visinforme.html:130
-#: src/templates/visinforme.html:452 src/templates/visinforme.html:458
+#: src/templates/visinforme.html:455 src/templates/visinforme.html:461
 msgid "Centralidad Valor Propio"
 msgstr "Eigenvector Centrality"
 
 #: src/templates/informe.html:125 src/templates/visinforme.html:133
-#: src/templates/visinforme.html:476 src/templates/visinforme.html:482
+#: src/templates/visinforme.html:479 src/templates/visinforme.html:485
 msgid "Pagerank"
 msgstr "Pagerank"
 
-#: src/templates/informe.html:128 src/templates/visinforme.html:501
+#: src/templates/informe.html:128 src/templates/visinforme.html:504
 msgid "Grupos y comunidades"
 msgstr "Communities and groups"
 
 #: src/templates/informe.html:130 src/templates/visinforme.html:139
-#: src/templates/visinforme.html:504
+#: src/templates/visinforme.html:507
 msgid "Comunidades K-clique"
 msgstr "K-clique Communities"
 
@@ -464,32 +465,37 @@ msgid "Valor k del K-clique para comunidades"
 msgstr "K value for K-clique community"
 
 #: src/templates/informe.html:137 src/templates/visinforme.html:142
-#: src/templates/visinforme.html:532
+#: src/templates/visinforme.html:535
 msgid "Comunidades Girvan-Newman"
 msgstr "Girvan-Newman Communities"
 
 #: src/templates/informe.html:140 src/templates/visinforme.html:145
-#: src/templates/visinforme.html:559
+#: src/templates/visinforme.html:562
+msgid "Comunidades Clauset-Newman-Moore"
+msgstr "Clauset-Newman-Moore Communities"
+
+#: src/templates/informe.html:143 src/templates/visinforme.html:148
+#: src/templates/visinforme.html:589
 msgid "Detección de roles"
 msgstr "Role Detection"
 
-#: src/templates/informe.html:142
+#: src/templates/informe.html:145
 msgid "Detectar Roles"
 msgstr "Detect Roles"
 
-#: src/templates/informe.html:217
+#: src/templates/informe.html:220
 msgid "Por favor introduzca un valor"
 msgstr "Please introduce a value"
 
-#: src/templates/informe.html:221 src/templates/visinforme.html:631
+#: src/templates/informe.html:224 src/templates/visinforme.html:661
 msgid "K del K-clique de comunidades"
 msgstr "K for the K-clique communities"
 
-#: src/templates/informe.html:225
+#: src/templates/informe.html:228
 msgid "K del K-clique de comunidades mayor o igual que 2"
 msgstr "K for the K-clique communities greater or equal than 2"
 
-#: src/templates/informe.html:228
+#: src/templates/informe.html:231
 msgid "Esto puede tardar unos minutos."
 msgstr "This may last a couple of minutes."
 
@@ -551,8 +557,8 @@ msgstr "This process can be slow, be patient"
 
 #: src/templates/moddict.html:119
 msgid ""
-"Primero se van a buscar las posiciones de los personajes, esto puede tardar "
-"unos minutos."
+"Primero se van a buscar las posiciones de los personajes, esto puede tardar unos "
+"minutos."
 msgstr ""
 "The characters' positions are going to be obtained, this process may last a "
 "couple of minutes."
@@ -678,8 +684,8 @@ msgstr "Lowest number of appearances"
 
 #: src/templates/params.html:45
 msgid ""
-"Introduzca la distancia <br />máxima de palabras entre <br />personajes para "
-"que <br />cuente como relación"
+"Introduzca la distancia <br />máxima de palabras entre <br />personajes para que "
+"<br />cuente como relación"
 msgstr ""
 "Enter the highest <br /> word distance <br /> between characters <br /> to "
 "consider as a relation"
@@ -708,23 +714,39 @@ msgstr "Enter a numeric value for the lowest number of appearances"
 msgid "Introduzca un valor numérico para la distancia entre personajes"
 msgstr "Enter a numeric value for the distance between characters"
 
-#: src/templates/red.html:43
+#: src/templates/red.html:50
 msgid "Exportar GML"
 msgstr "Download GML"
 
-#: src/templates/red.html:44
+#: src/templates/red.html:51
 msgid "Exportar GEXF"
 msgstr "Download GEXF"
 
-#: src/templates/red.html:45
+#: src/templates/red.html:52
 msgid "Exportar NET"
 msgstr "Download NET"
 
-#: src/templates/seleccion.html:49
+#: src/templates/seleccion.html:36
+msgid "Advertencia"
+msgstr "Warning"
+
+#: src/templates/seleccion.html:38
+msgid "Botones de navegación"
+msgstr "Navigation buttons"
+
+#: src/templates/seleccion.html:39
+msgid ""
+"Se recomienda no utilizar los botones de navegación del navegador, en su lugar "
+"utilice los que tiene la propia aplicación."
+msgstr ""
+"It is recommended not to use the browser navigation buttons, instead use those "
+"that the application itself has."
+
+#: src/templates/seleccion.html:46
 msgid "epub"
 msgstr "epub"
 
-#: src/templates/seleccion.html:52
+#: src/templates/seleccion.html:49
 msgid "pelicula"
 msgstr "movie"
 
@@ -732,7 +754,7 @@ msgstr "movie"
 msgid "Menú de Navegación"
 msgstr "Navigation Menu"
 
-#: src/templates/visinforme.html:94 src/templates/visinforme.html:312
+#: src/templates/visinforme.html:94 src/templates/visinforme.html:315
 msgid "Diametro"
 msgstr "Diameter"
 
@@ -740,82 +762,83 @@ msgstr "Diameter"
 msgid "Grupos y Comunidades"
 msgstr "Groups and Communities"
 
-#: src/templates/visinforme.html:150
+#: src/templates/visinforme.html:153
 msgid "Informe"
 msgstr "Report"
 
-#: src/templates/visinforme.html:180
+#: src/templates/visinforme.html:183
 msgid "Grados Nodo Sin Peso"
 msgstr "Nodes Degree Unweighted"
 
-#: src/templates/visinforme.html:200
+#: src/templates/visinforme.html:203
 msgid "Grados Nodo Con Peso"
 msgstr "Nodes Degree Weighted"
 
-#: src/templates/visinforme.html:220 src/templates/visinforme.html:243
+#: src/templates/visinforme.html:223 src/templates/visinforme.html:246
 msgid "Num Nodos con este Grado"
 msgstr "Number of Nodes with this Degree"
 
-#: src/templates/visinforme.html:273
+#: src/templates/visinforme.html:276
 msgid "Componente"
 msgstr "Component"
 
-#: src/templates/visinforme.html:296 src/templates/visinforme.html:333
-#: src/templates/visinforme.html:364 src/templates/visinforme.html:388
-#: src/templates/visinforme.html:410 src/templates/visinforme.html:433
-#: src/templates/visinforme.html:457 src/templates/visinforme.html:481
+#: src/templates/visinforme.html:299 src/templates/visinforme.html:336
+#: src/templates/visinforme.html:367 src/templates/visinforme.html:391
+#: src/templates/visinforme.html:413 src/templates/visinforme.html:436
+#: src/templates/visinforme.html:460 src/templates/visinforme.html:484
 msgid "Personaje"
 msgstr "Character"
 
-#: src/templates/visinforme.html:329
+#: src/templates/visinforme.html:332
 msgid "Clustering Local"
 msgstr "Local Clustering"
 
-#: src/templates/visinforme.html:348
+#: src/templates/visinforme.html:351
 msgid "Clustering Global"
 msgstr "Global Clustering"
 
-#: src/templates/visinforme.html:429 src/templates/visinforme.html:434
+#: src/templates/visinforme.html:432 src/templates/visinforme.html:437
 msgid "Centralidad Intermediación Camino Aleatorio"
 msgstr "Random Path Betweenness Centrality"
 
-#: src/templates/visinforme.html:508 src/templates/visinforme.html:537
+#: src/templates/visinforme.html:511 src/templates/visinforme.html:540
+#: src/templates/visinforme.html:567
 msgid "Comunidad"
 msgstr "Community"
 
-#: src/templates/visinforme.html:509
+#: src/templates/visinforme.html:512
 msgid "Miembros"
 msgstr "Members"
 
-#: src/templates/visinforme.html:560
+#: src/templates/visinforme.html:590
 msgid "Hubs Provinciales"
 msgstr "Provincial Hubs"
 
-#: src/templates/visinforme.html:567
+#: src/templates/visinforme.html:597
 msgid "Hubs Conectores"
 msgstr "Connector Hubs"
 
-#: src/templates/visinforme.html:574
+#: src/templates/visinforme.html:604
 msgid "Hubs Kinless"
 msgstr "Kinless Hubs"
 
-#: src/templates/visinforme.html:581
+#: src/templates/visinforme.html:611
 msgid "No Hubs Ultra Periféricos"
 msgstr "Ultra Peripheral Nodes"
 
-#: src/templates/visinforme.html:588
+#: src/templates/visinforme.html:618
 msgid "No Hubs Periféricos"
 msgstr "Peripheral Nodes"
 
-#: src/templates/visinforme.html:595
+#: src/templates/visinforme.html:625
 msgid "No Hubs Conectores"
 msgstr "Non Hub Connectors"
 
-#: src/templates/visinforme.html:602
+#: src/templates/visinforme.html:632
 msgid "No Hubs Kinless"
 msgstr "Non Hub Kinless Nodes"
 
-#: src/templates/visinforme.html:627
+#: src/templates/visinforme.html:657
 msgid "Por favor introduzca valor en:"
 msgstr "Please enter value in:"
 
@@ -844,9 +867,9 @@ msgstr "Please enter value in:"
 #~ msgstr "About"
 
 #~ msgid ""
-#~ "Ububooknet es una herramienta que permite generar de forma automática la "
-#~ "red de interacciones de personajes en novelas y analizar las redes "
-#~ "obtenidas para capturar sus métricas más relevantes."
+#~ "Ububooknet es una herramienta que permite generar de forma automática la red "
+#~ "de interacciones de personajes en novelas y analizar las redes obtenidas para "
+#~ "capturar sus métricas más relevantes."
 #~ msgstr ""
 #~ "Ububooknet is a tool which allows to generate an interactions between "
 #~ "characters from a novel network automatically, and analyse the resulting "
@@ -854,11 +877,10 @@ msgstr "Please enter value in:"
 
 #~ msgid ""
 #~ "Esta herramienta ha sido desarrollada por Luis Miguel Cabrejas Arce y "
-#~ "tutorizada por D. José Manuel Galán Ordax y D. Luis Rodrigo Izquierdo "
-#~ "Millán."
+#~ "tutorizada por D. José Manuel Galán Ordax y D. Luis Rodrigo Izquierdo Millán."
 #~ msgstr ""
-#~ "This tool has been developed by Luis Miguel Cabrejas Arce and tutorized by "
-#~ "D. José Manuel Galán Ordax and D. Luis Rodrigo Izquierdo Millán."
+#~ "This tool has been developed by Luis Miguel Cabrejas Arce and tutorized by D. "
+#~ "José Manuel Galán Ordax and D. Luis Rodrigo Izquierdo Millán."
 
 #~ msgid "Créditos"
 #~ msgstr "Credits"
@@ -1023,11 +1045,11 @@ msgstr "Please enter value in:"
 #~ msgstr "Enter the lowest number or appearances in the book"
 
 #~ msgid ""
-#~ "Introduzca la distancia máxima de palabras entre personajes para que "
-#~ "cuente como relación"
+#~ "Introduzca la distancia máxima de palabras entre personajes para que cuente "
+#~ "como relación"
 #~ msgstr ""
-#~ "Enter the highest number of words that have to be between characters so "
-#~ "the relation still counts"
+#~ "Enter the highest number of words that have to be between characters so the "
+#~ "relation still counts"
 
 #~ msgid "Red"
 #~ msgstr "Net"
@@ -1046,3 +1068,12 @@ msgstr "Please enter value in:"
 
 #~ msgid "Introduzca la id actual del personaje"
 #~ msgstr "Enter the character current id"
+
+#~ msgid "Diccionario creado correctamente"
+#~ msgstr "Dictionary was successfully created"
+
+#~ msgid "Personajes que aparecen en la página introducidos"
+#~ msgstr "The characters that appear in the introduced url were succesfully added"
+
+#~ msgid "Fichero introducido correctamente"
+#~ msgstr "File was properly uploaded"

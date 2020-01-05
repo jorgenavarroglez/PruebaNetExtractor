@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2019 ORGANIZATION
+# Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-16 17:35+0100\n"
+"POT-Creation-Date: 2020-01-05 16:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,8 +33,8 @@ msgstr ""
 msgid "N nodos"
 msgstr ""
 
-#: src/Modelo/Modelo.py:662 src/templates/visinforme.html:219
-#: src/templates/visinforme.html:242
+#: src/Modelo/Modelo.py:662 src/templates/visinforme.html:222
+#: src/templates/visinforme.html:245
 msgid "Grado"
 msgstr ""
 
@@ -230,7 +230,7 @@ msgid "Siguiente"
 msgstr ""
 
 #: src/templates/dictaut.html:78
-msgid "Diccionario creado correctamente"
+msgid "Diccionario creado correctamente. Para avanzar pulsa siguiente."
 msgstr ""
 
 #: src/templates/dictaut.html:84
@@ -259,7 +259,9 @@ msgid "Introduzca una url"
 msgstr ""
 
 #: src/templates/dictpelicula.html:83 src/templates/obtdict.html:83
-msgid "Personajes que aparecen en la página introducidos"
+msgid ""
+"Personajes que aparecen en la página introducidos. Para avanzar pulsa "
+"siguiente."
 msgstr ""
 
 #: src/templates/dictpelicula.html:85 src/templates/obtdict.html:86
@@ -270,7 +272,7 @@ msgstr ""
 msgid "¡Bienvenido a NetExtractor!"
 msgstr ""
 
-#: src/templates/home.html:56
+#: src/templates/home.html:54
 msgid "¡Empezar!"
 msgstr ""
 
@@ -291,7 +293,7 @@ msgid "No se ha creado un diccionario"
 msgstr ""
 
 #: src/templates/impdict.html:82
-msgid "Fichero introducido correctamente"
+msgid "Fichero introducido correctamente. Para avanzar pulsa siguiente."
 msgstr ""
 
 #: src/templates/impdict.html:85 src/templates/index.html:69
@@ -315,67 +317,67 @@ msgid "Extracción de datos para el informe"
 msgstr ""
 
 #: src/templates/informe.html:48 src/templates/visinforme.html:55
-#: src/templates/visinforme.html:153
+#: src/templates/visinforme.html:156
 msgid "Medidas básicas"
 msgstr ""
 
 #: src/templates/informe.html:50 src/templates/visinforme.html:58
-#: src/templates/visinforme.html:156
+#: src/templates/visinforme.html:159
 msgid "Número Nodos"
 msgstr ""
 
 #: src/templates/informe.html:53 src/templates/visinforme.html:61
-#: src/templates/visinforme.html:161
+#: src/templates/visinforme.html:164
 msgid "Número Enlaces"
 msgstr ""
 
 #: src/templates/informe.html:56 src/templates/visinforme.html:64
-#: src/templates/visinforme.html:166
+#: src/templates/visinforme.html:169
 msgid "Número Interacciones"
 msgstr ""
 
 #: src/templates/informe.html:59 src/templates/visinforme.html:67
-#: src/templates/visinforme.html:170
+#: src/templates/visinforme.html:173
 msgid "Medidas de grado"
 msgstr ""
 
 #: src/templates/informe.html:61 src/templates/visinforme.html:70
-#: src/templates/visinforme.html:175
+#: src/templates/visinforme.html:178
 msgid "Grado Nodos Sin Peso"
 msgstr ""
 
 #: src/templates/informe.html:64 src/templates/visinforme.html:73
-#: src/templates/visinforme.html:195
+#: src/templates/visinforme.html:198
 msgid "Grado Nodos Con Peso"
 msgstr ""
 
 #: src/templates/informe.html:67 src/templates/visinforme.html:76
-#: src/templates/visinforme.html:215
+#: src/templates/visinforme.html:218
 msgid "Distribución Grado Sin Peso"
 msgstr ""
 
 #: src/templates/informe.html:70 src/templates/visinforme.html:79
-#: src/templates/visinforme.html:238
+#: src/templates/visinforme.html:241
 msgid "Distribución Grado Con Peso"
 msgstr ""
 
 #: src/templates/informe.html:73 src/templates/visinforme.html:82
-#: src/templates/visinforme.html:261
+#: src/templates/visinforme.html:264
 msgid "Densidad"
 msgstr ""
 
 #: src/templates/informe.html:78 src/templates/visinforme.html:85
-#: src/templates/visinforme.html:266
+#: src/templates/visinforme.html:269
 msgid "Medidas de Distancia"
 msgstr ""
 
 #: src/templates/informe.html:80 src/templates/visinforme.html:88
-#: src/templates/visinforme.html:269
+#: src/templates/visinforme.html:272
 msgid "Componentes Conectados"
 msgstr ""
 
 #: src/templates/informe.html:83 src/templates/visinforme.html:91
-#: src/templates/visinforme.html:291 src/templates/visinforme.html:297
+#: src/templates/visinforme.html:294 src/templates/visinforme.html:300
 msgid "Excentricidad"
 msgstr ""
 
@@ -384,17 +386,17 @@ msgid "Diámetro"
 msgstr ""
 
 #: src/templates/informe.html:89 src/templates/visinforme.html:97
-#: src/templates/visinforme.html:317
+#: src/templates/visinforme.html:320
 msgid "Radio"
 msgstr ""
 
 #: src/templates/informe.html:92 src/templates/visinforme.html:100
-#: src/templates/visinforme.html:322
+#: src/templates/visinforme.html:325
 msgid "Distancia Media"
 msgstr ""
 
 #: src/templates/informe.html:95 src/templates/visinforme.html:103
-#: src/templates/visinforme.html:326
+#: src/templates/visinforme.html:329
 msgid "Medidas de Clustering"
 msgstr ""
 
@@ -407,27 +409,27 @@ msgid "Coeficiente de Clustering Local Medio"
 msgstr ""
 
 #: src/templates/informe.html:103 src/templates/visinforme.html:112
-#: src/templates/visinforme.html:351
+#: src/templates/visinforme.html:354
 msgid "Transitividad"
 msgstr ""
 
 #: src/templates/informe.html:108 src/templates/visinforme.html:115
-#: src/templates/visinforme.html:356
+#: src/templates/visinforme.html:359
 msgid "Medidas de Centralidad"
 msgstr ""
 
 #: src/templates/informe.html:110 src/templates/visinforme.html:118
-#: src/templates/visinforme.html:359 src/templates/visinforme.html:365
+#: src/templates/visinforme.html:362 src/templates/visinforme.html:368
 msgid "Centralidad Grado"
 msgstr ""
 
 #: src/templates/informe.html:113 src/templates/visinforme.html:121
-#: src/templates/visinforme.html:383 src/templates/visinforme.html:389
+#: src/templates/visinforme.html:386 src/templates/visinforme.html:392
 msgid "Centralidad Cercanía"
 msgstr ""
 
 #: src/templates/informe.html:116 src/templates/visinforme.html:124
-#: src/templates/visinforme.html:405 src/templates/visinforme.html:411
+#: src/templates/visinforme.html:408 src/templates/visinforme.html:414
 msgid "Centralidad Intermediación"
 msgstr ""
 
@@ -436,21 +438,21 @@ msgid "Intermediación Camino Aleatorio"
 msgstr ""
 
 #: src/templates/informe.html:122 src/templates/visinforme.html:130
-#: src/templates/visinforme.html:452 src/templates/visinforme.html:458
+#: src/templates/visinforme.html:455 src/templates/visinforme.html:461
 msgid "Centralidad Valor Propio"
 msgstr ""
 
 #: src/templates/informe.html:125 src/templates/visinforme.html:133
-#: src/templates/visinforme.html:476 src/templates/visinforme.html:482
+#: src/templates/visinforme.html:479 src/templates/visinforme.html:485
 msgid "Pagerank"
 msgstr ""
 
-#: src/templates/informe.html:128 src/templates/visinforme.html:501
+#: src/templates/informe.html:128 src/templates/visinforme.html:504
 msgid "Grupos y comunidades"
 msgstr ""
 
 #: src/templates/informe.html:130 src/templates/visinforme.html:139
-#: src/templates/visinforme.html:504
+#: src/templates/visinforme.html:507
 msgid "Comunidades K-clique"
 msgstr ""
 
@@ -459,32 +461,37 @@ msgid "Valor k del K-clique para comunidades"
 msgstr ""
 
 #: src/templates/informe.html:137 src/templates/visinforme.html:142
-#: src/templates/visinforme.html:532
+#: src/templates/visinforme.html:535
 msgid "Comunidades Girvan-Newman"
 msgstr ""
 
 #: src/templates/informe.html:140 src/templates/visinforme.html:145
-#: src/templates/visinforme.html:559
+#: src/templates/visinforme.html:562
+msgid "Comunidades Clauset-Newman-Moore"
+msgstr ""
+
+#: src/templates/informe.html:143 src/templates/visinforme.html:148
+#: src/templates/visinforme.html:589
 msgid "Detección de roles"
 msgstr ""
 
-#: src/templates/informe.html:142
+#: src/templates/informe.html:145
 msgid "Detectar Roles"
 msgstr ""
 
-#: src/templates/informe.html:217
+#: src/templates/informe.html:220
 msgid "Por favor introduzca un valor"
 msgstr ""
 
-#: src/templates/informe.html:221 src/templates/visinforme.html:631
+#: src/templates/informe.html:224 src/templates/visinforme.html:661
 msgid "K del K-clique de comunidades"
 msgstr ""
 
-#: src/templates/informe.html:225
+#: src/templates/informe.html:228
 msgid "K del K-clique de comunidades mayor o igual que 2"
 msgstr ""
 
-#: src/templates/informe.html:228
+#: src/templates/informe.html:231
 msgid "Esto puede tardar unos minutos."
 msgstr ""
 
@@ -699,23 +706,37 @@ msgstr ""
 msgid "Introduzca un valor numérico para la distancia entre personajes"
 msgstr ""
 
-#: src/templates/red.html:43
+#: src/templates/red.html:50
 msgid "Exportar GML"
 msgstr ""
 
-#: src/templates/red.html:44
+#: src/templates/red.html:51
 msgid "Exportar GEXF"
 msgstr ""
 
-#: src/templates/red.html:45
+#: src/templates/red.html:52
 msgid "Exportar NET"
 msgstr ""
 
-#: src/templates/seleccion.html:49
+#: src/templates/seleccion.html:36
+msgid "Advertencia"
+msgstr ""
+
+#: src/templates/seleccion.html:38
+msgid "Botones de navegación"
+msgstr ""
+
+#: src/templates/seleccion.html:39
+msgid ""
+"Se recomienda no utilizar los botones de navegación del navegador, en su "
+"lugar utilice los que tiene la propia aplicación."
+msgstr ""
+
+#: src/templates/seleccion.html:46
 msgid "epub"
 msgstr ""
 
-#: src/templates/seleccion.html:52
+#: src/templates/seleccion.html:49
 msgid "pelicula"
 msgstr ""
 
@@ -723,7 +744,7 @@ msgstr ""
 msgid "Menú de Navegación"
 msgstr ""
 
-#: src/templates/visinforme.html:94 src/templates/visinforme.html:312
+#: src/templates/visinforme.html:94 src/templates/visinforme.html:315
 msgid "Diametro"
 msgstr ""
 
@@ -731,82 +752,83 @@ msgstr ""
 msgid "Grupos y Comunidades"
 msgstr ""
 
-#: src/templates/visinforme.html:150
+#: src/templates/visinforme.html:153
 msgid "Informe"
 msgstr ""
 
-#: src/templates/visinforme.html:180
+#: src/templates/visinforme.html:183
 msgid "Grados Nodo Sin Peso"
 msgstr ""
 
-#: src/templates/visinforme.html:200
+#: src/templates/visinforme.html:203
 msgid "Grados Nodo Con Peso"
 msgstr ""
 
-#: src/templates/visinforme.html:220 src/templates/visinforme.html:243
+#: src/templates/visinforme.html:223 src/templates/visinforme.html:246
 msgid "Num Nodos con este Grado"
 msgstr ""
 
-#: src/templates/visinforme.html:273
+#: src/templates/visinforme.html:276
 msgid "Componente"
 msgstr ""
 
-#: src/templates/visinforme.html:296 src/templates/visinforme.html:333
-#: src/templates/visinforme.html:364 src/templates/visinforme.html:388
-#: src/templates/visinforme.html:410 src/templates/visinforme.html:433
-#: src/templates/visinforme.html:457 src/templates/visinforme.html:481
+#: src/templates/visinforme.html:299 src/templates/visinforme.html:336
+#: src/templates/visinforme.html:367 src/templates/visinforme.html:391
+#: src/templates/visinforme.html:413 src/templates/visinforme.html:436
+#: src/templates/visinforme.html:460 src/templates/visinforme.html:484
 msgid "Personaje"
 msgstr ""
 
-#: src/templates/visinforme.html:329
+#: src/templates/visinforme.html:332
 msgid "Clustering Local"
 msgstr ""
 
-#: src/templates/visinforme.html:348
+#: src/templates/visinforme.html:351
 msgid "Clustering Global"
 msgstr ""
 
-#: src/templates/visinforme.html:429 src/templates/visinforme.html:434
+#: src/templates/visinforme.html:432 src/templates/visinforme.html:437
 msgid "Centralidad Intermediación Camino Aleatorio"
 msgstr ""
 
-#: src/templates/visinforme.html:508 src/templates/visinforme.html:537
+#: src/templates/visinforme.html:511 src/templates/visinforme.html:540
+#: src/templates/visinforme.html:567
 msgid "Comunidad"
 msgstr ""
 
-#: src/templates/visinforme.html:509
+#: src/templates/visinforme.html:512
 msgid "Miembros"
 msgstr ""
 
-#: src/templates/visinforme.html:560
+#: src/templates/visinforme.html:590
 msgid "Hubs Provinciales"
 msgstr ""
 
-#: src/templates/visinforme.html:567
+#: src/templates/visinforme.html:597
 msgid "Hubs Conectores"
 msgstr ""
 
-#: src/templates/visinforme.html:574
+#: src/templates/visinforme.html:604
 msgid "Hubs Kinless"
 msgstr ""
 
-#: src/templates/visinforme.html:581
+#: src/templates/visinforme.html:611
 msgid "No Hubs Ultra Periféricos"
 msgstr ""
 
-#: src/templates/visinforme.html:588
+#: src/templates/visinforme.html:618
 msgid "No Hubs Periféricos"
 msgstr ""
 
-#: src/templates/visinforme.html:595
+#: src/templates/visinforme.html:625
 msgid "No Hubs Conectores"
 msgstr ""
 
-#: src/templates/visinforme.html:602
+#: src/templates/visinforme.html:632
 msgid "No Hubs Kinless"
 msgstr ""
 
-#: src/templates/visinforme.html:627
+#: src/templates/visinforme.html:657
 msgid "Por favor introduzca valor en:"
 msgstr ""
 

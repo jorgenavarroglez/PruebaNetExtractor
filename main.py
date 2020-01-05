@@ -10,4 +10,3 @@ import os
 #result = runner.run(unittest.makeSuite(testUnitarios.testUnitarios))
 port = int(os.environ.get('PORT', 5000))
 Controlador.app.run(threaded=True, host='0.0.0.0', port=port)
-

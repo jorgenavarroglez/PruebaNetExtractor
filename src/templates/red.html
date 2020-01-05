@@ -37,15 +37,6 @@
 			<button type="button" class="btn btn-primary float-right btn-lg p-3 px-5" name="btn btn-volver" onclick="guardaconfig('informe')">{{ _('Generar Informe') }}</button>
 		</div>
 	</div>
-	<div id="indice">
-		<form action="" id="form-menu" method="post">
-			<div class="btn-group btn-block" role="group" aria-label="Basic example">
-				<button type="submit" class="btn btn-secondary" name="btn btn-expgml">{{ _('Exportar GML') }}</button>
-				<button type="submit" class="btn btn-secondary" name="btn btn-expgexf">{{ _('Exportar GEXF') }}</button>
-				<button type="submit" class="btn btn-secondary" name="btn btn-expnet">{{ _('Exportar NET') }}</button>
-			</div>
-		</form>
-	</div>
 	<div id="content">
 		<div class="parent_div sticky-top" style="margin-left:0rem;">
 			<div class="child_div1 sticky-top" style="margin-bottom:15rem; margin-top:6.8rem;">
@@ -54,6 +45,13 @@
 				</div>
 			</div>
 			<div class="child_div2">
+				<form action="" id="form-menu" method="post">
+					<div class="btn-group btn-block" role="group" aria-label="Basic example">
+						<button type="submit" class="btn btn-secondary" name="btn btn-expgml">{{ _('Exportar GML') }}</button>
+						<button type="submit" class="btn btn-secondary" name="btn btn-expgexf">{{ _('Exportar GEXF') }}</button>
+						<button type="submit" class="btn btn-secondary" name="btn btn-expnet">{{ _('Exportar NET') }}</button>
+					</div>
+				</form>
 				<div class="controls_container"></div>
 				<div class="child_div2_child_mid"></div>
 				<div class="infotext_container" style="margin-bottom: 5rem;">
