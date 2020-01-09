@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-05 16:41+0100\n"
-"PO-Revision-Date: 2020-01-05 16:44+0100\n"
+"POT-Creation-Date: 2020-01-09 20:01+0100\n"
+"PO-Revision-Date: 2020-01-09 20:01+0100\n"
 "Last-Translator: \n"
 "Language: en_GB\n"
 "Language-Team: \n"
@@ -35,8 +35,8 @@ msgstr "Degree histogram"
 msgid "N nodos"
 msgstr "N nodes"
 
-#: src/Modelo/Modelo.py:662 src/templates/visinforme.html:222
-#: src/templates/visinforme.html:245
+#: src/Modelo/Modelo.py:662 src/templates/visinforme.html:225
+#: src/templates/visinforme.html:248
 msgid "Grado"
 msgstr "Degree"
 
@@ -100,11 +100,24 @@ msgstr "Repository"
 msgid "Acerca De"
 msgstr "About"
 
-#: src/templates/about.html:47
+#: src/templates/about.html:27 src/templates/delpers.html:27
+#: src/templates/delrefpers.html:27 src/templates/dictaut.html:27
+#: src/templates/dictpelicula.html:27 src/templates/home.html:27
+#: src/templates/impdict.html:27 src/templates/index.html:27
+#: src/templates/informe.html:27 src/templates/joinpers.html:27
+#: src/templates/moddict.html:27 src/templates/modidpers.html:27
+#: src/templates/newpers.html:27 src/templates/newrefpers.html:27
+#: src/templates/obtdict.html:27 src/templates/params.html:27
+#: src/templates/paramsPeliculas.html:27 src/templates/red.html:27
+#: src/templates/seleccion.html:27 src/templates/visinforme.html:38
+msgid "Wiki"
+msgstr "Wiki"
+
+#: src/templates/about.html:50
 msgid "¿Qué es NetExtractor?"
 msgstr "What is NetExtractor?"
 
-#: src/templates/about.html:48
+#: src/templates/about.html:51
 msgid ""
 "NetExtractor es una herramienta desarrollada en la Universidad de Burgos que "
 "permite generar de forma automática la red de interacciones de personajes en "
@@ -116,11 +129,11 @@ msgstr ""
 "analyze the networks obtained to capture their most relevant metrics in a simple "
 "way."
 
-#: src/templates/about.html:50
+#: src/templates/about.html:53
 msgid "¿Quién integra el proyecto?"
 msgstr "Who integrates the Project?"
 
-#: src/templates/about.html:51
+#: src/templates/about.html:54
 msgid ""
 "El proyecto de NetExtractor fue iniciado por el alumno del grado de Ingeniería "
 "Informática Luis Miguel Cabrejas, tutorizado por D. Jose Manuel Galán -info de "
@@ -129,433 +142,480 @@ msgid ""
 "Manuel Galán y Dña. Virginia Ahedo -info de virginia-."
 msgstr ""
 
-#: src/templates/about.html:53
+#: src/templates/about.html:56
 msgid "Agradecimientos"
 msgstr "Acknowledgment"
 
-#: src/templates/about.html:54
+#: src/templates/about.html:57
 msgid ""
 "A los alumnos del grado de Ingeniería Informática Alicia Olivares y Yi Peng por "
 "su colaboración en la extracción de características de la red para la generación "
 "del informe en el apartado de \"Detección de roles\"."
 msgstr ""
 
-#: src/templates/about.html:57
+#: src/templates/about.html:60
 msgid "¿Qué herramientas se han empleado?"
 msgstr "What tools have been used?"
 
-#: src/templates/delpers.html:36
+#: src/templates/delpers.html:39
 msgid "Marque los personajes <br />a eliminar"
 msgstr "Mark the characters <br /> to be eliminated"
 
-#: src/templates/delpers.html:37 src/templates/delrefpers.html:42
+#: src/templates/delpers.html:40 src/templates/delrefpers.html:45
 msgid "Eliminar"
 msgstr "Delete"
 
-#: src/templates/delpers.html:44 src/templates/delrefpers.html:36
-#: src/templates/dictaut.html:57 src/templates/dictpelicula.html:47
-#: src/templates/impdict.html:36 src/templates/index.html:47
-#: src/templates/informe.html:36 src/templates/joinpers.html:36
-#: src/templates/moddict.html:59 src/templates/modidpers.html:36
-#: src/templates/newpers.html:46 src/templates/newrefpers.html:36
-#: src/templates/obtdict.html:36 src/templates/params.html:36
-#: src/templates/paramsPeliculas.html:36 src/templates/red.html:36
-#: src/templates/visinforme.html:47
+#: src/templates/delpers.html:47 src/templates/delrefpers.html:39
+#: src/templates/dictaut.html:60 src/templates/dictpelicula.html:50
+#: src/templates/impdict.html:39 src/templates/index.html:50
+#: src/templates/informe.html:39 src/templates/joinpers.html:39
+#: src/templates/moddict.html:62 src/templates/modidpers.html:39
+#: src/templates/newpers.html:49 src/templates/newrefpers.html:39
+#: src/templates/obtdict.html:39 src/templates/params.html:39
+#: src/templates/paramsPeliculas.html:39 src/templates/red.html:39
+#: src/templates/visinforme.html:50
 msgid "Volver"
 msgstr "Return"
 
-#: src/templates/delpers.html:50
+#: src/templates/delpers.html:53
 msgid "Marque para Borrar"
 msgstr "Check to Delete"
 
-#: src/templates/delpers.html:51 src/templates/delrefpers.html:49
-#: src/templates/joinpers.html:50 src/templates/moddict.html:66
-#: src/templates/modidpers.html:52 src/templates/newpers.html:37
-#: src/templates/newpers.html:52 src/templates/newrefpers.html:52
-#: src/templates/params.html:58 src/templates/paramsPeliculas.html:50
+#: src/templates/delpers.html:54 src/templates/delrefpers.html:52
+#: src/templates/joinpers.html:53 src/templates/moddict.html:69
+#: src/templates/modidpers.html:55 src/templates/newpers.html:40
+#: src/templates/newpers.html:55 src/templates/newrefpers.html:55
+#: src/templates/params.html:61 src/templates/paramsPeliculas.html:53
 msgid "ID Personaje"
 msgstr "Character ID"
 
-#: src/templates/delpers.html:52 src/templates/delrefpers.html:50
-#: src/templates/joinpers.html:51 src/templates/moddict.html:67
-#: src/templates/modidpers.html:53 src/templates/newpers.html:53
-#: src/templates/newrefpers.html:53 src/templates/params.html:59
-#: src/templates/paramsPeliculas.html:51
+#: src/templates/delpers.html:55 src/templates/delrefpers.html:53
+#: src/templates/joinpers.html:54 src/templates/moddict.html:70
+#: src/templates/modidpers.html:56 src/templates/newpers.html:56
+#: src/templates/newrefpers.html:56 src/templates/params.html:62
+#: src/templates/paramsPeliculas.html:54
 msgid "Referencias personaje"
 msgstr "Character References"
 
-#: src/templates/delpers.html:53 src/templates/delrefpers.html:51
-#: src/templates/joinpers.html:52 src/templates/moddict.html:68
-#: src/templates/modidpers.html:54 src/templates/newpers.html:54
-#: src/templates/newrefpers.html:54 src/templates/params.html:60
-#: src/templates/paramsPeliculas.html:52
+#: src/templates/delpers.html:56 src/templates/delrefpers.html:54
+#: src/templates/joinpers.html:55 src/templates/moddict.html:71
+#: src/templates/modidpers.html:57 src/templates/newpers.html:57
+#: src/templates/newrefpers.html:57 src/templates/params.html:63
+#: src/templates/paramsPeliculas.html:55
 msgid "Número Apariciones"
 msgstr "Number of appearances"
 
-#: src/templates/delpers.html:62
+#: src/templates/delpers.html:65
 msgid "Marque para eliminar el personaje"
 msgstr "Check to delete the character"
 
-#: src/templates/delpers.html:115
+#: src/templates/delpers.html:118
 msgid "Los personajes seleccionados han sido eliminados con éxito"
 msgstr "Selected characters were deleted"
 
-#: src/templates/delrefpers.html:41
+#: src/templates/delrefpers.html:44
 msgid "Marque las referencias de <br />personajes a eliminar"
 msgstr "Check the carácter <br />references to delete"
 
-#: src/templates/delrefpers.html:63
+#: src/templates/delrefpers.html:66
 msgid "Marque para eliminar referencia"
 msgstr "Check to delete the reference"
 
-#: src/templates/delrefpers.html:115
+#: src/templates/delrefpers.html:118
 msgid "Las referencias seleccionadas han sido eliminados con éxito"
 msgstr "Selected references were succesfully deleted"
 
-#: src/templates/dictaut.html:40
+#: src/templates/dictaut.html:43
 msgid "Crear Diccionario"
 msgstr "Create Dictionary"
 
-#: src/templates/dictaut.html:43
+#: src/templates/dictaut.html:46
 msgid "Importar Diccionario"
 msgstr "Import Dictionary"
 
-#: src/templates/dictaut.html:46
+#: src/templates/dictaut.html:49
 msgid "Obtener Diccionario"
 msgstr "Obtain Dictionary"
 
-#: src/templates/dictaut.html:49
+#: src/templates/dictaut.html:52
 msgid "Vaciar Diccionario"
 msgstr "Clear Dictionary"
 
-#: src/templates/dictaut.html:58 src/templates/dictpelicula.html:48
-#: src/templates/impdict.html:37 src/templates/moddict.html:60
-#: src/templates/obtdict.html:37
+#: src/templates/dictaut.html:61 src/templates/dictpelicula.html:51
+#: src/templates/impdict.html:40 src/templates/moddict.html:63
+#: src/templates/obtdict.html:40
 msgid "Siguiente"
 msgstr "Next"
 
-#: src/templates/dictaut.html:78
+#: src/templates/dictaut.html:81
 msgid "Diccionario creado correctamente. Para avanzar pulsa siguiente."
 msgstr "Dictionary was created successfully. To advance press next."
 
-#: src/templates/dictaut.html:84
+#: src/templates/dictaut.html:87
 msgid "Diccionario borrado correctamente"
 msgstr "Dictionary was successfully deleted"
 
-#: src/templates/dictaut.html:104 src/templates/dictpelicula.html:69
-#: src/templates/obtdict.html:69
+#: src/templates/dictaut.html:107 src/templates/dictpelicula.html:72
+#: src/templates/obtdict.html:72
 msgid "No se ha creado ningún diccionario"
 msgstr "There is no dictionary created"
 
-#: src/templates/dictpelicula.html:38 src/templates/obtdict.html:44
+#: src/templates/dictpelicula.html:41 src/templates/obtdict.html:47
 msgid "Introduzca la dirección url donde se encuentren los personajes a obtener"
 msgstr "Enter the url address where the characters to obtain are"
 
-#: src/templates/dictpelicula.html:39
+#: src/templates/dictpelicula.html:42
 msgid "Url perteneciente a imsdb.com/scripts/*"
 msgstr "Url from imsdb.com/scripts/*"
 
-#: src/templates/dictpelicula.html:40 src/templates/obtdict.html:46
+#: src/templates/dictpelicula.html:43 src/templates/obtdict.html:49
 msgid "Obtener"
 msgstr "Obtain"
 
-#: src/templates/dictpelicula.html:77 src/templates/obtdict.html:77
+#: src/templates/dictpelicula.html:80 src/templates/obtdict.html:80
 msgid "Introduzca una url"
 msgstr "Enter a url"
 
-#: src/templates/dictpelicula.html:83 src/templates/obtdict.html:83
+#: src/templates/dictpelicula.html:86 src/templates/obtdict.html:86
 msgid ""
 "Personajes que aparecen en la página introducidos. Para avanzar pulsa siguiente."
-msgstr "Characters that appear on the entered page. To advance press next."
+msgstr ""
+"Characters that appear on the page have been introduced. To advance press next."
 
-#: src/templates/dictpelicula.html:85 src/templates/obtdict.html:86
-msgid "Introduzca una url perteneciente a *.fandom.com/wiki/Category:Characters"
-msgstr "Enter a url from *.fandom.com/wiki/Category:Characters"
+#: src/templates/dictpelicula.html:88
+msgid "Introduzca una url perteneciente a https://www.imsdb.com/scripts/*"
+msgstr "Enter Url from https://www.imsdb.com/scripts/*"
 
-#: src/templates/home.html:42
+#: src/templates/home.html:45
 msgid "¡Bienvenido a NetExtractor!"
 msgstr "Welcome to NetExtractor!"
 
-#: src/templates/home.html:54
+#: src/templates/home.html:48
+msgid ""
+"NetExtractor es un proyecto con el fin de generar redes de interacciones entre "
+"personajes, ya sean tanto de películas como de novelas, con el fin de "
+"posteriormente poder extraer características de dichas redes que podrán ser "
+"elegidas y mostradas en un informe."
+msgstr ""
+"NetExtractor is a project in order to generate networks of interactions between "
+"characters, whether of movies and novels, in order to be able to extract "
+"characteristics from those networks that can be chosen and displayed in a report."
+
+#: src/templates/home.html:49
+msgid ""
+"Las novelas serán gestionadas en formato ePub, de tal manera que se debe "
+"introducir uno en la aplicación para poder extraer las características que se "
+"deseen. Por otra parte, para las películas será necesaria la introducción del "
+"guión de dicha película en la aplicación, para ello deberemos obtener uno de los "
+"guiones existentes en la siguiente página:"
+msgstr ""
+"The novels will be managed in ePub format, so that you must enter one in the "
+"application in order to extract the features you want. On the other hand, for "
+"movies it will be necessary to introduce the script of said movie in the "
+"application, for this we will have to obtain one of the scripts existing on the "
+"following page:"
+
+#: src/templates/home.html:50
+msgid ""
+"Si desea obtener más información acerca de los integrantes del proyecto o su "
+"desarrollo puede acceder en la parte superior de esta página a los apartados de "
+"\"Acerca de\" o \"Repositorio\". Si desea más información acerca de cómo "
+"manejarse por la aplicación puede consultar el apartado de \"Wiki\" en la parte "
+"superior también."
+msgstr ""
+"If you want to learn more about the project members or their development, you "
+"can access the \"About\" or \"Repository\" sections at the top of this page. If "
+"you want more information about how to manage by the application you can see the "
+"\"Wiki\" section at the top as well."
+
+#: src/templates/home.html:51
+msgid ""
+"Una vez que pulse el botón de empezar se le mostrará la pantalla para poder "
+"elegir si desea obtener la red de una novela o de una película."
+msgstr ""
+"Once you press the start button you will be shown the screen to be able to "
+"choose if you want to get the network of a novel or a movie."
+
+#: src/templates/home.html:57
 msgid "¡Empezar!"
 msgstr "Start!"
 
-#: src/templates/impdict.html:44
+#: src/templates/impdict.html:47
 msgid "Introduzca la ruta al fichero csv"
 msgstr "Enter the path to the csv file"
 
-#: src/templates/impdict.html:45 src/templates/index.html:39
+#: src/templates/impdict.html:48 src/templates/index.html:42
 msgid "Seleccionar archivo"
 msgstr "Select file"
 
-#: src/templates/impdict.html:46 src/templates/index.html:40
+#: src/templates/impdict.html:49 src/templates/index.html:43
 msgid "Cargar"
 msgstr "Upload"
 
-#: src/templates/impdict.html:70
+#: src/templates/impdict.html:73
 msgid "No se ha creado un diccionario"
 msgstr "There is no dictionary created"
 
-#: src/templates/impdict.html:82
+#: src/templates/impdict.html:85
 msgid "Fichero introducido correctamente. Para avanzar pulsa siguiente."
 msgstr "File entered correctly. To advance press next."
 
-#: src/templates/impdict.html:85 src/templates/index.html:69
+#: src/templates/impdict.html:88 src/templates/index.html:72
 msgid "Formato de archivo equivocado"
 msgstr "File format is wrong"
 
-#: src/templates/impdict.html:88 src/templates/index.html:72
+#: src/templates/impdict.html:91 src/templates/index.html:75
 msgid "Introduzca un archivo"
 msgstr "Enter a file"
 
-#: src/templates/index.html:38
+#: src/templates/index.html:41
 msgid "Introduzca la ruta al fichero ePub"
 msgstr "Enter the path to the ePub file"
 
-#: src/templates/informe.html:37 src/templates/red.html:37
+#: src/templates/informe.html:40 src/templates/red.html:40
 msgid "Generar Informe"
 msgstr "Create Report"
 
-#: src/templates/informe.html:45
+#: src/templates/informe.html:48
 msgid "Extracción de datos para el informe"
 msgstr "Report data extraction"
 
-#: src/templates/informe.html:48 src/templates/visinforme.html:55
-#: src/templates/visinforme.html:156
+#: src/templates/informe.html:51 src/templates/visinforme.html:58
+#: src/templates/visinforme.html:159
 msgid "Medidas básicas"
 msgstr "Basic metrics"
 
-#: src/templates/informe.html:50 src/templates/visinforme.html:58
-#: src/templates/visinforme.html:159
+#: src/templates/informe.html:53 src/templates/visinforme.html:61
+#: src/templates/visinforme.html:162
 msgid "Número Nodos"
 msgstr "Number of Nodes"
 
-#: src/templates/informe.html:53 src/templates/visinforme.html:61
-#: src/templates/visinforme.html:164
+#: src/templates/informe.html:56 src/templates/visinforme.html:64
+#: src/templates/visinforme.html:167
 msgid "Número Enlaces"
 msgstr "Number of Edges"
 
-#: src/templates/informe.html:56 src/templates/visinforme.html:64
-#: src/templates/visinforme.html:169
+#: src/templates/informe.html:59 src/templates/visinforme.html:67
+#: src/templates/visinforme.html:172
 msgid "Número Interacciones"
 msgstr "Number of Interactions"
 
-#: src/templates/informe.html:59 src/templates/visinforme.html:67
-#: src/templates/visinforme.html:173
+#: src/templates/informe.html:62 src/templates/visinforme.html:70
+#: src/templates/visinforme.html:176
 msgid "Medidas de grado"
 msgstr "Degree metrics"
 
-#: src/templates/informe.html:61 src/templates/visinforme.html:70
-#: src/templates/visinforme.html:178
+#: src/templates/informe.html:64 src/templates/visinforme.html:73
+#: src/templates/visinforme.html:181
 msgid "Grado Nodos Sin Peso"
 msgstr "Nodes Degree Unweighted"
 
-#: src/templates/informe.html:64 src/templates/visinforme.html:73
-#: src/templates/visinforme.html:198
+#: src/templates/informe.html:67 src/templates/visinforme.html:76
+#: src/templates/visinforme.html:201
 msgid "Grado Nodos Con Peso"
 msgstr "Nodes Degree Weighted"
 
-#: src/templates/informe.html:67 src/templates/visinforme.html:76
-#: src/templates/visinforme.html:218
+#: src/templates/informe.html:70 src/templates/visinforme.html:79
+#: src/templates/visinforme.html:221
 msgid "Distribución Grado Sin Peso"
 msgstr "Degree Distribution Unweighted"
 
-#: src/templates/informe.html:70 src/templates/visinforme.html:79
-#: src/templates/visinforme.html:241
+#: src/templates/informe.html:73 src/templates/visinforme.html:82
+#: src/templates/visinforme.html:244
 msgid "Distribución Grado Con Peso"
 msgstr "Degree Distribution Weighted"
 
-#: src/templates/informe.html:73 src/templates/visinforme.html:82
-#: src/templates/visinforme.html:264
+#: src/templates/informe.html:76 src/templates/visinforme.html:85
+#: src/templates/visinforme.html:267
 msgid "Densidad"
 msgstr "Density"
 
-#: src/templates/informe.html:78 src/templates/visinforme.html:85
-#: src/templates/visinforme.html:269
+#: src/templates/informe.html:81 src/templates/visinforme.html:88
+#: src/templates/visinforme.html:272
 msgid "Medidas de Distancia"
 msgstr "Distance Metrics"
 
-#: src/templates/informe.html:80 src/templates/visinforme.html:88
-#: src/templates/visinforme.html:272
+#: src/templates/informe.html:83 src/templates/visinforme.html:91
+#: src/templates/visinforme.html:275
 msgid "Componentes Conectados"
 msgstr "Connected Components"
 
-#: src/templates/informe.html:83 src/templates/visinforme.html:91
-#: src/templates/visinforme.html:294 src/templates/visinforme.html:300
+#: src/templates/informe.html:86 src/templates/visinforme.html:94
+#: src/templates/visinforme.html:297 src/templates/visinforme.html:303
 msgid "Excentricidad"
 msgstr "Eccentricity"
 
-#: src/templates/informe.html:86
+#: src/templates/informe.html:89
 msgid "Diámetro"
 msgstr "Diameter"
 
-#: src/templates/informe.html:89 src/templates/visinforme.html:97
-#: src/templates/visinforme.html:320
+#: src/templates/informe.html:92 src/templates/visinforme.html:100
+#: src/templates/visinforme.html:323
 msgid "Radio"
 msgstr "Radius"
 
-#: src/templates/informe.html:92 src/templates/visinforme.html:100
-#: src/templates/visinforme.html:325
+#: src/templates/informe.html:95 src/templates/visinforme.html:103
+#: src/templates/visinforme.html:328
 msgid "Distancia Media"
 msgstr "Average Distance"
 
-#: src/templates/informe.html:95 src/templates/visinforme.html:103
-#: src/templates/visinforme.html:329
+#: src/templates/informe.html:98 src/templates/visinforme.html:106
+#: src/templates/visinforme.html:332
 msgid "Medidas de Clustering"
 msgstr "Clustering Metrics"
 
-#: src/templates/informe.html:97 src/templates/visinforme.html:106
+#: src/templates/informe.html:100 src/templates/visinforme.html:109
 msgid "Coeficiente de Clustering Local"
 msgstr "Local Clustering Coefficient"
 
-#: src/templates/informe.html:100 src/templates/visinforme.html:109
+#: src/templates/informe.html:103 src/templates/visinforme.html:112
 msgid "Coeficiente de Clustering Local Medio"
 msgstr "Average Local Clustering Coefficient"
 
-#: src/templates/informe.html:103 src/templates/visinforme.html:112
-#: src/templates/visinforme.html:354
+#: src/templates/informe.html:106 src/templates/visinforme.html:115
+#: src/templates/visinforme.html:357
 msgid "Transitividad"
 msgstr "Transitivity"
 
-#: src/templates/informe.html:108 src/templates/visinforme.html:115
-#: src/templates/visinforme.html:359
+#: src/templates/informe.html:111 src/templates/visinforme.html:118
+#: src/templates/visinforme.html:362
 msgid "Medidas de Centralidad"
 msgstr "Centrality Metrics"
 
-#: src/templates/informe.html:110 src/templates/visinforme.html:118
-#: src/templates/visinforme.html:362 src/templates/visinforme.html:368
+#: src/templates/informe.html:113 src/templates/visinforme.html:121
+#: src/templates/visinforme.html:365 src/templates/visinforme.html:371
 msgid "Centralidad Grado"
 msgstr "Degree Centrality"
 
-#: src/templates/informe.html:113 src/templates/visinforme.html:121
-#: src/templates/visinforme.html:386 src/templates/visinforme.html:392
+#: src/templates/informe.html:116 src/templates/visinforme.html:124
+#: src/templates/visinforme.html:389 src/templates/visinforme.html:395
 msgid "Centralidad Cercanía"
 msgstr "Closeness Centrality"
 
-#: src/templates/informe.html:116 src/templates/visinforme.html:124
-#: src/templates/visinforme.html:408 src/templates/visinforme.html:414
+#: src/templates/informe.html:119 src/templates/visinforme.html:127
+#: src/templates/visinforme.html:411 src/templates/visinforme.html:417
 msgid "Centralidad Intermediación"
 msgstr "Betweenness Centrality"
 
-#: src/templates/informe.html:119 src/templates/visinforme.html:127
+#: src/templates/informe.html:122 src/templates/visinforme.html:130
 msgid "Intermediación Camino Aleatorio"
 msgstr "Random Path Betweenness Centrality"
 
-#: src/templates/informe.html:122 src/templates/visinforme.html:130
-#: src/templates/visinforme.html:455 src/templates/visinforme.html:461
+#: src/templates/informe.html:125 src/templates/visinforme.html:133
+#: src/templates/visinforme.html:458 src/templates/visinforme.html:464
 msgid "Centralidad Valor Propio"
 msgstr "Eigenvector Centrality"
 
-#: src/templates/informe.html:125 src/templates/visinforme.html:133
-#: src/templates/visinforme.html:479 src/templates/visinforme.html:485
+#: src/templates/informe.html:128 src/templates/visinforme.html:136
+#: src/templates/visinforme.html:482 src/templates/visinforme.html:488
 msgid "Pagerank"
 msgstr "Pagerank"
 
-#: src/templates/informe.html:128 src/templates/visinforme.html:504
+#: src/templates/informe.html:131 src/templates/visinforme.html:507
 msgid "Grupos y comunidades"
 msgstr "Communities and groups"
 
-#: src/templates/informe.html:130 src/templates/visinforme.html:139
-#: src/templates/visinforme.html:507
+#: src/templates/informe.html:133 src/templates/visinforme.html:142
+#: src/templates/visinforme.html:510
 msgid "Comunidades K-clique"
 msgstr "K-clique Communities"
 
-#: src/templates/informe.html:132
+#: src/templates/informe.html:135
 msgid "Valor k del K-clique para comunidades"
 msgstr "K value for K-clique community"
 
-#: src/templates/informe.html:137 src/templates/visinforme.html:142
-#: src/templates/visinforme.html:535
+#: src/templates/informe.html:140 src/templates/visinforme.html:145
+#: src/templates/visinforme.html:538
 msgid "Comunidades Girvan-Newman"
 msgstr "Girvan-Newman Communities"
 
-#: src/templates/informe.html:140 src/templates/visinforme.html:145
-#: src/templates/visinforme.html:562
+#: src/templates/informe.html:143 src/templates/visinforme.html:148
+#: src/templates/visinforme.html:565
 msgid "Comunidades Clauset-Newman-Moore"
 msgstr "Clauset-Newman-Moore Communities"
 
-#: src/templates/informe.html:143 src/templates/visinforme.html:148
-#: src/templates/visinforme.html:589
+#: src/templates/informe.html:146 src/templates/visinforme.html:151
+#: src/templates/visinforme.html:592
 msgid "Detección de roles"
 msgstr "Role Detection"
 
-#: src/templates/informe.html:145
+#: src/templates/informe.html:148
 msgid "Detectar Roles"
 msgstr "Detect Roles"
 
-#: src/templates/informe.html:220
+#: src/templates/informe.html:223
 msgid "Por favor introduzca un valor"
 msgstr "Please introduce a value"
 
-#: src/templates/informe.html:224 src/templates/visinforme.html:661
+#: src/templates/informe.html:227 src/templates/visinforme.html:664
 msgid "K del K-clique de comunidades"
 msgstr "K for the K-clique communities"
 
-#: src/templates/informe.html:228
+#: src/templates/informe.html:231
 msgid "K del K-clique de comunidades mayor o igual que 2"
 msgstr "K for the K-clique communities greater or equal than 2"
 
-#: src/templates/informe.html:231
+#: src/templates/informe.html:234
 msgid "Esto puede tardar unos minutos."
 msgstr "This may last a couple of minutes."
 
-#: src/templates/joinpers.html:41
+#: src/templates/joinpers.html:44
 msgid "Marque los personajes <br />a juntar"
 msgstr "Check the characters <br /> to be join"
 
-#: src/templates/joinpers.html:42
+#: src/templates/joinpers.html:45
 msgid "Juntar"
 msgstr "Join"
 
-#: src/templates/joinpers.html:49
+#: src/templates/joinpers.html:52
 msgid "Marque para Juntar"
 msgstr "Check to join"
 
-#: src/templates/joinpers.html:60
+#: src/templates/joinpers.html:63
 msgid "Marque para juntar"
 msgstr "Check to join"
 
-#: src/templates/joinpers.html:111
+#: src/templates/joinpers.html:114
 msgid "Los personajes seleccionados han sido juntados con éxito"
 msgstr "Checked characters were succesfully joined"
 
-#: src/templates/moddict.html:38
+#: src/templates/moddict.html:41
 msgid "Añadir Personaje"
 msgstr "New Character"
 
-#: src/templates/moddict.html:39
+#: src/templates/moddict.html:42
 msgid "Eliminar Personaje"
 msgstr "Delete Character"
 
-#: src/templates/moddict.html:40
+#: src/templates/moddict.html:43
 msgid "Juntar Personajes"
 msgstr "Join Characters"
 
-#: src/templates/moddict.html:41
+#: src/templates/moddict.html:44
 msgid "Añadir Referencia"
 msgstr "New Reference"
 
-#: src/templates/moddict.html:42
+#: src/templates/moddict.html:45
 msgid "Eliminar Referencia"
 msgstr "Delete Reference"
 
-#: src/templates/moddict.html:43
+#: src/templates/moddict.html:46
 msgid "Modificar Id Personaje"
 msgstr "Modify Characters Id"
 
-#: src/templates/moddict.html:44
+#: src/templates/moddict.html:47
 msgid "Exportar Diccionario"
 msgstr "Download Dictionary"
 
-#: src/templates/moddict.html:53
+#: src/templates/moddict.html:56
 msgid "Obtener Posiciones"
 msgstr "Obtain Positions"
 
-#: src/templates/moddict.html:60
+#: src/templates/moddict.html:63
 msgid "Este proceso puede llevar unos minutos"
 msgstr "This process can be slow, be patient"
 
-#: src/templates/moddict.html:119
+#: src/templates/moddict.html:122
 msgid ""
 "Primero se van a buscar las posiciones de los personajes, esto puede tardar unos "
 "minutos."
@@ -563,126 +623,130 @@ msgstr ""
 "The characters' positions are going to be obtained, this process may last a "
 "couple of minutes."
 
-#: src/templates/modidpers.html:41
+#: src/templates/modidpers.html:44
 msgid "Introduzca la id actual <br /> del personaje"
 msgstr "Enter the character <br />current id"
 
-#: src/templates/modidpers.html:42
+#: src/templates/modidpers.html:45
 msgid "Id Actual"
 msgstr "Current Id"
 
-#: src/templates/modidpers.html:43
+#: src/templates/modidpers.html:46
 msgid "Introduzca la nueva id"
 msgstr "Enter the new id"
 
-#: src/templates/modidpers.html:44
+#: src/templates/modidpers.html:47
 msgid "Nueva Id"
 msgstr "New Id"
 
-#: src/templates/modidpers.html:45
+#: src/templates/modidpers.html:48
 msgid "Cambiar"
 msgstr "Change"
 
-#: src/templates/modidpers.html:102 src/templates/newpers.html:101
-#: src/templates/newrefpers.html:101
+#: src/templates/modidpers.html:105 src/templates/newpers.html:104
+#: src/templates/newrefpers.html:104
 msgid "Introduzca una ID"
 msgstr "Enter an ID"
 
-#: src/templates/modidpers.html:106
+#: src/templates/modidpers.html:109
 msgid "Introduzca la ID por la que sustituir la actual"
 msgstr "Enter an ID to substitute the current one"
 
-#: src/templates/modidpers.html:125
+#: src/templates/modidpers.html:128
 msgid "La nueva id introducida ya existe"
 msgstr "The new introduced ID already exists"
 
-#: src/templates/modidpers.html:129
+#: src/templates/modidpers.html:132
 msgid "Id modificada correctamente"
 msgstr "Id was properly changed"
 
-#: src/templates/modidpers.html:134
+#: src/templates/modidpers.html:137
 msgid "La id actual introducida no se corresponde con ningun personaje"
 msgstr "The introduced current id doesnt exist"
 
-#: src/templates/newpers.html:36
+#: src/templates/newpers.html:39
 msgid "Introduzca la id del <br />nuevo personaje"
 msgstr "Enter the new character"
 
-#: src/templates/newpers.html:38
+#: src/templates/newpers.html:41
 msgid "Introduzca el nombre del <br />nuevo personaje"
 msgstr "Enter the new character <br /> name"
 
-#: src/templates/newpers.html:39 src/templates/newrefpers.html:42
+#: src/templates/newpers.html:42 src/templates/newrefpers.html:45
 msgid "Nombre Personaje"
 msgstr "Character Name"
 
-#: src/templates/newpers.html:40 src/templates/newrefpers.html:45
+#: src/templates/newpers.html:43 src/templates/newrefpers.html:48
 msgid "Añadir"
 msgstr "Add"
 
-#: src/templates/newpers.html:105
+#: src/templates/newpers.html:108
 msgid "Introduzca un nombre"
 msgstr "Enter a name"
 
-#: src/templates/newpers.html:116
+#: src/templates/newpers.html:119
 msgid "La id introducida ya existe"
 msgstr "The introduced id already exists"
 
-#: src/templates/newpers.html:119 src/templates/newrefpers.html:118
+#: src/templates/newpers.html:122 src/templates/newrefpers.html:121
 msgid ""
 "Por favor no introduzca ninguno de los siguientes caracteres como primer "
 "caracter:"
 msgstr "Please do not enter any of these characters as the first carácter:"
 
-#: src/templates/newpers.html:123
+#: src/templates/newpers.html:126
 msgid "Personaje introducido correctamente"
 msgstr "Character was properly introduced"
 
-#: src/templates/newrefpers.html:41
+#: src/templates/newrefpers.html:44
 msgid "Introduzca la id del <br />personaje a añadir <br />la referencia"
 msgstr "Enter the new <br /> reference character id"
 
-#: src/templates/newrefpers.html:43
+#: src/templates/newrefpers.html:46
 msgid "Introduzca la nueva <br />referencia al personaje"
 msgstr "Enter the new <br /> character reference"
 
-#: src/templates/newrefpers.html:44
+#: src/templates/newrefpers.html:47
 msgid "Referencia Personaje"
 msgstr "Character Reference"
 
-#: src/templates/newrefpers.html:105
+#: src/templates/newrefpers.html:108
 msgid "Introduzca una referencia"
 msgstr "Enter a reference"
 
-#: src/templates/newrefpers.html:130
+#: src/templates/newrefpers.html:133
 msgid "La referencia ya existe en el personaje"
 msgstr "Reference already exist in the character"
 
-#: src/templates/newrefpers.html:134
+#: src/templates/newrefpers.html:137
 msgid "Referencia añadida correctamente"
 msgstr "Reference was successfully added"
 
-#: src/templates/newrefpers.html:140
+#: src/templates/newrefpers.html:143
 msgid "No existe ningún personaje con la ID introducida"
 msgstr "There is no character with the introduced ID"
 
-#: src/templates/obtdict.html:45
+#: src/templates/obtdict.html:48
 msgid "Url perteneciente a *.fandom.com/wiki/Category:Characters"
 msgstr "Url from *.fandom.com/wiki/Category:Characters"
 
-#: src/templates/params.html:37 src/templates/paramsPeliculas.html:37
+#: src/templates/obtdict.html:89
+msgid "Introduzca una url perteneciente a *.fandom.com/wiki/Category:Characters"
+msgstr "Enter a url from *.fandom.com/wiki/Category:Characters"
+
+#: src/templates/params.html:40 src/templates/paramsPeliculas.html:40
 msgid "Obtener red"
 msgstr "Obtain net"
 
-#: src/templates/params.html:43 src/templates/paramsPeliculas.html:42
+#: src/templates/params.html:46 src/templates/paramsPeliculas.html:45
 msgid "Introduzca el número <br />mínimo de apariciones <br />en el libro"
 msgstr "Enter the lowest <br /> number of appearances <br /> in the book"
 
-#: src/templates/params.html:44 src/templates/paramsPeliculas.html:43
+#: src/templates/params.html:47 src/templates/paramsPeliculas.html:46
 msgid "Número mínimo de apariciones"
 msgstr "Lowest number of appearances"
 
-#: src/templates/params.html:45
+#: src/templates/params.html:48
 msgid ""
 "Introduzca la distancia <br />máxima de palabras entre <br />personajes para que "
 "<br />cuente como relación"
@@ -690,51 +754,51 @@ msgstr ""
 "Enter the highest <br /> word distance <br /> between characters <br /> to "
 "consider as a relation"
 
-#: src/templates/params.html:46
+#: src/templates/params.html:49
 msgid "Número de palabras máximas"
 msgstr "Highest number of words"
 
-#: src/templates/params.html:51
+#: src/templates/params.html:54
 msgid "Tener en cuenta los capítulos"
 msgstr "Have chapters in mind"
 
-#: src/templates/params.html:108 src/templates/paramsPeliculas.html:98
+#: src/templates/params.html:111 src/templates/paramsPeliculas.html:101
 msgid "Introduzca un número mínimo de apariciones"
 msgstr "Enter the lowest number of appearances"
 
-#: src/templates/params.html:112
+#: src/templates/params.html:115
 msgid "Introduzca una distancia entre personajes"
 msgstr "Enter the distance between characters"
 
-#: src/templates/params.html:115 src/templates/paramsPeliculas.html:102
+#: src/templates/params.html:118 src/templates/paramsPeliculas.html:105
 msgid "Introduzca un valor numérico para el número mínimo de apariciones"
 msgstr "Enter a numeric value for the lowest number of appearances"
 
-#: src/templates/params.html:118
+#: src/templates/params.html:121
 msgid "Introduzca un valor numérico para la distancia entre personajes"
 msgstr "Enter a numeric value for the distance between characters"
 
-#: src/templates/red.html:50
+#: src/templates/red.html:53
 msgid "Exportar GML"
 msgstr "Download GML"
 
-#: src/templates/red.html:51
+#: src/templates/red.html:54
 msgid "Exportar GEXF"
 msgstr "Download GEXF"
 
-#: src/templates/red.html:52
+#: src/templates/red.html:55
 msgid "Exportar NET"
 msgstr "Download NET"
 
-#: src/templates/seleccion.html:36
+#: src/templates/seleccion.html:39
 msgid "Advertencia"
 msgstr "Warning"
 
-#: src/templates/seleccion.html:38
+#: src/templates/seleccion.html:41
 msgid "Botones de navegación"
 msgstr "Navigation buttons"
 
-#: src/templates/seleccion.html:39
+#: src/templates/seleccion.html:42
 msgid ""
 "Se recomienda no utilizar los botones de navegación del navegador, en su lugar "
 "utilice los que tiene la propia aplicación."
@@ -742,103 +806,103 @@ msgstr ""
 "It is recommended not to use the browser navigation buttons, instead use those "
 "that the application itself has."
 
-#: src/templates/seleccion.html:46
+#: src/templates/seleccion.html:49
 msgid "epub"
 msgstr "epub"
 
-#: src/templates/seleccion.html:49
+#: src/templates/seleccion.html:52
 msgid "pelicula"
 msgstr "movie"
 
-#: src/templates/visinforme.html:48 src/templates/visinforme.html:53
+#: src/templates/visinforme.html:51 src/templates/visinforme.html:56
 msgid "Menú de Navegación"
 msgstr "Navigation Menu"
 
-#: src/templates/visinforme.html:94 src/templates/visinforme.html:315
+#: src/templates/visinforme.html:97 src/templates/visinforme.html:318
 msgid "Diametro"
 msgstr "Diameter"
 
-#: src/templates/visinforme.html:136
+#: src/templates/visinforme.html:139
 msgid "Grupos y Comunidades"
 msgstr "Groups and Communities"
 
-#: src/templates/visinforme.html:153
+#: src/templates/visinforme.html:156
 msgid "Informe"
 msgstr "Report"
 
-#: src/templates/visinforme.html:183
+#: src/templates/visinforme.html:186
 msgid "Grados Nodo Sin Peso"
 msgstr "Nodes Degree Unweighted"
 
-#: src/templates/visinforme.html:203
+#: src/templates/visinforme.html:206
 msgid "Grados Nodo Con Peso"
 msgstr "Nodes Degree Weighted"
 
-#: src/templates/visinforme.html:223 src/templates/visinforme.html:246
+#: src/templates/visinforme.html:226 src/templates/visinforme.html:249
 msgid "Num Nodos con este Grado"
 msgstr "Number of Nodes with this Degree"
 
-#: src/templates/visinforme.html:276
+#: src/templates/visinforme.html:279
 msgid "Componente"
 msgstr "Component"
 
-#: src/templates/visinforme.html:299 src/templates/visinforme.html:336
-#: src/templates/visinforme.html:367 src/templates/visinforme.html:391
-#: src/templates/visinforme.html:413 src/templates/visinforme.html:436
-#: src/templates/visinforme.html:460 src/templates/visinforme.html:484
+#: src/templates/visinforme.html:302 src/templates/visinforme.html:339
+#: src/templates/visinforme.html:370 src/templates/visinforme.html:394
+#: src/templates/visinforme.html:416 src/templates/visinforme.html:439
+#: src/templates/visinforme.html:463 src/templates/visinforme.html:487
 msgid "Personaje"
 msgstr "Character"
 
-#: src/templates/visinforme.html:332
+#: src/templates/visinforme.html:335
 msgid "Clustering Local"
 msgstr "Local Clustering"
 
-#: src/templates/visinforme.html:351
+#: src/templates/visinforme.html:354
 msgid "Clustering Global"
 msgstr "Global Clustering"
 
-#: src/templates/visinforme.html:432 src/templates/visinforme.html:437
+#: src/templates/visinforme.html:435 src/templates/visinforme.html:440
 msgid "Centralidad Intermediación Camino Aleatorio"
 msgstr "Random Path Betweenness Centrality"
 
-#: src/templates/visinforme.html:511 src/templates/visinforme.html:540
-#: src/templates/visinforme.html:567
+#: src/templates/visinforme.html:514 src/templates/visinforme.html:543
+#: src/templates/visinforme.html:570
 msgid "Comunidad"
 msgstr "Community"
 
-#: src/templates/visinforme.html:512
+#: src/templates/visinforme.html:515
 msgid "Miembros"
 msgstr "Members"
 
-#: src/templates/visinforme.html:590
+#: src/templates/visinforme.html:593
 msgid "Hubs Provinciales"
 msgstr "Provincial Hubs"
 
-#: src/templates/visinforme.html:597
+#: src/templates/visinforme.html:600
 msgid "Hubs Conectores"
 msgstr "Connector Hubs"
 
-#: src/templates/visinforme.html:604
+#: src/templates/visinforme.html:607
 msgid "Hubs Kinless"
 msgstr "Kinless Hubs"
 
-#: src/templates/visinforme.html:611
+#: src/templates/visinforme.html:614
 msgid "No Hubs Ultra Periféricos"
 msgstr "Ultra Peripheral Nodes"
 
-#: src/templates/visinforme.html:618
+#: src/templates/visinforme.html:621
 msgid "No Hubs Periféricos"
 msgstr "Peripheral Nodes"
 
-#: src/templates/visinforme.html:625
+#: src/templates/visinforme.html:628
 msgid "No Hubs Conectores"
 msgstr "Non Hub Connectors"
 
-#: src/templates/visinforme.html:632
+#: src/templates/visinforme.html:635
 msgid "No Hubs Kinless"
 msgstr "Non Hub Kinless Nodes"
 
-#: src/templates/visinforme.html:657
+#: src/templates/visinforme.html:660
 msgid "Por favor introduzca valor en:"
 msgstr "Please enter value in:"
 

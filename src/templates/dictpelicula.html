@@ -23,6 +23,9 @@
 				<li class="nav-item">
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://wikinetextractor.herokuapp.com/index.php?title=Welcome_to_NetExtractor#Obtain_script" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+				</li>
 			  </ul>
 			  <div class="banderas">
 				  <img src="{{ url_for('static', filename='img/esp.png') }}" id="esp" onclick="idioma('es','{{ g.locale }}')">
@@ -82,7 +85,7 @@
 					document.getElementById("form").submit();
 					alert("{{ _('Personajes que aparecen en la página introducidos. Para avanzar pulsa siguiente.') }}")
 				} else {
-					alert("{{ _('Introduzca una url perteneciente a *.fandom.com/wiki/Category:Characters') }}")
+					alert("{{ _('Introduzca una url perteneciente a https://www.imsdb.com/scripts/*') }}")
 				}
 			}
 		}

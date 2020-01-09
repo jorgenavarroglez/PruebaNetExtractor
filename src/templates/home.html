@@ -23,6 +23,9 @@
 				<li class="nav-item">
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://wikinetextractor.herokuapp.com/index.php?title=Welcome_to_NetExtractor#Home" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+				</li>
 			  </ul>
 			  <div class="banderas">
 				  <img src="{{ url_for('static', filename='img/esp.png') }}" id="esp" onclick="idioma('es','{{ g.locale }}')">
@@ -32,20 +35,20 @@
 		  </nav>
 	</header>
 	<div class="col-2 float-left sticky-top" style="margin-left:5rem; margin-top:5rem;">
-		<img src="{{ url_for('static', filename='img/poli.jpg') }}" width="300" height="300" id="politecnica">
+		<img src="{{ url_for('static', filename='img/poli.jpg') }}" width="200" height="200" id="politecnica">
 	</div>
 	<div class="float-right sticky-top" style="margin-right:5rem; margin-top:5rem;">
-		<img src="{{ url_for('static', filename='img/ubuescudo.png') }}" width="300" height="300" id="politecnica">
+		<img src="{{ url_for('static', filename='img/ubuescudo.png') }}" width="200" height="200" id="politecnica">
 	</div>
 	<div class="text-justify" style="margin-top:5rem;">
 		<div style="text-align: center;">
 			<h1>{{ _('¡Bienvenido a NetExtractor!') }}</h1><br />
 		</div>
-		<div style="margin-right:40rem; margin-left:40rem;">
-			<h5>NetExtractor es un proyecto con el fin de generar redes de interacciones entre personajes, ya sean tanto de películas como de novelas, con el fin de posteriormente poder extraer características de dichas redes que podrán ser elegidas y mostradas en un informe.</h5><br />
-			<h5>Las novelas serán gestionadas en formato ePub, de tal manera que se debe introducir uno en la aplicación para poder extraer las características que se deseen. Por otra parte, para las películas será necesaria la introducción del guión de dicha película en la aplicación, para ello deberemos obtener uno de los guiones existentes en la siguiente página: <a href="https://www.imsdb.com/">https://www.imsdb.com/</a></h5><br />
-			<h5>Si desea obtener más información acerca de los integrantes del proyecto o su desarrollo puede acceder en la parte superior de esta página a los apartados de "Acerca de" o "Repositorio". Si desea más información acerca de cómo manejarse por la aplicación puede consultar el apartado de "Wiki" en la parte superior también.</h5><br />
-			<h5>Una vez que pulse el botón de empezar se le mostrará la pantalla para poder elegir si desea obtener la red de una novela o de una película.</h5>
+		<div style="margin-right:30rem; margin-left:35rem;">
+			<h5>{{ _('NetExtractor es un proyecto con el fin de generar redes de interacciones entre personajes, ya sean tanto de películas como de novelas, con el fin de posteriormente poder extraer características de dichas redes que podrán ser elegidas y mostradas en un informe.') }}</h5><br />
+			<h5>{{ _('Las novelas serán gestionadas en formato ePub, de tal manera que se debe introducir uno en la aplicación para poder extraer las características que se deseen. Por otra parte, para las películas será necesaria la introducción del guión de dicha película en la aplicación, para ello deberemos obtener uno de los guiones existentes en la siguiente página:') }} <a href="https://www.imsdb.com/">https://www.imsdb.com/</a></h5><br />
+			<h5>{{ _('Si desea obtener más información acerca de los integrantes del proyecto o su desarrollo puede acceder en la parte superior de esta página a los apartados de "Acerca de" o "Repositorio". Si desea más información acerca de cómo manejarse por la aplicación puede consultar el apartado de "Wiki" en la parte superior también.') }}</h5><br />
+			<h5>{{ _('Una vez que pulse el botón de empezar se le mostrará la pantalla para poder elegir si desea obtener la red de una novela o de una película.') }}</h5>
 		</div>
 		
 	</div>

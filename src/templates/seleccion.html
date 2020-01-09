@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
-<body>
+<body background="{{ url_for('static', filename='img/fondo8.png') }}">
 	<header id="header" class="sticky-top">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky-top">
 			<a class="navbar-brand" href="#"><h2><img src="{{ url_for('static', filename='img/NetExtractor2.png') }}" width="200" height="100" id="politecnica"></h2></a>
@@ -22,6 +22,9 @@
 				</li>
 				<li class="nav-item">
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://wikinetextractor.herokuapp.com/index.php?title=Welcome_to_NetExtractor#Selection" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
 				</li>
 			  </ul>
 			  <div class="banderas">

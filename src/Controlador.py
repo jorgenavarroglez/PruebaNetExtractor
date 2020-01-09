@@ -93,7 +93,7 @@ def about():
 def dictaut():
     msg = ''
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if request.method == "POST":
@@ -112,7 +112,7 @@ def dictaut():
 @app.route('/Dicts-Automaticos/Importar-Dict/', methods=["GET","POST"])
 def impdict():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if request.method == "POST":
@@ -126,7 +126,7 @@ def impdict():
 @app.route('/Dicts-Automaticos/Obtener-Dict/', methods=["GET","POST"])
 def obtdict():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if request.method == "POST":
@@ -138,11 +138,11 @@ def obtdict():
 @app.route('/Modificar-Diccionario/', methods=["GET", "POST"])   
 def moddict():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         ajax = request.get_json()
         if(ajax != None):
@@ -173,11 +173,11 @@ def moddict():
 @app.route('/Modificar-Diccionario/Anadir-Personaje/', methods=["GET", "POST"])    
 def newpers():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         idperso = request.form['txt txt-idpers']
         perso = request.form['txt txt-nombrepers']
@@ -187,11 +187,11 @@ def newpers():
 @app.route('/Modificar-Diccionario/Eliminar-Personaje/', methods=["GET", "POST"])    
 def delpers():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         ajax = request.get_json()
         if(ajax != None):
@@ -201,11 +201,11 @@ def delpers():
 @app.route('/Modificar-Diccionario/Juntar-Personajes/', methods=["GET", "POST"])    
 def joinpers():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         ajax = request.get_json()
         if(ajax != None):
@@ -215,11 +215,11 @@ def joinpers():
 @app.route('/Modificar-Diccionario/Nueva-Referencia/', methods=["GET", "POST"])    
 def newrefpers():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         idp = request.form['txt txt-idpers']
         ref = request.form['txt txt-refpers']
@@ -229,11 +229,11 @@ def newrefpers():
 @app.route('/Modificar-Diccionario/Eliminar-Referencia/', methods=["GET", "POST"])    
 def delrefpers():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         ajax = request.get_json()
         if(ajax != None):
@@ -243,11 +243,11 @@ def delrefpers():
 @app.route('/Modificar-Diccionario/Cambiar-Identificador/', methods=["GET", "POST"])
 def modidpers():
     if('fichero' not in session ):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         idact = request.form['txt txt-idact']
         newid = request.form['txt txt-newid']
@@ -257,11 +257,11 @@ def modidpers():
 @app.route('/Parametros/', methods=["GET", "POST"])
 def params():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         apar = request.form['txt txt-apar']
         dist = request.form['txt txt-dist']
@@ -275,11 +275,11 @@ def params():
 @app.route('/Parametros-Peliculas/', methods=["GET", "POST"])
 def paramsPeliculas():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
         apar = request.form['txt txt-apar']
         m.obtenerEnlaces(int(apar))          
@@ -289,11 +289,11 @@ def paramsPeliculas():
 @app.route('/Red/', methods=["GET", "POST"])
 def red():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     jsonred = m.visualizar()
     if request.method == "POST":
         if("btn btn-expgml" in request.form):
@@ -313,11 +313,11 @@ def red():
 @app.route('/Informe/', methods=["GET", "POST"])
 def informe():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     if request.method == "POST":
 #        print(request.form)
         x = dict(request.form)
@@ -330,11 +330,11 @@ def informe():
 @app.route('/Informe/Visualizar/', methods=["GET", "POST"])
 def visinforme():
     if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     g.usuario = session['usuario']
     m = tbd.getObject(session['usuario'])
     if (m.hayPersonajes() == 0):
-        return redirect(url_for('inicio'))
+        return redirect(url_for('home'))
     return render_template('visinforme.html', informe = m.informe)
 
 @app.route('/Informe/Visualizar/<path:filename>')
