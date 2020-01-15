@@ -18,6 +18,7 @@ from threading import Thread
 import os
 import secrets
 from flask_babel import gettext
+from community import community_louvain
 
 
 class Modelo:
@@ -576,7 +577,7 @@ class Modelo:
             solicitud: lista con las metricas
             direc: directorio donde guardar imagenes
         """
-        switch = {'cbx cbx-nnod': self.nNodos, 'cbx cbx-nenl': self.nEnl, 'cbx cbx-nint': self.nInt, 'cbx cbx-gradosin': self.gSin, 'cbx cbx-gradocon': self.gCon, 'cbx cbx-distsin': self.dSin, 'cbx cbx-distcon': self.dCon, 'cbx cbx-dens': self.dens, 'cbx cbx-concomp': self.conComp, 'cbx cbx-exc': self.exc, 'cbx cbx-dia': self.diam, 'cbx cbx-rad': self.rad, 'cbx cbx-longmed': self.longMed, 'cbx cbx-locclust': self.locClust, 'cbx cbx-clust': self.clust, 'cbx cbx-trans': self.trans, 'cbx cbx-centg': self.centG, 'cbx cbx-centc': self.centC, 'cbx cbx-centi': self.centI, 'cbx cbx-ranwal': self.ranWal, 'cbx cbx-centv': self.centV,'cbx cbx-para': self.paRa, 'cbx cbx-kcliperc': self.kCliPerc, 'cbx cbx-girnew': self.girNew, 'cbx cbx-greedy': self.greedyComunidad, 'cbx cbx-roles': self.roles}
+        switch = {'cbx cbx-nnod': self.nNodos, 'cbx cbx-nenl': self.nEnl, 'cbx cbx-nint': self.nInt, 'cbx cbx-gradosin': self.gSin, 'cbx cbx-gradocon': self.gCon, 'cbx cbx-distsin': self.dSin, 'cbx cbx-distcon': self.dCon, 'cbx cbx-dens': self.dens, 'cbx cbx-concomp': self.conComp, 'cbx cbx-exc': self.exc, 'cbx cbx-dia': self.diam, 'cbx cbx-rad': self.rad, 'cbx cbx-longmed': self.longMed, 'cbx cbx-locclust': self.locClust, 'cbx cbx-clust': self.clust, 'cbx cbx-trans': self.trans, 'cbx cbx-centg': self.centG, 'cbx cbx-centc': self.centC, 'cbx cbx-centi': self.centI, 'cbx cbx-ranwal': self.ranWal, 'cbx cbx-centv': self.centV,'cbx cbx-para': self.paRa, 'cbx cbx-kcliperc': self.kCliPerc, 'cbx cbx-girnew': self.girNew, 'cbx cbx-greedy': self.greedyComunidad, 'cbx cbx-louvain': self.louvain, 'cbx cbx-roles': self.roles}
         valkcliqper =  solicitud['valkcliqper']
         del solicitud['valkcliqper']
         self.informe = dict()
@@ -908,6 +909,44 @@ class Modelo:
         nx.draw(self.__G,pos,with_labels=True, node_size = pesos*10000, ax=f.add_subplot(111))
         f.savefig(os.path.join(self.dir,'para.png'), format="PNG")
         return pr
+
+    def ordenarFrozen(self, partition):
+        lista = list(partition.keys())
+        lista2 = lista.copy()
+        particiones = list()
+        valores = list()
+        for x in lista:
+            valor = partition.get(x)
+            lista2.remove(x)
+            lista3=list()
+            lista3.append(x)
+            for y in lista2:
+                if not partition.get(x) in valores:
+                    if partition.get(y) == valor:
+                        lista3.append(y)
+                    frozen = frozenset(lista3)
+            if not len(frozen) == 0:
+                particiones.append(frozen)
+            frozen = []
+            valores.append(valor)
+        return particiones
+        
+
+
+    def louvain(self):
+        l = list()
+        pos=nx.kamada_kawai_layout(self.__G)
+        f = plt.figure(figsize=(12,12))
+        nx.draw(self.__G,pos,with_labels=True)
+        partition = community_louvain.best_partition(self.__G)
+        particiones = self.ordenarFrozen(partition)
+        for x in particiones:
+            l.append(x)
+            col = '#'+secrets.token_hex(3)
+            nx.draw_networkx_nodes(self.__G,pos,nodelist=list(x),node_color=col)
+        f.savefig(os.path.join(self.dir, 'louvain.png'), format="PNG")
+        return l
+
 
     def greedyComunidad(self):
         """

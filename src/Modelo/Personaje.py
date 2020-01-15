@@ -13,7 +13,49 @@ class Personaje:
         self.__pospers = dict()
         self.lennombres = dict()
         self.__numapar = 0
-        
+        self.__etnia = None
+        self.__sexo = None
+
+    def setEtnia(self, etnia):
+        """
+        Metodo que asigna una etnia al personaje
+
+        Args:
+            la etnia a la que pertenece
+        """
+        self.__etnia = etnia
+
+    def setSexo(self, sexo):
+        """
+        Metodo que asigna el sexo del personaje
+
+        Args:
+            el sexo al que pertenece el personaje
+        """
+        self.__sexo = sexo
+
+    def getEtnia(self):
+        """
+        Metodo devuelve la etnia del personaje
+
+        Args:
+
+        Return:
+            string con la etnia de ese personaje
+        """
+        return self.__etnia
+
+    def getSexo(self):
+        """
+        Metodo devuelve el sexo del personaje
+
+        Args:
+
+        Return:
+            string con el sexo de ese personaje
+        """
+        return self.__sexo
+
     def getPersonaje(self):
         """
         Metodo que devuelve un diccionario con todos los nombres del personaje y sus apariciones

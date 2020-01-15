@@ -135,7 +135,7 @@
 			{%if "cbx cbx-para" in informe.keys() %}
 			<a href="#pagerank" class="btn btn-secondary btn-block">{{_('Pagerank')}}></a>
 			{%endif%}
-			{% if "cbx cbx-kcliperc" in informe.keys() or "cbx cbx-girnew" in informe.keys() or "cbx cbx-greedy" in informe.keys() %}
+			{% if "cbx cbx-kcliperc" in informe.keys() or "cbx cbx-girnew" in informe.keys() or "cbx cbx-greedy" in informe.keys() or "cbx cbx-louvain" in informe.keys() %}
 			<a href="#gruposycomunidades" class="btn btn-primary btn-block">{{_('Grupos y Comunidades')}}</a>
 			{%endif%}
 			{% if "cbx cbx-kcliperc" in informe.keys() %}
@@ -146,6 +146,9 @@
 			{%endif%}
 			{%if "cbx cbx-greedy" in informe.keys() %}
 			<a href="#greedy" class="btn btn-secondary btn-block">{{_('Comunidades Clauset-Newman-Moore')}}</a>
+			{%endif%}
+			{%if "cbx cbx-louvain" in informe.keys() %}
+			<a href="#louvain" class="btn btn-secondary btn-block">{{_('Comunidades Louvain')}}</a>
 			{%endif%}
 			{% if "cbx cbx-roles" in informe.keys() %}
 			<a href="#deteccionderoles" class="btn btn-primary btn-block">{{_('Detección de roles')}}</a>
@@ -502,7 +505,7 @@
 				</div>
 				<br/>
 			{% endif %}			
-			{% if "cbx cbx-kcliperc" in informe.keys() or "cbx cbx-girnew" in informe.keys() or "cbx cbx-greedy" in informe.keys() %}
+			{% if "cbx cbx-kcliperc" in informe.keys() or "cbx cbx-girnew" in informe.keys() or "cbx cbx-greedy" in informe.keys() or "cbx cbx-louvain" in informe.keys() %}
 			{%set prueba=0%}
 				<a name="gruposycomunidades"><h3>{{_('Grupos y comunidades')}}</h3></a>
 			{% endif %}
@@ -584,6 +587,32 @@
 				</table>
 				<div style="margin-left:20rem;">
 				<img src="{{ url_for('download_file', filename='greedyCom.png') }}" width="700" height="500" class="zoomA">
+				</div>
+
+				<br/>
+			{% endif %}
+			{% if "cbx cbx-louvain" in informe.keys() %}
+				<a name="louvain"><p><h5>{{_('Comunidades Louvain')}}:</h5> </p></a>
+				<table class="table table-hover">
+					<thead>
+						<tr class="table-primary">
+							<th scope="col">{{_('Comunidad')}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for x in informe["cbx cbx-louvain"] %}
+							<tr>
+								<td>
+									{% for i in x %}
+										{{ i }} | 
+									{% endfor %}
+								</td>
+							</tr>
+						{%endfor%}
+					</tbody>
+				</table>
+				<div style="margin-left:20rem;">
+				<img src="{{ url_for('download_file', filename='louvain.png') }}" width="700" height="500" class="zoomA">
 				</div>
 
 				<br/>
