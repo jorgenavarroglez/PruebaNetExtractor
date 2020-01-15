@@ -7,4 +7,5 @@ ply==3.11
 beautifulsoup4==4.7.1
 lxml==4.3.1
 html5lib==1.0.1
-scipy==1.1.0python-louvain
+scipy==1.1.0
+python-louvain
