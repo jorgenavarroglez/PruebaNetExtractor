@@ -34,15 +34,64 @@
 			</div>
 		  </nav>
 	</header>
-	<div id="indice" class="sticky-top float-left" style="margin-left:1rem;">
-		<form action="" id="form-menu" method="post">
-			<h5>{{ _('Introduzca la id del <br />nuevo personaje') }}</h5>
-			<input type="text" id="idpers" size="25" name="txt txt-idpers" placeholder="{{ _('ID Personaje') }}">
-			<h5>{{ _('Introduzca el nombre del <br />nuevo personaje') }}</h5>
-			<input type="text" id="nompers" size="25" name="txt txt-nombrepers" placeholder="{{ _('Nombre Personaje') }}"><br/>
-			<input type="button" class="btn btn-secondary" style="margin-top: 0.5rem" onclick="sendForm()" name="btn btn-newpers" value="{{ _('Añadir') }}">
-		</form>
+	<div class="d-flex flex-row bd-highlight mb-3">
+		<div id="indice" class="sticky-top float-left col-2 p-2">
+			<form action="" id="form-menu" method="post">
+				<h5>{{ _('Introduzca la id del nuevo personaje:') }}</h5>
+				<input type="text" id="idpers" size="25" name="txt txt-idpers" placeholder="{{ _('ID Personaje') }}">
+				<h5>{{ _('Introduzca el nombre del nuevo personaje:') }}</h5>
+				<input type="text" id="nompers" size="25" name="txt txt-nombrepers" placeholder="{{ _('Nombre Personaje') }}"><br/>
+				<input type="button" class="btn btn-secondary" style="margin-top: 0.5rem" onclick="sendForm()" name="btn btn-newpers" value="{{ _('Añadir') }}">
+			</form>
+		</div>
+		<div class="col-10">
+			<table class="table table-hover" style="margin-bottom: 3.75rem;">
+				<thead>
+					<tr class="table-primary">
+					<th scope="col">{{ _('ID Personaje') }}</th>
+					<th scope="col">{{ _('Referencias personaje') }}</th>
+					<th scope="col">{{ _('Número Apariciones') }}</th>
+					<th scope="col">{{ _('Etnia') }}</th>
+					  <th scope="col">{{ _('Sexo') }}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for i in pers.keys() %}
+					<tr style="padding-bottom: 150rem;">
+					<div class="Personaje" idp="{{ i }}" numapa="{{ pers[i].getNumApariciones()[0] }}">
+					<td><div class="IdPersonaje" idpers="{{ i }}"></div>{{ i }}</td>
+					<td>
+					<div class="NomP">
+					{% for n in pers[i].getPersonaje().keys() %}
+					{{ n }}<br />
+					{% endfor %}
+					</div>
+					</td>
+					{% if pers[i].getNumApariciones()[1]%}
+						<div class="NumApar" parse="true">
+						<td>{{ pers[i].getNumApariciones()[0] }}</td>
+						</div>
+					{% elif pers[i].getNumApariciones()[0] == 0 %}
+						<div class="NumApar" parse="false">
+						<td>N/A</td>
+						</div>
+					{% else %}
+						<div class="NumApar" parse="false">
+						<td>{{ pers[i].getNumApariciones()[0] }}</td>
+					{% endif %}
+					<td>
+						{{ pers[i].getEtnia() }}
+					</td>
+					<td>
+						{{ pers[i].getSexo() }}
+					</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table> 
+			</div>
 	</div>
+	
 	<div id="content">
 	<div class="fixed-bottom" style="background-color:white">
 		<div id="indice">
@@ -50,50 +99,7 @@
 		</div>
 	</div>
 	</div>
-	<div style="margin-left:14rem;">
-	<table class="table table-hover" style="margin-bottom: 3.75rem;">
-		<thead>
-			<tr class="table-primary">
-			<th scope="col">{{ _('ID Personaje') }}</th>
-			<th scope="col">{{ _('Referencias personaje') }}</th>
-			<th scope="col">{{ _('Número Apariciones') }}</th>
-			<th scope="col">{{ _('Etnia') }}</th>
-		  	<th scope="col">{{ _('Sexo') }}</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for i in pers.keys() %}
-			<tr style="padding-bottom: 150rem;">
-			<div class="Personaje" idp="{{ i }}" numapa="{{ pers[i].getNumApariciones()[0] }}">
-			<td><div class="IdPersonaje" idpers="{{ i }}"></div>{{ i }}</td>
-			<td>
-			<div class="NomP">
-			{% for n in pers[i].getPersonaje().keys() %}
-			{{ n }}<br />
-			{% endfor %}
-			</div>
-			</td>
-			{% if pers[i].getNumApariciones()[1]%}
-				<div class="NumApar" parse="true">
-				<td>{{ pers[i].getNumApariciones()[0] }}</td>
-			{% elif pers[i].getNumApariciones()[0] == 0 %}
-				<div class="NumApar" parse="false">
-				<td>N/A</td>
-			{% else %}
-				<div class="NumApar" parse="false">
-				<td>{{ pers[i].getNumApariciones()[0] }}</td>
-			{% endif %}
-			<td>
-				{{ pers[i].getEtnia() }}
-			</td>
-			<td>
-				{{ pers[i].getSexo() }}
-			</td>
-			</tr>
-			{% endfor %}
-		</tbody>
-	</table> 
-	</div>
+	
 	<footer></footer>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

@@ -10985,7 +10985,6 @@ a.text-dark:focus {
 	*height: 100%;
 	min-height: 100vh;
     float: left;
-    position: fixed;
 }
 
 .canvas_container {

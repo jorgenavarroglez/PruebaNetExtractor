@@ -40,12 +40,12 @@
 			<button type="button" class="btn btn-primary float-right btn-lg p-3 px-5" name="btn btn-parseo" onclick="sendForm()">{{ _('Obtener red') }}</button>
 		</div>
 	</div>
-	<div id="content">
-		<div id="indice" class="sticky-top float-left" style="margin-left:1rem;">
+	<div id="content" class="d-flex flex-row bd-highlight mb-3">
+		<div id="indice" class="sticky-top float-left p-2 col-2">
 			<form action="" id="form-menu" method="post">
-				<h5>{{ _('Introduzca el número <br />mínimo de apariciones <br />en el libro') }}</h5>
+				<h5>{{ _('Introduzca el número mínimo de apariciones en el libro:') }}</h5>
 				<input type="text" id="apar" name="txt txt-apar" size="25" placeholder="{{ _('Número mínimo de apariciones') }}">
-				<h5>{{ _('Introduzca la distancia <br />máxima de palabras entre <br />personajes para que <br />cuente como relación') }}</h5>
+				<h5>{{ _('Introduzca la distancia máxima de palabras entre personajes para que cuente como relación:') }}</h5>
 				<input type="text" id="dist" name="txt txt-dist" size="25" placeholder="{{ _('Número de palabras máximas') }}">
 			</form>
 			<div id="cbx">
@@ -55,7 +55,7 @@
 				</div>
 			</div>
 		</div>
-		<div style="margin-left:14rem;">
+		<div class="col-10">
 			<table class="table table-hover" style="margin-bottom: 3.75rem;">
 				<thead>
 					<tr class="table-primary">

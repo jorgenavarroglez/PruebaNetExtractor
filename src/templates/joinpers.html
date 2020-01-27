@@ -39,58 +39,62 @@
 			<button type="button" class="btn btn-primary float-left btn-lg p-3 px-5" name="btn btn-volver" onclick="atras()">{{ _('Volver') }}</button>
 		</div>
 	</div>
-	<div id="indice" class="sticky-top float-left" style="margin-left:1rem;">
-		<form action="javascript:junta()" id="form-menu" method="post">
-			<h5>{{ _('Marque los personajes <br />a juntar') }}</h5>
-			<input type="submit" class="btn btn-secondary" name="btn btn-joinpers" value="{{ _('Juntar') }}">
-		</form>
+
+	<div class="d-flex flex-row bd-highlight mb-3">
+		<div id="indice" class="sticky-top float-left col-2 p-2">
+			<form action="javascript:junta()" id="form-menu" method="post">
+				<h5>{{ _('Marque los personajes a juntar.') }}</h5>
+				<input type="submit" class="btn btn-secondary" name="btn btn-joinpers" value="{{ _('Juntar') }}">
+			</form>
+		</div>
+		<div id="content" class="col-10">
+		<table class="table table-hover" style="margin-bottom: 3.75rem;">
+			<thead>
+				<tr class="table-primary">
+				<th scope="col">{{ _('Marque para Juntar') }}</th>
+				<th scope="col">{{ _('ID Personaje') }}</th>
+				<th scope="col">{{ _('Referencias personaje') }}</th>
+				<th scope="col">{{ _('Número Apariciones') }}</th>
+				<th scope="col">{{ _('Etnia') }}</th>
+				<th scope="col">{{ _('Sexo') }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in pers.keys() %}
+				<tr style="padding-bottom: 150rem;">
+				<div class="Personaje" idp="{{ i }}" numapa="{{ pers[i].getNumApariciones()[0] }}">
+					<div class="IdPersonaje">
+						<td><input type="checkbox" class="cbx-idpers" title="{{ _('Marque para juntar') }}" value="{{ i }}"></td>
+						<td>{{ i }}</td>
+					</div>
+				<td>
+				{% for n in pers[i].getPersonaje().keys() %}
+				{{ n }}<br />
+				{% endfor %}
+				</td>
+				{% if pers[i].getNumApariciones()[1]%}
+					<div class="NumApar" parse="true">
+					<td>{{ pers[i].getNumApariciones()[0] }}</td>
+				{% elif pers[i].getNumApariciones()[0] == 0 %}
+					<div class="NumApar" parse="false">
+					<td>N/A</td>
+				{% else %}
+					<div class="NumApar" parse="false">
+					<td>{{ pers[i].getNumApariciones()[0] }}</td>
+				{% endif %}
+				<td>
+					{{ pers[i].getEtnia() }}
+				</td>
+				<td>
+					{{ pers[i].getSexo() }}
+				</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		</div>
 	</div>
-	<div id="content" style= "margin-left: 14rem;">
-	<table class="table table-hover" style="margin-bottom: 3.75rem;">
-		<thead>
-			<tr class="table-primary">
-			<th scope="col">{{ _('Marque para Juntar') }}</th>
-			<th scope="col">{{ _('ID Personaje') }}</th>
-			<th scope="col">{{ _('Referencias personaje') }}</th>
-			<th scope="col">{{ _('Número Apariciones') }}</th>
-			<th scope="col">{{ _('Etnia') }}</th>
-			<th scope="col">{{ _('Sexo') }}</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for i in pers.keys() %}
-			<tr style="padding-bottom: 150rem;">
-			<div class="Personaje" idp="{{ i }}" numapa="{{ pers[i].getNumApariciones()[0] }}">
-				<div class="IdPersonaje">
-					<td><input type="checkbox" class="cbx-idpers" title="{{ _('Marque para juntar') }}" value="{{ i }}"></td>
-					<td>{{ i }}</td>
-				</div>
-			<td>
-			{% for n in pers[i].getPersonaje().keys() %}
-			{{ n }}<br />
-			{% endfor %}
-			</td>
-			{% if pers[i].getNumApariciones()[1]%}
-				<div class="NumApar" parse="true">
-				<td>{{ pers[i].getNumApariciones()[0] }}</td>
-			{% elif pers[i].getNumApariciones()[0] == 0 %}
-				<div class="NumApar" parse="false">
-				<td>N/A</td>
-			{% else %}
-				<div class="NumApar" parse="false">
-				<td>{{ pers[i].getNumApariciones()[0] }}</td>
-			{% endif %}
-			<td>
-				{{ pers[i].getEtnia() }}
-			</td>
-			<td>
-				{{ pers[i].getSexo() }}
-			</td>
-			</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-	</div>
+	
 	<footer></footer>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

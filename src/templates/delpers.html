@@ -34,20 +34,14 @@
 			</div>
 		  </nav>
 	</header>
-	<div id="indice" class="sticky-top float-left" style="margin-left:1rem;">
+	<div class="d-flex flex-row bd-highlight mb-3">
+		<div id="indice" class="sticky-top float-left col-2 p-2">
 		<form action="javascript:borra()" id="form-menu" method="post">
-			<h5>{{ _('Marque los personajes <br />a eliminar') }}</h5>
+			<h5>{{ _('Marque los personajes a eliminar.') }}</h5>
 			<input type="submit" class="btn btn-secondary" name="btn btn-delpers" value="{{ _('Eliminar') }}">
 		</form>
 	</div>
-
-	<div class="fixed-bottom" style="background-color:white">
-		<div id="indice">
-			<button type="button" class="btn btn-primary float-left btn-lg p-3 px-5" name="btn btn-volver" onclick="atras()">{{ _('Volver') }}</button>
-		</div>
-	</div>
-
-	<div id="content" style="margin-left:14rem;">
+	<div id="content" class="col-10">
 		<table class="table table-hover" style="margin-bottom: 3.75rem;">
 			<thead>
 				<tr class="table-primary">
@@ -94,6 +88,14 @@
 				{% endfor %}
 			</tbody>
 		</table>
+	</div>
+</div>
+	
+
+	<div class="fixed-bottom" style="background-color:white">
+		<div id="indice">
+			<button type="button" class="btn btn-primary float-left btn-lg p-3 px-5" name="btn btn-volver" onclick="atras()">{{ _('Volver') }}</button>
+		</div>
 	</div>
 	<footer></footer>
 </body>
