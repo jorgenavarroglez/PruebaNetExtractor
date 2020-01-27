@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-27 10:50+0100\n"
-"PO-Revision-Date: 2020-01-27 10:50+0100\n"
+"POT-Creation-Date: 2020-01-27 11:13+0100\n"
+"PO-Revision-Date: 2020-01-27 11:14+0100\n"
 "Last-Translator: \n"
 "Language: en_GB\n"
 "Language-Team: \n"
@@ -860,7 +860,7 @@ msgstr "Enter a url from *.fandom.com/wiki/Category:Characters"
 msgid "Obtener red"
 msgstr "Obtain net"
 
-#: src/templates/params.html:46 src/templates/paramsPeliculas.html:45
+#: src/templates/params.html:46
 msgid "Introduzca el número <br />mínimo de apariciones <br />en el libro"
 msgstr "Enter the lowest <br /> number of appearances <br /> in the book"
 
@@ -899,6 +899,10 @@ msgstr "Enter a numeric value for the lowest number of appearances"
 #: src/templates/params.html:130
 msgid "Introduzca un valor numérico para la distancia entre personajes"
 msgstr "Enter a numeric value for the distance between characters"
+
+#: src/templates/paramsPeliculas.html:45
+msgid "Introduzca el número <br />mínimo de apariciones <br />en la película:"
+msgstr "Enter the lowest <br /> number of appearances <br /> in the movie:"
 
 #: src/templates/red.html:53
 msgid "Exportar GML"

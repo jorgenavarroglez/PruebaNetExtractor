@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-27 10:50+0100\n"
+"POT-Creation-Date: 2020-01-27 11:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -832,7 +832,7 @@ msgstr ""
 msgid "Obtener red"
 msgstr ""
 
-#: src/templates/params.html:46 src/templates/paramsPeliculas.html:45
+#: src/templates/params.html:46
 msgid "Introduzca el número <br />mínimo de apariciones <br />en el libro"
 msgstr ""
 
@@ -868,6 +868,10 @@ msgstr ""
 
 #: src/templates/params.html:130
 msgid "Introduzca un valor numérico para la distancia entre personajes"
+msgstr ""
+
+#: src/templates/paramsPeliculas.html:45
+msgid "Introduzca el número <br />mínimo de apariciones <br />en la película:"
 msgstr ""
 
 #: src/templates/red.html:53
