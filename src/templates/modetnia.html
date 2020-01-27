@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
 <body>
-	<header id="header" class="sticky-top">
+	<header id="header">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky-top">
 			<a class="navbar-brand" href="#"><h2><img src="{{ url_for('static', filename='img/NetExtractor2.png') }}" width="200" height="100" id="politecnica"></h2></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc4" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc17" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
 				</li>
 			  </ul>
 			  <div class="banderas">
@@ -34,60 +34,114 @@
 			</div>
 		  </nav>
 	</header>
-	<div class="container-fluid">
-		<div id="content" class="d-flex align-items-stretch min-vh-100">
-			<div id="form-content" class="d-flex align-items-center w-100">
-				<form id="form" class="m-auto" action="" method="post" enctype=multipart/form-data>
-					<h5>{{ _('Introduzca la dirección url donde se encuentren los personajes a obtener') }}</h5>
-					<input type="text" id="url" name="txt txt-url1" size="70" placeholder="{{ _('Url perteneciente a imsdb.com/scripts/*') }}">
-					<input type="button" class="btn btn-primary p-2 btn-block" style="margin-bottom: 25rem !important;" onclick="sendForm()" name="btn btn-scrape1" value="{{ _('Obtener') }}">
-				</form>
-			</div>
-		</div>
+	<div id="indice" class="sticky-top float-left" style="margin-left:1rem;">
+		<form action="" id="form-menu" method="post">
+			<h5>{{ _('Introduzca la id del <br />personaje') }}</h5>
+			<input type="text" id="idpers" size="25" name="txt txt-idpers" placeholder="{{ _('ID Personaje') }}">
+			<h5>{{ _('Introduzca la etnia del <br />personaje') }}</h5>
+			<input type="text" id="nometnia" size="25" name="txt txt-etniapers" placeholder="{{ _('Etnia Personaje') }}"><br/>
+			<input type="button" class="btn btn-secondary" style="margin-top: 0.5rem" onclick="sendForm()" name="btn btn-etniapers" value="{{ _('Modificar') }}">
+		</form>
 	</div>
+	<div id="content">
 	<div class="fixed-bottom" style="background-color:white">
 		<div id="indice">
 			<button type="button" class="btn btn-primary float-left btn-lg p-3 px-5" name="btn btn-volver" onclick="atras()">{{ _('Volver') }}</button>
-			<button type="button" class="btn btn-primary float-right btn-lg p-3 px-5" name="btn btn-sig" onclick="next()">{{ _('Siguiente') }}</button>
 		</div>
+	</div>
+	</div>
+	<div style="margin-left:14rem;">
+		<table class="table table-hover" style="margin-bottom: 3.75rem;">
+			<thead>
+				<tr class="table-primary">
+				<th scope="col">{{ _('ID Personaje') }}</th>
+				<th scope="col">{{ _('Referencias personaje') }}</th>
+				<th scope="col">{{ _('Número Apariciones') }}</th>
+				<th scope="col">{{ _('Etnia') }}</th>
+				  <th scope="col">{{ _('Sexo') }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in pers.keys() %}
+				<tr style="padding-bottom: 150rem;">
+				<div class="Personaje" idp="{{ i }}" numapa="{{ pers[i].getNumApariciones()[0] }}">
+				<td><div class="IdPersonaje" idpers="{{ i }}"></div>{{ i }}</td>
+				<td>
+				<div class="NomP">
+				{% for n in pers[i].getPersonaje().keys() %}
+				{{ n }}<br />
+				{% endfor %}
+				</div>
+				</td>
+				{% if pers[i].getNumApariciones()[1]%}
+					<div class="NumApar" parse="true">
+					<td>{{ pers[i].getNumApariciones()[0] }}</td>
+				{% elif pers[i].getNumApariciones()[0] == 0 %}
+					<div class="NumApar" parse="false">
+					<td>N/A</td>
+				{% else %}
+					<div class="NumApar" parse="false">
+					<td>{{ pers[i].getNumApariciones()[0] }}</td>
+				{% endif %}
+				<td>
+					{{ pers[i].getEtnia() }}
+				</td>
+				<td>
+					{{ pers[i].getSexo() }}
+				</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table> 
 	</div>
 	<footer></footer>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="{{ url_for('static', filename='js/orden.js') }}" type="text/javascript"></script>
 	<script src="{{ url_for('static', filename='js/language.js') }}" type="text/javascript"></script>
 	<script type="text/javascript">
 		var validNavigation = false;
-		var perso = {{ perso | safe }}
 		function atras() {
 			validNavigation = true;
-			window.location.href='{{ url_for('inicio') }}'
-		}
-		
-		function next() {
-			if (perso == 1) {
-				validNavigation = true;
-				window.location.href='{{ url_for('moddict') }}'
-			}else {
-				//TRADUCCION
-				alert("{{ _('No se ha creado ningún diccionario') }}")
-			}
+			window.location.href='{{ url_for('moddict') }}'
 		}
 		
 		function sendForm(){
-			var x = document.getElementById("url");
-			x.value = x.value.trim()
-			if(x.value.length == 0){
-				alert("{{ _('Introduzca una url') }}")
-			} else {
-				if(x.value.includes("imsdb")){
-					validNavigation = true;
-					//document.getElementById("form").submit();
-					document.getElementById("form").submit();
-					alert("{{ _('Personajes que aparecen en la página introducidos. Para avanzar pulsa siguiente.') }}")
-				} else {
-					alert("{{ _('Introduzca una url perteneciente a https://www.imsdb.com/scripts/*') }}")
-				}
+			var id = document.getElementById("idpers");
+			var nometnia = document.getElementById("nometnia");
+			id.value = id.value.trim()
+			nometnia.value = nometnia.value.trim()
+			var novalid = [".",",","(",")","[","]","<",">","'","\"",":",";","¿","?","¡","!","=","-","_","—"]
+			if(id.value.length == 0){
+				alert("{{ _('Introduzca una ID') }}")
 			}
+			else{
+				if(nometnia.value.length == 0){
+					alert("{{ _('Introduzca etnia') }}")
+				} else {
+					var divpers = document.getElementsByClassName("IdPersonaje");
+					var incluido = true;
+		        	for(var i=0; divpers[i]; ++i){
+		        		if(divpers[i].getAttribute("idpers")==id.value){
+		        			incluido = false;
+		        			break;
+		        		}
+		        	}
+					if(incluido){
+		        		alert("{{ _('La id introducida no existe') }}")
+		        	} else {
+						if(novalid.includes(nometnia.value.charAt(0))){
+							alert("{{ _('Por favor no introduzca ninguno de los siguientes caracteres como primer caracter:') }}" + " . , ( ) [ ] < > : ; ¿ ? ¡ ! = - _ — \' \" ")
+						}else{
+							validNavigation = true;
+							//document.getElementById("form-menu").submit();
+							alert("{{ _('Etnia modificada correctamente') }}")
+							document.getElementById("form-menu").submit();
+							//window.location.href='{{ url_for('moddict') }}'
+						}
+					}
+	        	}
+        	}
 		}
 		//https://eureka.ykyuen.info/2011/02/22/jquery-javascript-capture-the-browser-or-tab-closed-event/
 		

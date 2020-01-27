@@ -11019,6 +11019,16 @@ a.text-dark:focus {
 	*max-width: 40.714285702vh;
 }
 
+div#cargando {
+	position: absolute;
+	top: calc(40% - 100px);
+	left: calc(47% - 100px);
+    width: 500px;
+    height: 400px;
+    display: none;
+    cursor: wait;
+}
+
 div#loading {
 	position: absolute;
 	top: calc(50% - 100px);

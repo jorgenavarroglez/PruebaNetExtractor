@@ -24,7 +24,7 @@
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://wikinetextractor.herokuapp.com/index.php?title=User_Guide#Modify_characters" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc10" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
 				</li>
 			  </ul>
 			  <div class="banderas">
@@ -34,7 +34,11 @@
 			</div>
 		  </nav>
 	</header>
-	<div id="loading"></div>
+	<div id="cargando">
+		<p><h4>{{ _('Este proceso puede llevar varios minutos...') }}</h4></p>
+	</div>
+	<div id="loading">
+	</div>
 	<div id="content2">
 		<form action="" id="form-menu" method="post">
 			<div class="btn-group btn-block sticky-top" role="group" aria-label="Basic example">
@@ -44,6 +48,8 @@
 				<button type="submit" class="btn btn-secondary" id="nref" name="btn btn-newrefpers">{{ _('Añadir Referencia') }}</button>
 				<button type="submit" class="btn btn-secondary" id="dref" name="btn btn-delrefpers">{{ _('Eliminar Referencia') }}</button>
 				<button type="submit" class="btn btn-secondary" id="mid" name="btn btn-modid">{{ _('Modificar Id Personaje') }}</button>
+				<button type="submit" class="btn btn-secondary" id="met" name="btn btn-modet">{{ _('Modificar Etnia Personaje') }}</button>
+				<button type="submit" class="btn btn-secondary" id="mse" name="btn btn-modse">{{ _('Modificar Sexo Personaje') }}</button>
 				<button type="submit" class="btn btn-secondary" id="exp" name="btn btn-expdict">{{ _('Exportar Diccionario') }}</button>
 			</div>
 		</form>
@@ -54,6 +60,8 @@
 				<div class="txt1">
 					<input type="checkbox" id="pars-cbx" name="cbx cbx-pars">
 					<label for="pars-cbx">{{ _('Obtener Posiciones') }}</label>
+					<input type="checkbox" id="pars-cbx1" name="cbx cbx-pars1">
+					<label for="pars-cbx1">{{ _('Obtener Etnia y Sexo (Opcional: esta opción puede tomar varios minutos.)') }}</label>
 				</div>
 			</div>
 		</div>
@@ -69,6 +77,8 @@
 		  <th scope="col">{{ _('ID Personaje') }}</th>
 		  <th scope="col">{{ _('Referencias personaje') }}</th>
 		  <th scope="col">{{ _('Número Apariciones') }}</th>
+		  <th scope="col">{{ _('Etnia') }}</th>
+		  <th scope="col">{{ _('Sexo') }}</th>
 		</tr>
 	  </thead>
 	  <tbody>
@@ -91,6 +101,12 @@
 			<div class="NumApar" parse="false">
 			<td>{{ pers[i].getNumApariciones()[0] }}</td>
 		  {% endif %}
+			<td>
+				{{ pers[i].getEtnia() }}
+			</td>
+			<td>
+				{{ pers[i].getSexo() }}
+			</td>
 		</tr>
 		{% endfor %}
 	  </tbody>
@@ -118,14 +134,52 @@
 		
         function loading(){
         	var parsear = document.getElementById("pars-cbx").checked;
-        	if(parsear){
+			var parsear1 = document.getElementById("pars-cbx1").checked;
+			if (parsear && parsear1){
+				var parsear2 = true;
+				parsear = false;
+				parsear1 = false;
+			}
+        	if(parsear || parsear1 || parsear2){
         		alert("{{ _('Primero se van a buscar las posiciones de los personajes, esto puede tardar unos minutos.') }}");
         		$("#loading").show();
+				$("#cargando").show();
             	$("#content").hide();
             	$("#workflow").hide();
 				$("#content2").hide();
             	$(".banderas").hide();
-            	$.ajax({
+				if(parsear2){
+					$.ajax({
+	          		type: "POST",
+	          		contentType: "application/json;charset=utf-8",
+	          		url: "/Modificar-Diccionario/",
+	          		traditional: "true",
+	          		data: JSON.stringify('parsear2'),
+	          		dataType: "json",
+	          		success: function(response){
+	          			validNavigation = true;
+	          			location.reload();
+						//window.location.href='{{ url_for('params') }}'
+             		 }
+	        		});
+				}
+				if(parsear1){
+					$.ajax({
+	          		type: "POST",
+	          		contentType: "application/json;charset=utf-8",
+	          		url: "/Modificar-Diccionario/",
+	          		traditional: "true",
+	          		data: JSON.stringify('parsear1'),
+	          		dataType: "json",
+	          		success: function(response){
+	          			validNavigation = true;
+	          			location.reload();
+						//window.location.href='{{ url_for('params') }}'
+             		 }
+	        		});
+				}
+				if(parsear){
+					$.ajax({
 	          		type: "POST",
 	          		contentType: "application/json;charset=utf-8",
 	          		url: "/Modificar-Diccionario/",
@@ -137,7 +191,8 @@
 	          			location.reload();
 						//window.location.href='{{ url_for('params') }}'
              		 }
-	        	});
+	        		});
+				}
         	} else {
 				if(cambiarPantalla==1){
 					validNavigation = true;

@@ -24,7 +24,7 @@
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://wikinetextractor.herokuapp.com/index.php?title=User_Guide#Report_data_extraction" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc21" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
 				</li>
 			  </ul>
 			  <div class="banderas">
@@ -47,7 +47,7 @@
 				<form id="form" action="" method="post" enctype=multipart/form-data>
 				<h1 style="text-align:center">{{ _('Extracción de datos para el informe')}}</h1>
 				<div class="row">
-					<div class="col-4">
+					<div class="col-3">
 					<input type="checkbox" id="selectallbasics"><label for="selectallbasics"><h5>{{ _('Medidas básicas') }}</h5></label><br/>
 					<input type="checkbox" id="cbx-nnod" name="cbx cbx-nnod" class="case" value="1">
 					<label for="cbx-nnod">{{ _('Número Nodos') }}</label>
@@ -77,7 +77,7 @@
 					<br/>
 					<br/>
 					</div>
-					<div class="col-4">
+					<div class="col-3">
 					<input type="checkbox" id="selectalldistancia"><label for="selectalldistancia"><h5>{{ _('Medidas de Distancia') }}</h5></label><br/>
 					<input type="checkbox" id="cbx-concomp" name="cbx cbx-concomp" class="casedistancia" value="1">
 					<label for="cbx-concomp">{{ _('Componentes Conectados') }}</label>
@@ -107,7 +107,7 @@
 					<br/>
 					<br/>
 				</div>
-				<div class="col-4">
+				<div class="col-3">
 					<input type="checkbox" id="selectallcentro"><label for="selectallcentro"><h5>{{ _('Medidas de Centralidad') }}</h5></label><br/>
 					<input type="checkbox" id="cbx-centg" name="cbx cbx-centg" class="casecentro" value="1">
 					<label for="cbx-centg">{{ _('Centralidad Grado') }}</label>
@@ -128,30 +128,46 @@
 					<label for="cbx-para">{{ _('Pagerank') }}</label>
 					<br/>
 					<br/>
-					<h5>{{ _('Grupos y comunidades') }}</h5>
-					<input type="checkbox" id="cbx-kcliperc" name="cbx cbx-kcliperc">
+					<input type="checkbox" id="selectallcom"><label for="selectallcom"><h5>{{ _('Grupos y comunidades') }}</h5></label><br/>
+					<input type="checkbox" id="cbx-kcliperc" name="cbx cbx-kcliperc" class="casecom" value="1">
 					<label for="cbx-kcliperc">{{ _('Comunidades K-clique') }}</label>
 					<br/>
-					<p>{{ _('Valor k del K-clique para comunidades') }}: (Por defecto será 2) </p>
+					<p>{{ _('Valor k del K-clique para comunidades: (Por defecto será 2)') }} </p>
 					<input type="number" min=2 name="valkcliqper" id="valkcliqper" value="2">
 					<br/>
 					<br/>
-					<input type="checkbox" id="cbx-girnew" name="cbx cbx-girnew">
+					<input type="checkbox" id="cbx-girnew" name="cbx cbx-girnew" class="casecom" value="2">
 					<label for="cbx-girnew">{{ _('Comunidades Girvan-Newman') }}</label>
 					<br/>
-					<input type="checkbox" id="cbx-greedy" name="cbx cbx-greedy">
+					<input type="checkbox" id="cbx-greedy" name="cbx cbx-greedy" class="casecom" value="3">
 					<label for="cbx-greedy">{{ _('Comunidades Clauset-Newman-Moore') }}</label>
 					<br/>
-					<input type="checkbox" id="cbx-louvain" name="cbx cbx-louvain">
+					<input type="checkbox" id="cbx-louvain" name="cbx cbx-louvain" class="casecom" value="4">
 					<label for="cbx-louvain">{{ _('Comunidades Louvain') }}</label>
 					<br/>
 					<br/>
-					<h5>{{ _('Detección de roles') }}</h5>
-					<input type="checkbox" id="cbx-roles" name="cbx cbx-roles">
-					<label for="cbx-roles">{{ _('Detectar Roles') }}</label>
+				</div>
+				<div class="col-3">
+					<input type="checkbox" id="selectallrol"><label for="selectallrol"><h5>{{ _('Detección de roles') }}</h5></label><br/>
+					<input type="checkbox" id="cbx-roleskcliq" name="cbx cbx-roleskcliq" class="caserol" value="4">
+					<label for="cbx-roleskcliq">{{ _('Roles K-clique') }}</label>
+					<br />
+					<p>{{ _('Valor k del K-clique para roles: (Por defecto será 2)') }} </p>
+					<input type="number" min=2 name="valkcliqperrol" id="valkcliqperrol" value="2">
+					<br/>
+					<br/>
+					<input type="checkbox" id="cbx-rolesgirvan" name="cbx cbx-rolesgirvan" class="caserol" value="2">
+					<label for="cbx-rolesgirvan">{{ _('Roles Girvan-Newman') }}</label>
+					<br />
+					<input type="checkbox" id="cbx-rolesgreedy" name="cbx cbx-rolesgreedy" class="caserol" value="3">
+					<label for="cbx-rolesgreedy">{{ _('Roles Clauset-Newman-Moore') }}</label>
+					<br />
+					<input type="checkbox" id="cbx-roleslouvain" name="cbx cbx-roleslouvain" class="caserol" value="1">
+					<label for="cbx-roleslouvain">{{ _('Roles Louvain') }}</label>
 					</div>
 					</div>
 					<br/>
+				</div>
 				</form>
 			</div>
 		</div>
@@ -162,6 +178,28 @@
 	<script src="{{ url_for('static', filename='js/language.js') }}" type="text/javascript"></script>
 	<script type="text/javascript">
 		var validNavigation = false;
+		$("#selectallrol").on("click", function() {  
+			$(".caserol").prop("checked", this.checked);  
+		});  
+ 
+		$(".caserol").on("click", function() {  
+			if ($(".caserol").length == $(".caserol:checked").length) {  
+			$("#selectallrol").prop("checked", true);  
+			} else {  
+			$("#selectallrol").prop("checked", false);  
+			}  
+		});
+		$("#selectallcom").on("click", function() {  
+			$(".casecom").prop("checked", this.checked);  
+		});  
+ 
+		$(".casecom").on("click", function() {  
+			if ($(".casecom").length == $(".casecom:checked").length) {  
+			$("#selectallcom").prop("checked", true);  
+			} else {  
+			$("#selectallcom").prop("checked", false);  
+			}  
+		});
 		$("#selectallbasics").on("click", function() {  
 			$(".case").prop("checked", this.checked);  
 		});  

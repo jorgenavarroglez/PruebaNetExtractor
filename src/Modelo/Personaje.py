@@ -13,8 +13,17 @@ class Personaje:
         self.__pospers = dict()
         self.lennombres = dict()
         self.__numapar = 0
-        self.__etnia = None
-        self.__sexo = None
+        self.__etnia = 'None'
+        self.__sexo = 'None'
+        self.__dictSexEt = dict()
+
+    def getDiccionario(self):
+        return self.__dictSexEt
+
+    def crearDictSE(self):
+        self.__dictSexEt['Etnia'] = self.__etnia
+        self.__dictSexEt['Sexo'] = self.__sexo
+
 
     def setEtnia(self, etnia):
         """

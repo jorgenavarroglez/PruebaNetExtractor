@@ -24,7 +24,7 @@
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://wikinetextractor.herokuapp.com/index.php?title=User_Guide#Delete_characters" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc12" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
 				</li>
 			  </ul>
 			  <div class="banderas">
@@ -41,19 +41,22 @@
 		</form>
 	</div>
 
-	<div id="content">
-		<div class="fixed-bottom" style="background-color:white">
-			<div id="indice">
-				<button type="button" class="btn btn-primary float-left btn-lg p-3 px-5" name="btn btn-volver" onclick="atras()">{{ _('Volver') }}</button>
-			</div>
+	<div class="fixed-bottom" style="background-color:white">
+		<div id="indice">
+			<button type="button" class="btn btn-primary float-left btn-lg p-3 px-5" name="btn btn-volver" onclick="atras()">{{ _('Volver') }}</button>
 		</div>
-		<table class="table table-hover" style="margin-bottom: 3.75rem;margin-left:14rem">
+	</div>
+
+	<div id="content" style="margin-left:14rem;">
+		<table class="table table-hover" style="margin-bottom: 3.75rem;">
 			<thead>
 				<tr class="table-primary">
 				<th scope="col">{{ _('Marque para Borrar') }}</th>
 				<th scope="col">{{ _('ID Personaje') }}</th>
 				<th scope="col">{{ _('Referencias personaje') }}</th>
 				<th scope="col">{{ _('Número Apariciones') }}</th>
+				<th scope="col">{{ _('Etnia') }}</th>
+		  		<th scope="col">{{ _('Sexo') }}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -64,7 +67,7 @@
 						<td>
 							<input type="checkbox" name="cbx cbx-idpers" class="cbx-idpers" title="{{ _('Marque para eliminar el personaje') }}" value="{{ i }}">
 						</td>
-						<td>{{ i }}</td>
+						<td><div class="IdPersonaje" idpers="{{ i }}"></div>{{ i }}</td>
 					</div>
 				<td>
 				{% for n in pers[i].getPersonaje().keys() %}
@@ -81,6 +84,12 @@
 					<div class="NumApar" parse="false">
 					<td>{{ pers[i].getNumApariciones()[0] }}</td>
 				{% endif %}
+				<td>
+					{{ pers[i].getEtnia() }}
+				</td>
+				<td>
+					{{ pers[i].getSexo() }}
+				</td>
 				</tr>
 				{% endfor %}
 			</tbody>

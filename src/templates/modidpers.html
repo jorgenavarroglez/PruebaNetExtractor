@@ -24,7 +24,7 @@
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://wikinetextractor.herokuapp.com/index.php?title=User_Guide#Modify_characters_ID" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc16" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
 				</li>
 			  </ul>
 			  <div class="banderas">
@@ -48,26 +48,28 @@
 			<input type="button" class="btn btn-secondary" style="margin-top: 0.5rem" onclick="sendForm()" name="btn btn-cambiarid" value="{{ _('Cambiar') }}">
 		</form>
 	</div>
-	<div id="content">
-		<table class="table table-hover" style="margin-bottom: 3.75rem; margin-left: 14rem;">
+	<div style="margin-left:14rem;">
+		<table class="table table-hover" style="margin-bottom: 3.75rem;">
 			<thead>
 				<tr class="table-primary">
 				<th scope="col">{{ _('ID Personaje') }}</th>
 				<th scope="col">{{ _('Referencias personaje') }}</th>
 				<th scope="col">{{ _('Número Apariciones') }}</th>
+				<th scope="col">{{ _('Etnia') }}</th>
+				  <th scope="col">{{ _('Sexo') }}</th>
 				</tr>
 			</thead>
 			<tbody>
 				{% for i in pers.keys() %}
 				<tr style="padding-bottom: 150rem;">
 				<div class="Personaje" idp="{{ i }}" numapa="{{ pers[i].getNumApariciones()[0] }}">
-					<div class="IdPersonaje" idpers="{{ i }}">
-						<td>{{ i }}</td>
-					</div>
+				<td><div class="IdPersonaje" idpers="{{ i }}"></div>{{ i }}</td>
 				<td>
+				<div class="NomP">
 				{% for n in pers[i].getPersonaje().keys() %}
 				{{ n }}<br />
 				{% endfor %}
+				</div>
 				</td>
 				{% if pers[i].getNumApariciones()[1]%}
 					<div class="NumApar" parse="true">
@@ -79,10 +81,16 @@
 					<div class="NumApar" parse="false">
 					<td>{{ pers[i].getNumApariciones()[0] }}</td>
 				{% endif %}
+				<td>
+					{{ pers[i].getEtnia() }}
+				</td>
+				<td>
+					{{ pers[i].getSexo() }}
+				</td>
 				</tr>
 				{% endfor %}
 			</tbody>
-		</table>
+		</table> 
 	</div>
 	<footer></footer>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>

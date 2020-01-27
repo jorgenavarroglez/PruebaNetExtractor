@@ -35,7 +35,7 @@
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://wikinetextractor.herokuapp.com/index.php?title=User_Guide#Report" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc22" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
 				</li>
 			  </ul>
 			  <div class="banderas">
@@ -150,8 +150,20 @@
 			{%if "cbx cbx-louvain" in informe.keys() %}
 			<a href="#louvain" class="btn btn-secondary btn-block">{{_('Comunidades Louvain')}}</a>
 			{%endif%}
-			{% if "cbx cbx-roles" in informe.keys() %}
+			{% if "cbx cbx-roleslouvain" in informe.keys() or "cbx cbx-rolesgirvan" in informe.keys() or "cbx cbx-rolesgreedy" in informe.keys() or "cbx cbx-roleskcliq" in informe.keys() %}
 			<a href="#deteccionderoles" class="btn btn-primary btn-block">{{_('Detección de roles')}}</a>
+			{%endif%}
+			{% if "cbx cbx-roleskcliq" in informe.keys() %}
+			<a href="#roleskcliq" class="btn btn-secondary btn-block">{{_('Roles K-clique')}}</a>
+			{%endif%}
+			{%if "cbx cbx-rolesgirvan" in informe.keys() %}
+			<a href="#rolesgirvan" class="btn btn-secondary btn-block">{{_('Roles Girvan-Newman')}}</a>
+			{%endif%}
+			{%if "cbx cbx-rolesgreedy" in informe.keys() %}
+			<a href="#rolesgreedy" class="btn btn-secondary btn-block">{{_('Roles Clauset-Newman-Moore')}}</a>
+			{%endif%}
+			{%if "cbx cbx-roleslouvain" in informe.keys() %}
+			<a href="#roleslouvain" class="btn btn-secondary btn-block">{{_('Roles Louvain')}}</a>
 			{%endif%}
 		</form>
 	</div>
@@ -163,22 +175,21 @@
 			{% endif %}
 			{% if "cbx cbx-nnod" in informe.keys() %}
 				<a name="numnodos"><p><h5>{{_('Número Nodos')}}:</h5></p></a>
-				<p>El número de nodos se va a corresponder con el número de personajes que existen.<br/>
-				En el caso de esta red <b>{{informe["cbx cbx-nnod"]}}</b>.</p>
+				<p>
+				{{ _('En el caso de esta red el número de nodos es:') }} <b>{{informe["cbx cbx-nnod"]}}</b>.</p>
 			{% endif %}
 			{% if "cbx cbx-nenl" in informe.keys() %}
 				<a name="numenlaces"><p><h5>{{_('Número Enlaces')}}:</h5></p></a>
 				<p>El número de enlaces se corresponde con el número de uniones total entre nodos que hay.<br/>
-				En el caso de esta red <b>{{informe["cbx cbx-nenl"]}}</b>.</p>
+				{{ _('En el caso de esta red el número de enlaces es:') }} <b>{{informe["cbx cbx-nenl"]}}</b>.</p>
 			{% endif %}
 			{% if "cbx cbx-nint" in informe.keys() %}
 				<a name="numinter"><p><h5>{{_('Número Interacciones')}}:</h5></p></a>
-				<p><b>{{informe["cbx cbx-nint"]}}</b>.</p><br/>
+				<p>{{ _('En el caso de esta red el número de interacciones es:') }} <b>{{informe["cbx cbx-nint"]}}</b>.</p><br/>
 			{% endif %}
 			{% if "cbx cbx-gradosin" in informe.keys() or "cbx cbx-gradocon" in informe.keys() or "cbx cbx-distsin" in informe.keys() or "cbx cbx-distcon" in informe.keys() or "cbx cbx-dens" in informe.keys() %}
 			<a name="medidasdegrado"><h3>{{_('Medidas de grado')}}</h3></a>
-			<p>El grado de un nodo (k) en una red no dirigida es el número de enlaces que tiene conectados, si no tenemos en cuenta el peso de los enlaces, o el sumatorio del peso de los enlaces conectados a un nodo en caso de tenerlo en cuenta. Los nodos con un alto grado en comparación a la media se conocen como hubs.<br/>
-				Con el grado de todos los nodos podemos obtener la distribución de grado P(k), que es la fracción de nodos que tienen grado k.</p>
+
 			{%endif%}
 			{% if "cbx cbx-gradosin" in informe.keys() %}
 				<a name="gsinpeso"><p><h5>{{_('Grado Nodos Sin Peso')}}:</h5> </p> </a>
@@ -268,8 +279,8 @@
 			{% endif %}
 			{% if "cbx cbx-dens" in informe.keys() %}
 				<a name="densidad"><p><h5>{{_('Densidad')}}:</h5></p></a>
-				<p>La densidad de la red es la relación entre el número de enlaces y el número posible de enlaces. Se dice que una red es poco densa en caso de que el número de enlaces L es del mismo orden que el número de nodos N. Si por el contrario L >> N se considera que la red es densa.<br/>
-				En el caso de esta red la densidad es: <b>{{informe["cbx cbx-dens"]}}</b>.</p><br/>
+				<p>
+				{{ _('En el caso de esta red la densidad es:') }} <b>{{informe["cbx cbx-dens"]}}</b>.</p><br/>
 			{% endif %}
 			{% if "cbx cbx-concomp" in informe.keys() or "cbx cbx-exc" in informe.keys() or "cbx cbx-dia" in informe.keys() or "cbx cbx-rad" in informe.keys() or "cbx cbx-longmed" in informe.keys() %}
 			<a name="medidasdedistancia"><h3>{{_('Medidas de Distancia')}}</h3></a>
@@ -297,8 +308,7 @@
 				<br/>
 			{% endif %}
 			{% if "cbx cbx-exc" in informe.keys() %}
-				<a name="excen"><p><h5>{{_('Excentricidad')}}:</h5> </p></a>
-				<p>Se le llama excentricidad a la mayor distancia geodésica que tiene un nodo con respecto al resto de nodos de la red.</p>
+				<a name="excen"><p><h5>{{_('Excentricidad')}}:</h5></p></a>
 				<table class="table table-hover">
 					<thead>
 						<tr class="table-primary">
@@ -319,13 +329,13 @@
 			{% endif %}
 			{% if "cbx cbx-dia" in informe.keys() %}
 				<a name="diametro"><p><h5>{{_('Diametro')}}:</h5></p></a>
-				<p>El diámetro es la excentricidad máxima entre todos los nodos de la red. Los nodos con excentricidad máxima se denominan nodos periféricos. El diámetro nos proporciona el número de pasos máximos necesarios para ir de cualquier nodo a cualquier otro de la red y es una de las principales medidas de conectividad global de una red.<br/>
-				En el caso de esta red <b>{{informe["cbx cbx-dia"]}}</b>.</p><br/>
+				<p>
+				{{ _('En el caso de esta red el diámetro es:') }} <b>{{informe["cbx cbx-dia"]}}</b>.</p><br/>
 			{% endif %}
 			{% if "cbx cbx-rad" in informe.keys() %}
 				<a name="radio"><p><h5>{{_('Radio')}}:</h5></p></a>
-				<p>El radio es la excentricidad mínima entre todos los nodos de la red. Los nodos con excentricidad mínima forman el centro. Dos veces el radio de la red siempre es mayor o igual que el diámetro de la red.<br/>
-				En el caso de esta red <b>{{informe["cbx cbx-rad"]}}</b>.</p>
+				<p>
+				{{ _('En el caso de esta red el radio es:') }} <b>{{informe["cbx cbx-rad"]}}</b>.</p>
 			{% endif %}
 			{% if "cbx cbx-longmed" in informe.keys() %}
 				<a name="distmed"><p><h5>{{_('Distancia Media')}}:</h5></p></a>
@@ -358,15 +368,13 @@
 			{% endif %}
 			{% if "cbx cbx-trans" in informe.keys() %}
 				<a name="transitividad"><p><h5>{{_('Transitividad')}}:</h5></p></a>
-				<p>La transitividad mide el número de triadas abiertas que son triángulos en la red.<br/>
-					En el caso de esta red <b>{{informe["cbx cbx-trans"]}}</b>.</p><br/>
+					<p>{{ _('En esta red la transitividad es:') }} <b>{{informe["cbx cbx-trans"]}}</b>.</p><br/>
 			{% endif %}
 			{% if "cbx cbx-centg" in informe.keys() or "cbx cbx-centc" in informe.keys() or "cbx cbx-centi" in informe.keys() or "cbx cbx-ranwal" in informe.keys() or "cbx cbx-centv" in informe.keys() or "cbx cbx-para" in informe.keys()%}
 			<a name="medidasdecentralidad"><h3>{{_('Medidas de Centralidad')}}</h3></a>
 			{%endif%}
 			{% if "cbx cbx-centg" in informe.keys() %}
-				<a name="cg"><p><h5>{{_('Centralidad Grado')}}:</h5> </p></a>
-				<p>La centralidad de grado es una medida local que parte de la hipótesis de que los nodos con más grado son los más importantes de la red.</p>
+				<a name="cg"><p><h5>{{_('Centralidad Grado')}}:</h5></a>
 				<table class="table table-hover">
 					<thead>
 						<tr class="table-primary">
@@ -389,8 +397,7 @@
 				<br/>
 			{% endif %}
 			{% if "cbx cbx-centc" in informe.keys() %}
-				<a name="ccer"><p><h5>{{_('Centralidad Cercanía')}}:</h5> </p></a>
-				<p>La centralidad de cercanía parte de la hipótesis de que los nodos que están más cerca de otros nodos son los más importantes.</p>
+				<p><a name="ccer"><h5>{{_('Centralidad Cercanía')}}:</h5> </p></a>
 				<table class="table table-hover">
 					<thead>
 						<tr class="table-primary">
@@ -411,8 +418,7 @@
 				<br/>
 			{% endif %}
 			{% if "cbx cbx-centi" in informe.keys() %}
-				<a name="cinter"><p><h5>{{_('Centralidad Intermediación')}}:</h5> </p></a>
-				<p>La centralidad de intermediación asume que los nodos que conectan nodos son los nodos importantes.</p>
+				<p><a name="cinter"><p><h5>{{_('Centralidad Intermediación')}}:</h5> </p></a>
 				<table class="table table-hover">
 					<thead>
 						<tr class="table-primary">
@@ -458,8 +464,7 @@
 				<br/>
 			{% endif %}
 			{% if "cbx cbx-centv" in informe.keys() %}
-				<a name="cvp"><p><h5>{{_('Centralidad Valor Propio')}}:</h5> </p></a>
-				<p>Esta medida de centralidad se basa en la hipótesis de que la importancia de un nodo crece si tiene vínculos que también son importantes.</p>
+			<p><a name="cvp"><p><h5>{{_('Centralidad Valor Propio')}}:</h5> </p></a>
 				<table class="table table-hover">
 					<thead>
 						<tr class="table-primary">
@@ -482,8 +487,7 @@
 				<br/>
 			{% endif %}
 			{% if "cbx cbx-para" in informe.keys() %}
-				<a name="pagerank"><p><h5>{{_('Pagerank')}}:</h5> </p></a>
-				<p>Pagerank es un algoritmo que parte de la centralidad de valor propio.</p>
+			<p><a name="pagerank"><p><h5>{{_('Pagerank')}}:</h5> </p></a>
 				<table class="table table-hover">
 					<thead>
 						<tr class="table-primary">
@@ -506,7 +510,6 @@
 				<br/>
 			{% endif %}			
 			{% if "cbx cbx-kcliperc" in informe.keys() or "cbx cbx-girnew" in informe.keys() or "cbx cbx-greedy" in informe.keys() or "cbx cbx-louvain" in informe.keys() %}
-			{%set prueba=0%}
 				<a name="gruposycomunidades"><h3>{{_('Grupos y comunidades')}}</h3></a>
 			{% endif %}
 				{% if "cbx cbx-kcliperc" in informe.keys()%}
@@ -515,21 +518,19 @@
 					<thead>
 						<tr class="table-primary">
 							<th scope="col">{{_('Comunidad')}}</th>
-							<th scope="col">{{_('Miembros')}}</th>
+
 						</tr>
 					</thead>
-					<tbody>	
-						{%for x in informe["cbx cbx-kcliperc"] %}
-						<tr>
-							{%set prueba=prueba+1%}
-							<td>{{prueba}}</td>
-							<td>
-								{% for i in x %}
-									{{ i }} | 
-								{% endfor %}
-							</td>
-						</tr>
-						{% endfor %}
+					<tbody>
+						{% for x in informe["cbx cbx-kcliperc"] %}
+							<tr>
+								<td>
+									{% for i in x %}
+										{{ i }} | 
+									{% endfor %}
+								</td>
+							</tr>
+						{%endfor%}
 					</tbody>
 				</table>
 				<div style="margin-left:20rem;">
@@ -538,8 +539,7 @@
 				<br/>
 			{%endif%}
 			{% if "cbx cbx-girnew" in informe.keys() %}
-				<a name="gnew"><p><h5>{{_('Comunidades Girvan-Newman')}}:</h5> </p></a>
-				<p>El algoritmo de Girvan -Newman detecta comunidades eliminando progresivamente los enlaces de la red original. Los componentes conectados de la red que queda son las comunidades.</p>
+				<p><a name="gnew"><h5>{{_('Comunidades Girvan-Newman')}}:</h5> </p></a>
 				<table class="table table-hover">
 					<thead>
 						<tr class="table-primary">
@@ -565,8 +565,7 @@
 				<br/>
 			{% endif %}
 			{% if "cbx cbx-greedy" in informe.keys() %}
-				<a name="greedy"><p><h5>{{_('Comunidades Clauset-Newman-Moore')}}:</h5> </p></a>
-				<p>Algoritmo empleado para encontrar comunidades usando la maximización de la modularidad de Clauset-Newman-Moore.</p>
+				<p><a name="greedy"><h5>{{_('Comunidades Clauset-Newman-Moore')}}:</h5> </p></a>
 				<table class="table table-hover">
 					<thead>
 						<tr class="table-primary">
@@ -617,58 +616,207 @@
 
 				<br/>
 			{% endif %}
-			{% if "cbx cbx-roles" in informe.keys() %}
+			{% if "cbx cbx-roleslouvain" in informe.keys() or "cbx cbx-rolesgirvan" in informe.keys() or "cbx cbx-rolesgreedy" in informe.keys() or "cbx cbx-roleskcliq" in informe.keys() %}
 				<a name="deteccionderoles"><h3>{{_('Detección de roles')}}</h3></a>
-				<p><h5>{{_('Hubs Provinciales')}}:</h5> </p>
-				<p>Son nodos que tienen al menos 5/6 de sus enlaces dentro de la comunidad.</p>
-				<p>
-				{% for x in informe["cbx cbx-roles"]['hubp'] %}
-						{{x}} | 
-				{% endfor %}
-				</p>
-				<p><h5>{{_('Hubs Conectores')}}:</h5> </p>
-				<p>Son nodos que tienen aproximadamente la mitad de sus enlaces dentro de la comunidad.</p>
-				<p>
-				{% for x in informe["cbx cbx-roles"]['hubc'] %}
-						{{x}} | 
-				{% endfor %}
-				</p>
-				<p><h5>{{_('Hubs Kinless')}}:</h5> </p>
-				<p>Al igual que con los nodos que no son hubs, no se les puede asignar de forma clara a ninguna comunidad.</p>
-				<p>
-				{% for x in informe["cbx cbx-roles"]['hubk'] %}
-						{{x}} | 
-				{% endfor %}
-				</p>
-				<p><h5>{{_('No Hubs Ultra Periféricos')}}:</h5> </p>
-				<p>Tienen todos los enlaces en su comunidad.</p>
+			{% endif %}
+			{% if "cbx cbx-roleskcliq" in informe.keys() %}
+				<a name="roleskcliq"><p><h4>{{_('Roles K-clique')}}:</h4></p></a>
+				<p><h5>{{_('No Hubs Ultra Periféricos (R1)')}}:</h5></p>
 				<p> 
-				{% for x in informe["cbx cbx-roles"]['nhubu'] %}
+				{% for x in informe["cbx cbx-roleskcliq"]['nhubu'] %}
 					{{x}} | 
 				{% endfor %}
 				</p>
-				<p><h5>{{_('No Hubs Periféricos')}}:</h5> </p>
-				<p>Tienen al menos el 60% de sus enlaces en su comunidad.</p>
+				<p><h5>{{_('No Hubs Periféricos (R2)')}}:</h5></p>
 				<p>
-				{% for x in informe["cbx cbx-roles"]['nhubp'] %}
+				{% for x in informe["cbx cbx-roleskcliq"]['nhubp'] %}
 						{{x}} | 
 				{% endfor %}
 				</p>
-				<p><h5>{{_('No Hubs Conectores')}}:</h5> </p>
-				<p>Tienen aproximadamente la mitad de los enlaces dentro de la comunidad.</p>
+				<p><h5>{{_('No Hubs Conectores (R3)')}}:</h5></p>
 				<p>
-				{% for x in informe["cbx cbx-roles"]['nhubc'] %}
+				{% for x in informe["cbx cbx-roleskcliq"]['nhubc'] %}
 						{{x}} | 
 				{% endfor %}
 				</p>
-				<p><h5>{{_('No Hubs Kinless')}}:</h5> </p>
-				<p>Son nodos que tienen menos del 35% de sus enlaces dentro de la comunidad.</p>
+				<p><h5>{{_('No Hubs Kinless (R4)')}}:</h5></p>
 				<p>
-				{% for x in informe["cbx cbx-roles"]['nhubk'] %}
+				{% for x in informe["cbx cbx-roleskcliq"]['nhubk'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Provinciales (R5)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleskcliq"]['hubp'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Conectores (R6)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleskcliq"]['hubc'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Kinless (R7)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleskcliq"]['hubk'] %}
 						{{x}} | 
 				{% endfor %}
 				</p>
 				<br/>
+				<div style="margin-left:20rem;">
+				<img src="{{ url_for('download_file', filename='roleskcliq.png') }}" width="700" height="500" class="zoomA">
+				</div>
+				<br/>
+			{% endif %}
+			{% if "cbx cbx-rolesgirvan" in informe.keys() %}
+				<a name="rolesgirvan"><p><h4>{{_('Roles Girvan-Newman')}}:</h4></p></a>
+				<p><h5>{{_('No Hubs Ultra Periféricos (R1)')}}:</h5></p>
+				<p> 
+				{% for x in informe["cbx cbx-rolesgirvan"]['nhubu'] %}
+					{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Periféricos (R2)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgirvan"]['nhubp'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Conectores (R3)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgirvan"]['nhubc'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Kinless (R4)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgirvan"]['nhubk'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Provinciales (R5)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgirvan"]['hubp'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Conectores (R6)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgirvan"]['hubc'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Kinless (R7)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgirvan"]['hubk'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<br/>
+				<div style="margin-left:20rem;">
+				<img src="{{ url_for('download_file', filename='rolesgirvan.png') }}" width="700" height="500" class="zoomA">
+				</div>
+				<br/>
+			{% endif %}
+			{% if "cbx cbx-rolesgreedy" in informe.keys() %}
+				<a name="rolesgreedy"><p><h4>{{_('Roles Clauset-Newman-Moore')}}:</h4></p></a>
+				<p><h5>{{_('No Hubs Ultra Periféricos (R1)')}}:</h5></p>
+				<p> 
+				{% for x in informe["cbx cbx-rolesgreedy"]['nhubu'] %}
+					{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Periféricos (R2)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgreedy"]['nhubp'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Conectores (R3)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgreedy"]['nhubc'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Kinless (R4)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgreedy"]['nhubk'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Provinciales (R5)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgreedy"]['hubp'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Conectores (R6)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgreedy"]['hubc'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Kinless (R7)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-rolesgreedy"]['hubk'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<br/>
+				<div style="margin-left:20rem;">
+				<img src="{{ url_for('download_file', filename='rolesgreedy.png') }}" width="700" height="500" class="zoomA">
+				</div>
+				<br/>
+			{% endif %}
+			{% if "cbx cbx-roleslouvain" in informe.keys() %}
+				<a name="roleslouvain"><p><h4>{{_('Roles Louvain')}}:</h4></p></a>
+				<p><h5>{{_('No Hubs Ultra Periféricos (R1)')}}:</h5></p>
+				<p> 
+				{% for x in informe["cbx cbx-roleslouvain"]['nhubu'] %}
+					{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Periféricos (R2)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['nhubp'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Conectores (R3)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['nhubc'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('No Hubs Kinless (R4)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['nhubk'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Provinciales (R5)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['hubp'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Conectores (R6)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['hubc'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Hubs Kinless (R7)')}}:</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['hubk'] %}
+						{{x}} | 
+				{% endfor %}
+				</p>
+				<br/>
+				<div style="margin-left:20rem;">
+				<img src="{{ url_for('download_file', filename='roleslouvain.png') }}" width="700" height="500" class="zoomA">
+				</div>
 			{% endif %}
 		</div>
 		</div>

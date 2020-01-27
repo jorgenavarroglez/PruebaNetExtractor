@@ -146,12 +146,23 @@ def moddict():
     if request.method == "POST":
         ajax = request.get_json()
         if(ajax != None):
-            if(m.devolverCambio()==1):
-                m.prepararRed()
+            if(ajax == 'parsear2'):
+                if(m.devolverCambio()==1):
+                    m.prepararRed()
+                else:
+                    m.prepararRedPeliculas()
+                m.obtenerEthnea()
                 return json.dumps("True")
-            else:
-                m.prepararRedPeliculas()
+            if(ajax == 'parsear1'):
+                m.obtenerEthnea()
                 return json.dumps("True")
+            if(ajax == 'parsear'):
+                if(m.devolverCambio()==1):
+                    m.prepararRed()
+                    return json.dumps("True")
+                else:
+                    m.prepararRedPeliculas()
+                    return json.dumps("True")
         if("btn btn-newpers" in request.form):
             return redirect(url_for('newpers'))
         elif("btn btn-delpers" in request.form):
@@ -164,6 +175,10 @@ def moddict():
             return redirect(url_for('delrefpers'))
         elif("btn btn-modid" in request.form):
             return redirect(url_for('modidpers'))
+        elif("btn btn-modet" in request.form):
+            return redirect(url_for('etniapers'))
+        elif("btn btn-modse" in request.form):
+            return redirect(url_for('sexopers'))
         elif("btn btn-expdict" in request.form):
             filename = os.path.join(app.config['UPLOAD_FOLDER'], str(session['usuario']), session['fichero'] + ".csv")
             m.exportDict(filename)
@@ -183,6 +198,34 @@ def newpers():
         perso = request.form['txt txt-nombrepers']
         m.anadirPersonaje(idperso,perso)
     return render_template('newpers.html', pers = m.getPersonajes())
+
+@app.route('/Modificar-Diccionario/Etnia-Personaje/', methods=["GET", "POST"])    
+def etniapers():
+    if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
+        return redirect(url_for('home'))
+    g.usuario = session['usuario']
+    m = tbd.getObject(session['usuario'])
+    if (m.hayPersonajes() == 0):
+        return redirect(url_for('home'))
+    if request.method == "POST":
+        idperso = request.form['txt txt-idpers']
+        etnia = request.form['txt txt-etniapers']
+        m.cambiarEtnia(etnia,idperso)
+    return render_template('modetnia.html', pers = m.getPersonajes())
+
+@app.route('/Modificar-Diccionario/Sexo-Personaje/', methods=["GET", "POST"])    
+def sexopers():
+    if('fichero' not in session or session['usuario'] not in tbd.getSesiones().keys()):
+        return redirect(url_for('home'))
+    g.usuario = session['usuario']
+    m = tbd.getObject(session['usuario'])
+    if (m.hayPersonajes() == 0):
+        return redirect(url_for('home'))
+    if request.method == "POST":
+        idperso = request.form['txt txt-idpers']
+        sexo = request.form['sexelection']
+        m.cambiarSexo(sexo,idperso)
+    return render_template('modsexo.html', pers = m.getPersonajes())
 
 @app.route('/Modificar-Diccionario/Eliminar-Personaje/', methods=["GET", "POST"])    
 def delpers():
