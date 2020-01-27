@@ -51,124 +51,129 @@
 			<a href="#navegacion" class="btn btn-primary float-right btn-lg p-3 px-5">{{ _('Menú de Navegación') }}</a>
 		</div>
 	</div>
-	<div id="indice" class="float-left col-2">
-		<form action="" id="form-menu" method="post">
-			<a name="navegacion"><h3 style="text-align: center;">{{_('Menú de Navegación')}}</h3></a>
-			{% if "cbx cbx-nnod" in informe.keys() or "cbx cbx-nenl" in informe.keys() or "cbx cbx-nint" in informe.keys() %}
-			<a href="#medidasbasicas" class="btn btn-primary btn-block">{{_('Medidas básicas')}}</a>
-			{%endif%}
-			{% if "cbx cbx-nnod" in informe.keys() %}
-			<a href="#numnodos" class="btn btn-secondary btn-block">{{_('Número Nodos')}}</a>
-			{%endif%}
-			{%if "cbx cbx-nenl" in informe.keys()%}
-			<a href="#numenlaces" class="btn btn-secondary btn-block">{{_('Número Enlaces')}}</a>
-			{%endif%}
-			{%if "cbx cbx-nint" in informe.keys() %}
-			<a href="#numinter" class="btn btn-secondary btn-block">{{_('Número Interacciones')}}</a>
-			{%endif%}
-			{% if "cbx cbx-gradosin" in informe.keys() or "cbx cbx-gradocon" in informe.keys() or "cbx cbx-distsin" in informe.keys() or "cbx cbx-distcon" in informe.keys() or "cbx cbx-dens" in informe.keys() %}
-			<a href="#medidasdegrado" class="btn btn-primary btn-block">{{_('Medidas de grado')}}</a>
-			{%endif%}
-			{% if "cbx cbx-gradosin" in informe.keys() %}
-			<a href="#gsinpeso" class="btn btn-secondary btn-block">{{_('Grado Nodos Sin Peso')}}</a>
-			{%endif%}
-			{%if "cbx cbx-gradocon" in informe.keys() %}
-			<a href="#gconpeso" class="btn btn-secondary btn-block">{{_('Grado Nodos Con Peso')}}</a>
-			{%endif%}
-			{%if "cbx cbx-distsin" in informe.keys() %}
-			<a href="#dsinpeso" class="btn btn-secondary btn-block">{{_('Distribución Grado Sin Peso')}}</a>
-			{%endif%}
-			{%if "cbx cbx-distcon" in informe.keys() %}
-			<a href="#dconpeso" class="btn btn-secondary btn-block">{{_('Distribución Grado Con Peso')}}</a>
-			{%endif%}
-			{%if "cbx cbx-dens" in informe.keys() %}
-			<a href="#densidad" class="btn btn-secondary btn-block">{{_('Densidad')}}</a>
-			{%endif%}
-			{% if "cbx cbx-concomp" in informe.keys() or "cbx cbx-exc" in informe.keys() or "cbx cbx-dia" in informe.keys() or "cbx cbx-rad" in informe.keys() or "cbx cbx-longmed" in informe.keys() %}
-			<a href="#medidasdedistancia" class="btn btn-primary btn-block">{{_('Medidas de Distancia')}}</a>
-			{%endif%}
-			{% if "cbx cbx-concomp" in informe.keys() %}
-			<a href="#cc" class="btn btn-secondary btn-block">{{_('Componentes Conectados')}}</a>
-			{%endif%}
-			{%if "cbx cbx-exc" in informe.keys() %}
-			<a href="#excen" class="btn btn-secondary btn-block">{{_('Excentricidad')}}</a>
-			{%endif%}
-			{%if "cbx cbx-dia" in informe.keys() %}
-			<a href="#diametro" class="btn btn-secondary btn-block">{{_('Diametro')}}</a>
-			{%endif%}
-			{%if "cbx cbx-rad" in informe.keys() %}
-			<a href="#radio" class="btn btn-secondary btn-block">{{_('Radio')}}</a>
-			{%endif%}
-			{%if "cbx cbx-longmed" in informe.keys() %}
-			<a href="#distmed" class="btn btn-secondary btn-block">{{_('Distancia Media')}}</a>
-			{%endif%}
-			{% if "cbx cbx-locclust" in informe.keys() or "cbx cbx-clust" in informe.keys() or "cbx cbx-trans" in informe.keys() %}
-			<a href="#medidasdeclustering" class="btn btn-primary btn-block">{{_('Medidas de Clustering')}}</a>
-			{%endif%}
-			{% if "cbx cbx-locclust" in informe.keys() %}
-			<a href="#ccl" class="btn btn-secondary btn-block">{{_('Coeficiente de Clustering Local')}}</a>
-			{%endif%}
-			{%if "cbx cbx-clust" in informe.keys() %}
-			<a href="#cclm" class="btn btn-secondary btn-block">{{_('Coeficiente de Clustering Local Medio')}}</a>
-			{%endif%}
-			{%if "cbx cbx-trans" in informe.keys() %}
-			<a href="#transitividad" class="btn btn-secondary btn-block">{{_('Transitividad')}}</a>
-			{%endif%}
-			{% if "cbx cbx-centg" in informe.keys() or "cbx cbx-centc" in informe.keys() or "cbx cbx-centi" in informe.keys() or "cbx cbx-ranwal" in informe.keys() or "cbx cbx-centv" in informe.keys() or "cbx cbx-para" in informe.keys()%}
-			<a href="#medidasdecentralidad" class="btn btn-primary btn-block">{{_('Medidas de Centralidad')}}</a>
-			{%endif%}
-			{% if "cbx cbx-centg" in informe.keys() %}
-			<a href="#cg" class="btn btn-secondary btn-block">{{_('Centralidad Grado')}}</a>
-			{%endif%}
-			{%if "cbx cbx-centc" in informe.keys() %}
-			<a href="#ccer" class="btn btn-secondary btn-block">{{_('Centralidad Cercanía')}}</a>
-			{%endif%}
-			{%if "cbx cbx-centi" in informe.keys() %}
-			<a href="#cinter" class="btn btn-secondary btn-block">{{_('Centralidad Intermediación')}}</a>
-			{%endif%}
-			{%if "cbx cbx-ranwal" in informe.keys() %}
-			<a href="#ica" class="btn btn-secondary btn-block">{{_('Intermediación Camino Aleatorio')}}</a>
-			{%endif%}
-			{%if "cbx cbx-centv" in informe.keys() %}
-			<a href="#cvp" class="btn btn-secondary btn-block">{{_('Centralidad Valor Propio')}}</a>
-			{%endif%}
-			{%if "cbx cbx-para" in informe.keys() %}
-			<a href="#pagerank" class="btn btn-secondary btn-block">{{_('Pagerank')}}></a>
-			{%endif%}
-			{% if "cbx cbx-kcliperc" in informe.keys() or "cbx cbx-girnew" in informe.keys() or "cbx cbx-greedy" in informe.keys() or "cbx cbx-louvain" in informe.keys() %}
-			<a href="#gruposycomunidades" class="btn btn-primary btn-block">{{_('Grupos y Comunidades')}}</a>
-			{%endif%}
-			{% if "cbx cbx-kcliperc" in informe.keys() %}
-			<a href="#kcc" class="btn btn-secondary btn-block">{{_('Comunidades K-clique')}}</a>
-			{%endif%}
-			{%if "cbx cbx-girnew" in informe.keys() %}
-			<a href="#gnew" class="btn btn-secondary btn-block">{{_('Comunidades Girvan-Newman')}}</a>
-			{%endif%}
-			{%if "cbx cbx-greedy" in informe.keys() %}
-			<a href="#greedy" class="btn btn-secondary btn-block">{{_('Comunidades Clauset-Newman-Moore')}}</a>
-			{%endif%}
-			{%if "cbx cbx-louvain" in informe.keys() %}
-			<a href="#louvain" class="btn btn-secondary btn-block">{{_('Comunidades Louvain')}}</a>
-			{%endif%}
-			{% if "cbx cbx-roleslouvain" in informe.keys() or "cbx cbx-rolesgirvan" in informe.keys() or "cbx cbx-rolesgreedy" in informe.keys() or "cbx cbx-roleskcliq" in informe.keys() %}
-			<a href="#deteccionderoles" class="btn btn-primary btn-block">{{_('Detección de roles')}}</a>
-			{%endif%}
-			{% if "cbx cbx-roleskcliq" in informe.keys() %}
-			<a href="#roleskcliq" class="btn btn-secondary btn-block">{{_('Roles K-clique')}}</a>
-			{%endif%}
-			{%if "cbx cbx-rolesgirvan" in informe.keys() %}
-			<a href="#rolesgirvan" class="btn btn-secondary btn-block">{{_('Roles Girvan-Newman')}}</a>
-			{%endif%}
-			{%if "cbx cbx-rolesgreedy" in informe.keys() %}
-			<a href="#rolesgreedy" class="btn btn-secondary btn-block">{{_('Roles Clauset-Newman-Moore')}}</a>
-			{%endif%}
-			{%if "cbx cbx-roleslouvain" in informe.keys() %}
-			<a href="#roleslouvain" class="btn btn-secondary btn-block">{{_('Roles Louvain')}}</a>
-			{%endif%}
-		</form>
-	</div>
-	<div id="content" style="margin-left:25rem;">
-		<h1 style="text-align: center;margin-right:7rem;">{{_('Informe')}}</h1><br/>
+	<div id="content" class="d-flex flex-row bd-highlight mb-3">
+		<div id="indice" class="float-left col-2 p-2 bd-highligh">
+			<form action="" id="form-menu" method="post">
+				<a name="navegacion"><h3 style="text-align: center;">{{_('Menú de Navegación')}}</h3></a>
+				{% if "cbx cbx-nnod" in informe.keys() or "cbx cbx-nenl" in informe.keys() or "cbx cbx-nint" in informe.keys() %}
+				<a href="#medidasbasicas" class="btn btn-primary btn-block">{{_('Medidas básicas')}}</a>
+				{%endif%}
+				{% if "cbx cbx-nnod" in informe.keys() %}
+				<a href="#numnodos" class="btn btn-secondary btn-block">{{_('Número Nodos')}}</a>
+				{%endif%}
+				{%if "cbx cbx-nenl" in informe.keys()%}
+				<a href="#numenlaces" class="btn btn-secondary btn-block">{{_('Número Enlaces')}}</a>
+				{%endif%}
+				{%if "cbx cbx-nint" in informe.keys() %}
+				<a href="#numinter" class="btn btn-secondary btn-block">{{_('Número Interacciones')}}</a>
+				{%endif%}
+				{% if "cbx cbx-gradosin" in informe.keys() or "cbx cbx-gradocon" in informe.keys() or "cbx cbx-distsin" in informe.keys() or "cbx cbx-distcon" in informe.keys() or "cbx cbx-dens" in informe.keys() %}
+				<a href="#medidasdegrado" class="btn btn-primary btn-block">{{_('Medidas de grado')}}</a>
+				{%endif%}
+				{% if "cbx cbx-gradosin" in informe.keys() %}
+				<a href="#gsinpeso" class="btn btn-secondary btn-block">{{_('Grado Nodos Sin Peso')}}</a>
+				{%endif%}
+				{%if "cbx cbx-gradocon" in informe.keys() %}
+				<a href="#gconpeso" class="btn btn-secondary btn-block">{{_('Grado Nodos Con Peso')}}</a>
+				{%endif%}
+				{%if "cbx cbx-distsin" in informe.keys() %}
+				<a href="#dsinpeso" class="btn btn-secondary btn-block">{{_('Distribución Grado Sin Peso')}}</a>
+				{%endif%}
+				{%if "cbx cbx-distcon" in informe.keys() %}
+				<a href="#dconpeso" class="btn btn-secondary btn-block">{{_('Distribución Grado Con Peso')}}</a>
+				{%endif%}
+				{%if "cbx cbx-dens" in informe.keys() %}
+				<a href="#densidad" class="btn btn-secondary btn-block">{{_('Densidad')}}</a>
+				{%endif%}
+				{% if "cbx cbx-concomp" in informe.keys() or "cbx cbx-exc" in informe.keys() or "cbx cbx-dia" in informe.keys() or "cbx cbx-rad" in informe.keys() or "cbx cbx-longmed" in informe.keys() %}
+				<a href="#medidasdedistancia" class="btn btn-primary btn-block">{{_('Medidas de Distancia')}}</a>
+				{%endif%}
+				{% if "cbx cbx-concomp" in informe.keys() %}
+				<a href="#cc" class="btn btn-secondary btn-block">{{_('Componentes Conectados')}}</a>
+				{%endif%}
+				{%if "cbx cbx-exc" in informe.keys() %}
+				<a href="#excen" class="btn btn-secondary btn-block">{{_('Excentricidad')}}</a>
+				{%endif%}
+				{%if "cbx cbx-dia" in informe.keys() %}
+				<a href="#diametro" class="btn btn-secondary btn-block">{{_('Diametro')}}</a>
+				{%endif%}
+				{%if "cbx cbx-rad" in informe.keys() %}
+				<a href="#radio" class="btn btn-secondary btn-block">{{_('Radio')}}</a>
+				{%endif%}
+				{%if "cbx cbx-longmed" in informe.keys() %}
+				<a href="#distmed" class="btn btn-secondary btn-block">{{_('Distancia Media')}}</a>
+				{%endif%}
+				{% if "cbx cbx-locclust" in informe.keys() or "cbx cbx-clust" in informe.keys() or "cbx cbx-trans" in informe.keys() %}
+				<a href="#medidasdeclustering" class="btn btn-primary btn-block">{{_('Medidas de Clustering')}}</a>
+				{%endif%}
+				{% if "cbx cbx-locclust" in informe.keys() %}
+				<a href="#ccl" class="btn btn-secondary btn-block">{{_('Coeficiente de Clustering Local')}}</a>
+				{%endif%}
+				{%if "cbx cbx-clust" in informe.keys() %}
+				<a href="#cclm" class="btn btn-secondary btn-block">{{_('Coeficiente de Clustering Local Medio')}}</a>
+				{%endif%}
+				{%if "cbx cbx-trans" in informe.keys() %}
+				<a href="#transitividad" class="btn btn-secondary btn-block">{{_('Transitividad')}}</a>
+				{%endif%}
+				{% if "cbx cbx-centg" in informe.keys() or "cbx cbx-centc" in informe.keys() or "cbx cbx-centi" in informe.keys() or "cbx cbx-ranwal" in informe.keys() or "cbx cbx-centv" in informe.keys() or "cbx cbx-para" in informe.keys()%}
+				<a href="#medidasdecentralidad" class="btn btn-primary btn-block">{{_('Medidas de Centralidad')}}</a>
+				{%endif%}
+				{% if "cbx cbx-centg" in informe.keys() %}
+				<a href="#cg" class="btn btn-secondary btn-block">{{_('Centralidad Grado')}}</a>
+				{%endif%}
+				{%if "cbx cbx-centc" in informe.keys() %}
+				<a href="#ccer" class="btn btn-secondary btn-block">{{_('Centralidad Cercanía')}}</a>
+				{%endif%}
+				{%if "cbx cbx-centi" in informe.keys() %}
+				<a href="#cinter" class="btn btn-secondary btn-block">{{_('Centralidad Intermediación')}}</a>
+				{%endif%}
+				{%if "cbx cbx-ranwal" in informe.keys() %}
+				<a href="#ica" class="btn btn-secondary btn-block">{{_('Intermediación Camino Aleatorio')}}</a>
+				{%endif%}
+				{%if "cbx cbx-centv" in informe.keys() %}
+				<a href="#cvp" class="btn btn-secondary btn-block">{{_('Centralidad Valor Propio')}}</a>
+				{%endif%}
+				{%if "cbx cbx-para" in informe.keys() %}
+				<a href="#pagerank" class="btn btn-secondary btn-block">{{_('Pagerank')}}></a>
+				{%endif%}
+				{% if "cbx cbx-kcliperc" in informe.keys() or "cbx cbx-girnew" in informe.keys() or "cbx cbx-greedy" in informe.keys() or "cbx cbx-louvain" in informe.keys() %}
+				<a href="#gruposycomunidades" class="btn btn-primary btn-block">{{_('Grupos y Comunidades')}}</a>
+				{%endif%}
+				{% if "cbx cbx-kcliperc" in informe.keys() %}
+				<a href="#kcc" class="btn btn-secondary btn-block">{{_('Comunidades K-clique')}}</a>
+				{%endif%}
+				{%if "cbx cbx-girnew" in informe.keys() %}
+				<a href="#gnew" class="btn btn-secondary btn-block">{{_('Comunidades Girvan-Newman')}}</a>
+				{%endif%}
+				{%if "cbx cbx-greedy" in informe.keys() %}
+				<a href="#greedy" class="btn btn-secondary btn-block">{{_('Comunidades Clauset-Newman-Moore')}}</a>
+				{%endif%}
+				{%if "cbx cbx-louvain" in informe.keys() %}
+				<a href="#louvain" class="btn btn-secondary btn-block">{{_('Comunidades Louvain')}}</a>
+				{%endif%}
+				{% if "cbx cbx-roleslouvain" in informe.keys() or "cbx cbx-rolesgirvan" in informe.keys() or "cbx cbx-rolesgreedy" in informe.keys() or "cbx cbx-roleskcliq" in informe.keys() %}
+				<a href="#deteccionderoles" class="btn btn-primary btn-block">{{_('Detección de roles')}}</a>
+				{%endif%}
+				{% if "cbx cbx-roleskcliq" in informe.keys() %}
+				<a href="#roleskcliq" class="btn btn-secondary btn-block">{{_('Roles K-clique')}}</a>
+				{%endif%}
+				{%if "cbx cbx-rolesgirvan" in informe.keys() %}
+				<a href="#rolesgirvan" class="btn btn-secondary btn-block">{{_('Roles Girvan-Newman')}}</a>
+				{%endif%}
+				{%if "cbx cbx-rolesgreedy" in informe.keys() %}
+				<a href="#rolesgreedy" class="btn btn-secondary btn-block">{{_('Roles Clauset-Newman-Moore')}}</a>
+				{%endif%}
+				{%if "cbx cbx-roleslouvain" in informe.keys() %}
+				<a href="#roleslouvain" class="btn btn-secondary btn-block">{{_('Roles Louvain')}}</a>
+				{%endif%}
+			</form>
+		</div>
+		<div class="p-2 bd-highligh">
+			<div>
+				<div style="text-align: center;">
+				<h1>{{_('Informe')}}</h1><br />
+				</div>
+		</div>
 		<div id="forms" style="margin-bottom:5rem;">
 			{% if "cbx cbx-nnod" in informe.keys() or "cbx cbx-nenl" in informe.keys() or "cbx cbx-nint" in informe.keys() %}
 			<a name="medidasbasicas"><h3>{{_('Medidas básicas')}}</h3></a>
@@ -180,7 +185,6 @@
 			{% endif %}
 			{% if "cbx cbx-nenl" in informe.keys() %}
 				<a name="numenlaces"><p><h5>{{_('Número Enlaces')}}:</h5></p></a>
-				<p>El número de enlaces se corresponde con el número de uniones total entre nodos que hay.<br/>
 				{{ _('En el caso de esta red el número de enlaces es:') }} <b>{{informe["cbx cbx-nenl"]}}</b>.</p>
 			{% endif %}
 			{% if "cbx cbx-nint" in informe.keys() %}

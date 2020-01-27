@@ -34,30 +34,27 @@
 			</div>
 		  </nav>
 	</header>
-	<div class="col-2 float-left sticky-top" style="margin-left:5rem; margin-top:5rem;">
-		<img src="{{ url_for('static', filename='img/poli.jpg') }}" width="200" height="200" id="politecnica">
-	</div>
-	<div class="float-right sticky-top" style="margin-right:5rem; margin-top:5rem;">
-		<img src="{{ url_for('static', filename='img/ubuescudo.png') }}" width="200" height="200" id="politecnica">
-	</div>
-	<div id="content">
-		<div id="about" style="margin-left:30rem; margin-right:30rem;margin-bottom:5rem;">
+	
+	<div class="d-flex flex-row bd-highlight mb-3" style="margin-top:5rem;">
+		<div class="float-left sticky-top p-2 bd-highligh">
+			<img src="{{ url_for('static', filename='img/poli.jpg') }}" width="200" height="200" id="politecnica">
+		</div>
+		<div class="p-2 bd-highligh"></div>
+		<div class="text-center p-2 bd-highligh">
+		<div style="text-align: justify;">
 			<div style="text-align: center;">
 				<img src="{{ url_for('static', filename='img/NetExtractor2.png') }}" width="500" height="250" id="politecnica">
 			</div>
-			<br/>
-			<div class="text-justify">
-				<p><h3>{{_('¿Qué es NetExtractor?')}}</h3></p>
-				<p><h5>{{_('NetExtractor es una herramienta desarrollada en la Universidad de Burgos que permite generar de forma automática la red de interacciones de personajes en novelas o películas y analizar las redes obtenidas para capturar sus métricas más relevantes de una forma sencilla.')}}</h5></p>
-				<br />
-				<p><h3>{{_('¿Quién integra el proyecto?')}}</h3></p>
-				<p><h5>{{_('El proyecto de NetExtractor fue iniciado por el alumno del grado de Ingeniería Informática Luis Miguel Cabrejas, tutorizado por D. Jose Manuel Galán -info de jose manuel- y D. Luis Rodrigo Izquierdo -info de luis-; y ha sido continuado por el alumno de Ingeniería Informática Jorge Navarro, tutorizado por D. Jose Manuel Galán y Dña. Virginia Ahedo -info de virginia-.')}}</h5></p>
-				<br />
-				<p><h3>{{_('Agradecimientos')}}</h3></p>
-				<p><h5>{{_('A los alumnos del grado de Ingeniería Informática Alicia Olivares y Yi Peng Ji por su colaboración en la extracción de características de la red para la generación del informe en el apartado de "Detección de roles".')}}</h5></p>
-				<br />
-			</div>
-			<div class="apartadocentrado"><h3>{{_('¿Qué herramientas se han empleado?')}}</h3></div>
+			<h3>{{_('¿Qué es NetExtractor?')}}</h3>
+			<h5>{{_('NetExtractor es una herramienta desarrollada en la Universidad de Burgos que permite generar de forma automática la red de interacciones de personajes en novelas o películas y analizar las redes obtenidas para capturar sus métricas más relevantes de una forma sencilla.')}}</h5>
+			<br />
+			<h3>{{_('¿Quién integra el proyecto?')}}</h3>
+			<h5>{{_('El proyecto de NetExtractor fue iniciado por el alumno del grado de Ingeniería Informática Luis Miguel Cabrejas, tutorizado por D. Jose Manuel Galán -info de jose manuel- y D. Luis Rodrigo Izquierdo -info de luis-; y ha sido continuado por el alumno de Ingeniería Informática Jorge Navarro, tutorizado por D. Jose Manuel Galán y Dña. Virginia Ahedo -info de virginia-.')}}</h5>
+			<br />
+			<h3>{{_('Agradecimientos')}}</h3>
+			<h5>{{_('A los alumnos del grado de Ingeniería Informática Alicia Olivares y Yi Peng Ji por su colaboración en la extracción de características de la red para la generación del informe en el apartado de "Detección de roles".')}}</h5>
+			<br />
+			<h3>{{_('¿Qué herramientas se han empleado?')}}</h3>
 			<br/>
 			<div class="text-justify">
 				<ul>
@@ -76,6 +73,11 @@
 					</h5>
 				</ul>
 			</div>
+		</div>
+		</div>
+		<div class="p-2 bd-highligh"></div>
+		<div class="float-right sticky-top p-2 bd-highligh">
+			<img src="{{ url_for('static', filename='img/ubuescudo.png') }}" width="200" height="200" id="politecnica">
 		</div>
 	</div>
 	<footer></footer>
