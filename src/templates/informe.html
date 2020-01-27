@@ -40,7 +40,11 @@
 			<button type="button" class="btn btn-primary float-right btn-lg p-3 px-5" name="btn btn-informe" onclick="sendForm()">{{ _('Generar Informe') }}</button>
 		</div>
 	</div>
-	<div id="loading"></div>
+	<div id="cargando">
+		<p><h4>{{ _('Este proceso puede llevar varios minutos...') }}</h4></p>
+	</div>
+	<div id="loading">
+	</div>
 	<div id="content">
 		<div id="forms" style="margin-bottom:5rem;">
 			<div id="form-content">
