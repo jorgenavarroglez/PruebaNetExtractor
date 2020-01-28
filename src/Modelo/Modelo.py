@@ -543,7 +543,7 @@ class Modelo:
         for pers in html.find_all("b"):
             pn = pers.contents[0]
             pn = pn.strip()
-            if (not 'EXT.' in pn and not 'INT.' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not '-' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
+            if (not 'EXT.' in pn and not 'INT.' in pn and not 'INT ' in pn and not 'EXT ' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not '-' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
                 if (not pn in lista):
                     if(not pn == ''):
                         lista.append(pn)
