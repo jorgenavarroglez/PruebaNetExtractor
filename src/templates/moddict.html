@@ -147,6 +147,13 @@
 				$("#content2").hide();
             	$(".banderas").hide();
 				if(parsear2){
+					alert("{{ _('Primero se van a buscar las posiciones de los personajes así como la etnia y el sexo, esto puede tardar unos minutos.') }}");
+					$("#loading").show();
+					$("#cargando").show();
+					$("#content").hide();
+					$("#workflow").hide();
+					$("#content2").hide();
+					$(".banderas").hide();
 					$.ajax({
 	          		type: "POST",
 	          		contentType: "application/json;charset=utf-8",
@@ -162,6 +169,13 @@
 	        		});
 				}
 				if(parsear1){
+					alert("{{ _('Se va a calcular la etnia y el sexo, esto puede tardar unos minutos.') }}");
+					$("#loading").show();
+					$("#cargando").show();
+					$("#content").hide();
+					$("#workflow").hide();
+					$("#content2").hide();
+					$(".banderas").hide();
 					$.ajax({
 	          		type: "POST",
 	          		contentType: "application/json;charset=utf-8",
@@ -177,6 +191,13 @@
 	        		});
 				}
 				if(parsear){
+					alert("{{ _('Primero se van a buscar las posiciones de los personajes, esto puede tardar unos minutos.') }}");
+					$("#loading").show();
+					$("#cargando").show();
+					$("#content").hide();
+					$("#workflow").hide();
+					$("#content2").hide();
+					$(".banderas").hide();
 					$.ajax({
 	          		type: "POST",
 	          		contentType: "application/json;charset=utf-8",
