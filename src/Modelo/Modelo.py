@@ -119,6 +119,7 @@ class Modelo:
         for i in self.personajes.keys():
             self.personajes[i].lennombres = dict()
             pers = self.personajes[i].getPersonaje()
+            self.personajes[i].resNumApariciones(self.personajes[i].getNumApariciones()[0])
             for n in pers.keys():
                 listapar = list()
                 contador = 0

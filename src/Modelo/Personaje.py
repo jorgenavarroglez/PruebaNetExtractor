@@ -24,7 +24,6 @@ class Personaje:
         self.__dictSexEt['Etnia'] = self.__etnia
         self.__dictSexEt['Sexo'] = self.__sexo
 
-
     def setEtnia(self, etnia):
         """
         Metodo que asigna una etnia al personaje
