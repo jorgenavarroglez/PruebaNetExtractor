@@ -125,7 +125,7 @@ class Modelo:
                 for perso in html.find_all("b"):
                     pn = perso.contents[0]
                     pn = pn.strip()
-                    if ('EXT ' in pn or 'INT ' in pn):
+                    if ('EXT ' in pn or 'INT ' in pn or 'EXT.' in pn or 'EXT.' in pn):
                         contador = contador + 1
                     elif(pn == i):
                         if (not contador == 0):
