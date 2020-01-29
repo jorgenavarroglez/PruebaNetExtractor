@@ -15,6 +15,11 @@
  */
 
 :root {
+    
+	--major-width: 95vw;
+	--major-height: 55.19607845vw;
+	--canvas-dim: 54.730392155vw;
+	--sidebar-width: 27.941176465vw;
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #593196;
@@ -10972,50 +10977,74 @@ a.text-dark:focus {
 }
 
 .parent_div {
-	width: 100%;
-	height: calc(100% - 84px);
-	/*max-width: 138.428571415vh;
-	max-height: 95vh;*/
-	*position: absolute;
-	top: 80px;
+	width: var(--major-width);
+	height: var(--major-height);
+	max-width: 138.428571415vh;
+	max-height: 95vh;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .child_div1 {
-	width: 100vh;
-	*height: 100%;
-	min-height: 100vh;
-    float: left;
+	width: var(--major-height);
+	height: var(--major-height));
+	max-width: 95vh;
+	max-height: 95vh;
+	float: left;
 }
 
 .canvas_container {
-	width: 100%;
-	*height: 100%;
-    min-height: 100vh;
-    top: 50px;
+	width: var(--canvas-dim);
+	height: var(--canvas-dim);
+	max-width: 94.321428542vh;
+	max-height: 94.321428542vh;
+	border-style: solid;
+	border-color: #cacaca;
+	border-width: 2px;
 }
 
 .child_div2 {
-	width: 50%;
-	height: 100%;
+	width: var(--sidebar-width);
+	height: var(--major-height);
+	max-width: 40.714285702vh;
+	max-height: 95vh;
 	float: right;
-	*overflow-y: scroll;
+	overflow-y: scroll;
 }
 
 .controls_container {
-	width: 100%
-	*max-width: 40.714285702vh;
+	width: var(--sidebar-width);
+	max-width: 40.714285702vh;
 	position: relative;
 }
 
 .child_div2_child_mid {
-	width: 100%;
-	*max-width: 40.714285702vh;
+	width: var(--sidebar-width);
+	max-width: 40.714285702vh;
 	height: 30px;
 }
 
 .infotext_container {
-	width: 100%;
-	*max-width: 40.714285702vh;
+	width: var(--sidebar-width);
+	max-width: 40.714285702vh;
+}
+
+p.sidebar-text {
+	font-family: 'Open sans', sans-serif; color: #777777; font-size: 14px;
+    hyphens: auto;
+    text-align: justify;
+}
+
+.swal2-text {
+	font-family: 'Open sans', sans-serif; color: #777777; font-size: 14px;
+}
+
+.swal2-popup {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
 }
 
 div#cargando {

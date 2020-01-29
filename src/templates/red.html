@@ -38,14 +38,14 @@
 			<button type="button" class="btn btn-primary float-right btn-lg p-3 px-5" name="btn btn-volver" onclick="guardaconfig('informe')">{{ _('Generar Informe') }}</button>
 		</div>
 	</div>
-	<div id="content" class="d-flex flex-row bd-highlight mb-3">
-		<div class="parent_div">
-			<div class="child_div1 p-2 bd-highligh col-6">
+	<!--<div id="content" class="d-flex flex-row bd-highlight mb-3">-->
+		<div class="parent_div" style="margin-top: 10rem;margin-bottom: 5rem;">
+			<div class="child_div1 p-2 bd-highligh">
 				<div class="canvas_container">
 					<canvas id="canvas"></canvas>
 				</div>
 			</div>
-			<div class="child_div2 p-2 bd-highligh col-6">
+			<div class="child_div2 p-2 bd-highligh">
 				<form action="" id="form-menu" method="post">
 					<div class="btn-group btn-block" role="group" aria-label="Basic example">
 						<button type="submit" class="btn btn-secondary" name="btn btn-expgml">{{ _('Exportar GML') }}</button>
@@ -53,7 +53,8 @@
 						<button type="submit" class="btn btn-secondary" name="btn btn-expnet">{{ _('Exportar NET') }}</button>
 					</div>
 				</form>
-				<div class="controls_container"></div>
+				<div class="controls_container">
+				</div>
 				<div class="child_div2_child_mid"></div>
 				<div class="infotext_container" style="margin-bottom: 5rem;">
 					<div id="content"></div>
@@ -73,7 +74,7 @@
 					</p>
 				</div>
 			</div>
-		</div>
+		<!--</div>-->
 	</div>
 	<input type="file" id="upload" style="visibility:hidden" />
 	<!-- Javascript -->
