@@ -514,24 +514,18 @@ class Modelo:
     def obtenerEnlaces(self, apar):
         self.__G = nx.Graph()
         lista = list()
-        print(self.diccionarioApariciones)
         for key in self.diccionarioApariciones:
-            aux = 0
             if(self.personajes[key].getNumApariciones()[0]>=apar):
                 for key1 in self.diccionarioApariciones:
                     if (not key == key1):
                         lista = Modelo.elementosComunes(self.diccionarioApariciones.get(key), self.diccionarioApariciones.get(key1))
+
                         if (not len(lista) == 0):
                             #listaprueba.append((key,key1,len(lista)))
                             peso = len(lista)
                             self.__G.add_edge(key,key1,weight=int(peso))
-                            aux = 1
-                if(aux == 0):
-                    self.__G.add_node(key)
             else:
-                print(key)
                 if(self.__G.has_node(key)):
-                    print(key)
                     self.__G.remove_node(key)
         self.__Gnoatt = self.__G.copy()
         self.anadirAtributos()
