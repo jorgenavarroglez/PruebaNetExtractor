@@ -282,6 +282,17 @@ class Modelo:
             idPersonaje1: id del primer personaje a juntar
             idPersonaje2: id del primer personaje a juntar
         """
+        lista = list()
+        lista2 = list()
+        lista3 = list()
+        if(idPersonaje2 in self.diccionarioApariciones):
+            lista = self.diccionarioApariciones[idPersonaje2]
+        if(idPersonaje1 in self.diccionarioApariciones):
+            lista2 = self.diccionarioApariciones[idPersonaje1]
+            for i in lista:
+                lista2.append(i)
+            lista3 = sorted(list(set(lista2)))
+            self.diccionarioApariciones[idPersonaje1] = lista3
         if(idPersonaje1 in self.personajes and idPersonaje2 in self.personajes):
             pers1 = self.personajes[idPersonaje1].getPersonaje()
             pers2 = self.personajes[idPersonaje2].getPersonaje()
