@@ -113,6 +113,7 @@ class Modelo:
     def obtenerNumApariciones(self):
         #diccionarioAp = dict()
         listapar = list()
+        prueba = list()
         contador = 0
         web = urllib.request.urlopen(self.urlPelicula)
         html = BeautifulSoup(web.read(), "html.parser")
@@ -121,6 +122,7 @@ class Modelo:
             self.personajes[i].lennombres = dict()
             pers = self.personajes[i].getPersonaje()
             self.personajes[i].resNumApariciones(self.personajes[i].getNumApariciones()[0])
+            aux = 0
             for n in pers.keys():
                 listapar = list()
                 contador = 0
@@ -134,7 +136,15 @@ class Modelo:
                             if (not contador in listapar):
                                 listapar.append(contador)
                         #self.personajes[l].lennombres[n]=len(listapar)
-                        self.diccionarioApariciones[i] = listapar
+                        if(aux == 0):
+                            self.diccionarioApariciones[i] = listapar
+                            aux+=1
+                        else:
+                            prueba = self.diccionarioApariciones.get(i)
+                            for x in listapar:
+                                if(not x in prueba):
+                                    prueba.append(x)
+                            self.diccionarioApariciones[i] = prueba
                         #diccionarioAp[l] = len(listapar)
                 self.personajes[i].lennombres[n] = len(listapar)
                 self.personajes[i].sumNumApariciones(len(listapar))
@@ -504,15 +514,25 @@ class Modelo:
     def obtenerEnlaces(self, apar):
         self.__G = nx.Graph()
         lista = list()
+        print(self.diccionarioApariciones)
         for key in self.diccionarioApariciones:
-            for key1 in self.diccionarioApariciones:
-                if (not key == key1):
-                    lista = Modelo.elementosComunes(self.diccionarioApariciones.get(key), self.diccionarioApariciones.get(key1))
-                    if (not len(lista) == 0):
-                        if (len(lista) >= apar):
+            aux = 0
+            if(self.personajes[key].getNumApariciones()[0]>=apar):
+                for key1 in self.diccionarioApariciones:
+                    if (not key == key1):
+                        lista = Modelo.elementosComunes(self.diccionarioApariciones.get(key), self.diccionarioApariciones.get(key1))
+                        if (not len(lista) == 0):
                             #listaprueba.append((key,key1,len(lista)))
                             peso = len(lista)
                             self.__G.add_edge(key,key1,weight=int(peso))
+                            aux = 1
+                if(aux == 0):
+                    self.__G.add_node(key)
+            else:
+                print(key)
+                if(self.__G.has_node(key)):
+                    print(key)
+                    self.__G.remove_node(key)
         self.__Gnoatt = self.__G.copy()
         self.anadirAtributos()
     
