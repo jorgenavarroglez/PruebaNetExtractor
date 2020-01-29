@@ -259,6 +259,8 @@ class Modelo:
         Args:
             idPersonaje: id del personaje a eliminar
         """
+        if(idPersonaje in self.diccionarioApariciones):
+            del self.diccionarioApariciones[idPersonaje]
         if(idPersonaje in self.personajes):
             del self.personajes[idPersonaje]
 
@@ -506,7 +508,6 @@ class Modelo:
     def anadirAtributos(self):
         dictionary = dict()
         for i in self.__G.nodes:
-            print(i)
             dictionary[i]=self.personajes[i].getDiccionario()
         nx.set_node_attributes(self.__G,dictionary)
 
