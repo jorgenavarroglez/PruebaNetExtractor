@@ -116,6 +116,7 @@ class Modelo:
         contador = 0
         web = urllib.request.urlopen(self.urlPelicula)
         html = BeautifulSoup(web.read(), "html.parser")
+        self.diccionarioApariciones = dict()
         for i in self.personajes.keys():
             self.personajes[i].lennombres = dict()
             pers = self.personajes[i].getPersonaje()
@@ -128,7 +129,7 @@ class Modelo:
                     pn = pn.strip()
                     if ('EXT.' in pn or 'INT.' in pn or 'EXT ' in pn or 'INT ' in pn):
                         contador = contador + 1
-                    elif(pn == i):
+                    elif(pn == n):
                         if (not contador == 0):
                             if (not contador in listapar):
                                 listapar.append(contador)
@@ -505,6 +506,7 @@ class Modelo:
     def anadirAtributos(self):
         dictionary = dict()
         for i in self.__G.nodes:
+            print(i)
             dictionary[i]=self.personajes[i].getDiccionario()
         nx.set_node_attributes(self.__G,dictionary)
 
