@@ -665,6 +665,12 @@
 						{{x}} | 
 				{% endfor %}
 				</p>
+				<p><h5>{{_('Nodos Aislados:')}}</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['lista'] %}
+						{{x}} |
+				{% endfor %}
+				</p>
 				<br/>
 				<div style="text-align: center;">
 				<img src="{{ url_for('download_file', filename='roleskcliq.png') }}" width="700" height="500" class="zoomA">
@@ -713,6 +719,12 @@
 				<p>
 				{% for x in informe["cbx cbx-rolesgirvan"]['hubk'] %}
 						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Nodos Aislados:')}}</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['lista'] %}
+						{{x}} |
 				{% endfor %}
 				</p>
 				<br/>
@@ -765,6 +777,12 @@
 						{{x}} | 
 				{% endfor %}
 				</p>
+				<p><h5>{{_('Nodos Aislados:')}}</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['lista'] %}
+						{{x}} |
+				{% endfor %}
+				</p>
 				<br/>
 				<div style="text-align: center;">
 				<img src="{{ url_for('download_file', filename='rolesgreedy.png') }}" width="700" height="500" class="zoomA">
@@ -813,6 +831,12 @@
 				<p>
 				{% for x in informe["cbx cbx-roleslouvain"]['hubk'] %}
 						{{x}} | 
+				{% endfor %}
+				</p>
+				<p><h5>{{_('Nodos Aislados:')}}</h5></p>
+				<p>
+				{% for x in informe["cbx cbx-roleslouvain"]['lista'] %}
+						{{x}} |
 				{% endfor %}
 				</p>
 				<br/>

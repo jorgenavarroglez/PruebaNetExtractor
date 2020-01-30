@@ -514,7 +514,9 @@ class Modelo:
     def obtenerEnlaces(self, apar):
         self.__G = nx.Graph()
         lista = list()
+        aux = 0
         for key in self.diccionarioApariciones:
+            aux = 0
             if(self.personajes[key].getNumApariciones()[0]>=apar):
                 for key1 in self.diccionarioApariciones:
                     if (not key == key1):
@@ -524,6 +526,9 @@ class Modelo:
                             #listaprueba.append((key,key1,len(lista)))
                             peso = len(lista)
                             self.__G.add_edge(key,key1,weight=int(peso))
+                            aux = 1
+                if(aux == 0):
+                    self.__G.add_node(key)
             else:
                 if(self.__G.has_node(key)):
                     self.__G.remove_node(key)
@@ -1150,7 +1155,7 @@ class Modelo:
         """
         z = self.obtenerZ(self.__G,resul)
         print('z obtenida')
-        p = self.obtenerP(self.__G, resul)
+        p, lista = self.obtenerP(self.__G, resul)
         print('p obtenida')
         pesos = self.__G.degree(weight='weight')
         zlist = list()
@@ -1169,33 +1174,34 @@ class Modelo:
             pesoaux.append(aux)
             nodo = list()
             nodo.append(k)
-            zlist.append(z[k])
-            plist.append(p[k])
-            print('calculando a que rol pertenece...')
-            if z[k] >= 2.5:
-                if(p[k] < 0.32):
-                    hubp.append(k)
-                    print('pertenece a hubp')
-                elif(p[k] < 0.75):
-                    hubc.append(k)
-                    print('pertenece a hubc')
+            if(not k in lista):
+                zlist.append(z[k])
+                plist.append(p[k])
+                print('calculando a que rol pertenece...')
+                if z[k] >= 2.5:
+                    if(p[k] < 0.32):
+                        hubp.append(k)
+                        print('pertenece a hubp')
+                    elif(p[k] < 0.75):
+                        hubc.append(k)
+                        print('pertenece a hubc')
+                    else:
+                        hubk.append(k)
+                        print('pertenece a hubk')
                 else:
-                    hubk.append(k)
-                    print('pertenece a hubk')
-            else:
-                if(p[k] > -0.02 and p[k] < 0.02):
-                    nhubu.append(k)
-                    print('pertenece a nhubu')
-                elif(p[k] < 0.625):
-                    nhubp.append(k)
-                    print('pertenece a nhubp')
-                elif(p[k] < 0.8):
-                    nhubc.append(k)
-                    print('pertenece a nhubc')
-                else:
-                    nhubk.append(k)
-                    print('pertenece a nhubk')
-        roles = {'hubp':hubp,'hubc':hubc,'hubk':hubk,'nhubu':nhubu,'nhubp':nhubp,'nhubc':nhubc,'nhubk':nhubk}
+                    if(p[k] > -0.02 and p[k] < 0.02):
+                        nhubu.append(k)
+                        print('pertenece a nhubu')
+                    elif(p[k] < 0.625):
+                        nhubp.append(k)
+                        print('pertenece a nhubp')
+                    elif(p[k] < 0.8):
+                        nhubc.append(k)
+                        print('pertenece a nhubc')
+                    else:
+                        nhubk.append(k)
+                        print('pertenece a nhubk')
+        roles = {'hubp':hubp,'hubc':hubc,'hubk':hubk,'nhubu':nhubu,'nhubp':nhubp,'nhubc':nhubc,'nhubk':nhubk, 'lista':lista}
         print('Obteniendo figura...')
         f = plt.figure(figsize=(10,10))
         plt.xlabel("Participation coefficient (P)",fontsize=15)
@@ -1333,18 +1339,22 @@ class Modelo:
             coeficiente de participacion de cada nodo
         """
         pi = dict()
+        lista = list()
         pesos = grafo.degree()
         for peso in pesos:
             ki = peso[1]
             piaux = 0
-            for c in nx.connected_components(resul):
-                c.add(peso[0])
-                sub = grafo.subgraph(c)
-                pesosaux = sub.degree()
-                ksi = pesosaux[peso[0]]
-                piaux = piaux + (ksi/ki)**2 
-            pi[peso[0]] = 1 - piaux
-        return pi
+            if(not ki == 0):
+                for c in nx.connected_components(resul):
+                    c.add(peso[0])
+                    sub = grafo.subgraph(c)
+                    pesosaux = sub.degree()
+                    ksi = pesosaux[peso[0]]
+                    piaux = piaux + (ksi/ki)**2 
+                pi[peso[0]] = 1 - piaux
+            else:
+                lista.append(peso[0])
+        return pi, lista
     
     def modularidad(self,grafo, particion):
         """
