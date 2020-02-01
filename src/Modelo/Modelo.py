@@ -127,25 +127,26 @@ class Modelo:
                 listapar = list()
                 contador = 0
                 for perso in html.find_all("b"):
-                    pn = perso.contents[0]
-                    pn = pn.strip()
-                    if ('EXT.' in pn or 'INT.' in pn or 'EXT ' in pn or 'INT ' in pn):
-                        contador = contador + 1
-                    elif(pn == n):
-                        if (not contador == 0):
-                            if (not contador in listapar):
-                                listapar.append(contador)
-                        #self.personajes[l].lennombres[n]=len(listapar)
-                        if(aux == 0):
-                            self.diccionarioApariciones[i] = listapar
-                            aux+=1
-                        else:
-                            prueba = self.diccionarioApariciones.get(i)
-                            for x in listapar:
-                                if(not x in prueba):
-                                    prueba.append(x)
-                            self.diccionarioApariciones[i] = prueba
-                        #diccionarioAp[l] = len(listapar)
+                    if(not len(perso) == 0):
+                        pn = perso.contents[0]
+                        pn = pn.strip()
+                        if ('EXT.' in pn or 'INT.' in pn or 'EXT ' in pn or 'INT ' in pn):
+                            contador = contador + 1
+                        elif(pn == n):
+                            if (not contador == 0):
+                                if (not contador in listapar):
+                                    listapar.append(contador)
+                            #self.personajes[l].lennombres[n]=len(listapar)
+                            if(aux == 0):
+                                self.diccionarioApariciones[i] = listapar
+                                aux+=1
+                            else:
+                                prueba = self.diccionarioApariciones.get(i)
+                                for x in listapar:
+                                    if(not x in prueba):
+                                        prueba.append(x)
+                                self.diccionarioApariciones[i] = prueba
+                            #diccionarioAp[l] = len(listapar)
                 self.personajes[i].lennombres[n] = len(listapar)
                 self.personajes[i].sumNumApariciones(len(listapar))
         return self.diccionarioApariciones
@@ -576,13 +577,16 @@ class Modelo:
         html = BeautifulSoup(web.read(), "html.parser")
         for pers in html.find_all("b"):
             if(not len(pers) == 0):
-                pn = pers.contents[0]
-            pn = pn.strip()
-            if (not 'EXT.' in pn and not 'INT.' in pn and not 'INT ' in pn and not 'EXT ' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not '-' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
-                if (not pn in lista):
-                    if(not pn == ''):
-                        lista.append(pn)
-                        self.anadirPersonaje(pn,pn)
+                if(not '<' in str(pers.contents[0])):
+                    pn = pers.contents[0]
+                    pn = pn.strip()
+                    if (not 'EXT.' in pn and not 'INT.' in pn and not 'INT ' in pn and not 'EXT ' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not '-' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
+                        if (not pn in lista):
+                            if(not pn == ''):
+                                lista.append(pn)
+                                self.anadirPersonaje(pn,pn)
+                else:
+                    self.anadirPersonaje('None','None')
         return lista		
 	
     def importDict(self, fichero):
