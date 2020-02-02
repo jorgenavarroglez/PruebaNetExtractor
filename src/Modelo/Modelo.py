@@ -112,6 +112,7 @@ class Modelo:
 
     def obtenerNumApariciones(self):
         #diccionarioAp = dict()
+
         listapar = list()
         prueba = list()
         contador = 0
@@ -129,6 +130,7 @@ class Modelo:
                 for perso in html.find_all("b"):
                     if(not len(perso) == 0):
                         pn = perso.contents[0]
+                        pn = str(pn)
                         pn = pn.strip()
                         if ('EXT.' in pn or 'INT.' in pn or 'EXT ' in pn or 'INT ' in pn):
                             contador = contador + 1
@@ -577,16 +579,15 @@ class Modelo:
         html = BeautifulSoup(web.read(), "html.parser")
         for pers in html.find_all("b"):
             if(not len(pers) == 0):
-                if(not '<' in str(pers.contents[0])):
-                    pn = pers.contents[0]
-                    pn = pn.strip()
-                    if (not 'EXT.' in pn and not 'INT.' in pn and not 'INT ' in pn and not 'EXT ' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not '-' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
-                        if (not pn in lista):
-                            if(not pn == ''):
-                                lista.append(pn)
-                                self.anadirPersonaje(pn,pn)
-                else:
-                    self.anadirPersonaje('None','None')
+                print(pers)
+                pn = pers.contents[0]
+                pn = str(pn)
+                pn = pn.strip()
+                if (not '<' in pn and not '>' in pn and not 'EXT.' in pn and not 'INT.' in pn and not 'INT ' in pn and not 'EXT ' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not '-' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
+                    if (not pn in lista):
+                        if(not pn == ''):
+                            lista.append(pn)
+                            self.anadirPersonaje(pn,pn)
         return lista		
 	
     def importDict(self, fichero):
