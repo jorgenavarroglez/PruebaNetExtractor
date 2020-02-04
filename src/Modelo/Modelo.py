@@ -140,15 +140,15 @@ class Modelo:
                                 if (not contador in listapar):
                                     listapar.append(contador)
                             #self.personajes[l].lennombres[n]=len(listapar)
-                            if(aux == 0):
-                                self.diccionarioApariciones[i] = listapar
-                                aux+=1
-                            else:
-                                prueba = self.diccionarioApariciones.get(i)
-                                for x in listapar:
-                                    if(not x in prueba):
-                                        prueba.append(x)
-                                self.diccionarioApariciones[i] = prueba
+                                if(aux == 0):
+                                    self.diccionarioApariciones[i] = listapar
+                                    aux+=1
+                                else:
+                                    prueba = self.diccionarioApariciones.get(i)
+                                    for x in listapar:
+                                        if(not x in prueba):
+                                            prueba.append(x)
+                                    self.diccionarioApariciones[i] = prueba
                             #diccionarioAp[l] = len(listapar)
                 self.personajes[i].lennombres[n] = len(listapar)
                 self.personajes[i].sumNumApariciones(len(listapar))
@@ -585,7 +585,7 @@ class Modelo:
                 pn = pers.contents[0]
                 pn = str(pn)
                 pn = pn.strip()
-                if (not '<' in pn and not '>' in pn and not 'EXT.' in pn and not 'INT.' in pn and not 'INT ' in pn and not 'EXT ' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not '-' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
+                if (not '<' in pn and not '>' in pn and not 'EXT.' in pn and not 'INT.' in pn and not 'INT ' in pn and not 'EXT ' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
                     if (not pn in lista):
                         if(not pn == ''):
                             lista.append(pn)
