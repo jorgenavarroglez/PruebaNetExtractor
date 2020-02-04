@@ -154,31 +154,32 @@ class Modelo:
                 self.personajes[i].sumNumApariciones(len(listapar))
         return self.diccionarioApariciones
 
-    def normalize(s):
-    replacements = (
-        ("á", "a"),
-        ("é", "e"),
-        ("í", "i"),
-        ("ó", "o"),
-        ("ú", "u"),
-        ("#", ""),
-        (" ", "+"),
-        ("&", "%26"),
-        ("ø","o"),
-        ("ä", "a"),
-        ("ë", "e"),
-        ("ï", "i"),
-        ("ö", "o"),
-        ("ü", "u"),
-        ("à", "a"),
-        ("è", "e"),
-        ("ì", "i"),
-        ("ò", "o"),
-        ("ù", "u")
-    )
-    for a, b in replacements:
-        s = s.replace(a, b).replace(a.upper(), b.upper())
-    return s
+    def normalize(self,s):
+        replacements = (
+            ("á", "a"),
+            ("é", "e"),
+            ("í", "i"),
+            ("ó", "o"),
+            ("ú", "u"),
+            ("#", ""),
+            (" ", "+"),
+            ("&", "%26"),
+            ("ø","o"),
+            ("ä", "a"),
+            ("ë", "e"),
+            ("ï", "i"),
+            ("ö", "o"),
+            ("ü", "u"),
+            ("à", "a"),
+            ("è", "e"),
+            ("ì", "i"),
+            ("ò", "o"),
+            ("ù", "u")
+            
+        )
+        for a, b in replacements:
+            s = s.replace(a, b).replace(a.upper(), b.upper())
+        return s
 
     def separaNombres(self, nombre):
         name = nombre.split(maxsplit=1)
