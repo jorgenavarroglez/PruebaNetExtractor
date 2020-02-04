@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 import zipfile
 from threading import Thread
 import os
+import time
 import secrets
 from flask_babel import gettext
 from community import community_louvain
@@ -204,6 +205,7 @@ class Modelo:
             self.personajes[i].setEtnia(etnia)
             self.personajes[i].setSexo(sexo)
             self.personajes[i].crearDictSE()
+            time.sleep(1)
 
     def getDictParsear(self):
         """
