@@ -17,9 +17,6 @@ class Personaje:
         self.__sexo = 'None'
         self.__dictSexEt = dict()
 
-    def numaparcero(self):
-        self.__numapar = 0
-
     def getDiccionario(self):
         return self.__dictSexEt
 

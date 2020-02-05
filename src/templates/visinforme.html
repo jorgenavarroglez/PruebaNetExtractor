@@ -35,7 +35,7 @@
 				  <a class="nav-link" href="{{ url_for('about') }}" target="_blank"><h5>{{ _('Acerca De') }}</h5></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc22" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
+					<a class="nav-link" href="http://wikinetextractor.wikidot.com/user-guide#toc25" target="_blank"><h5>{{ _('Wiki') }}</h5></a>
 				</li>
 			  </ul>
 				  <img src="{{ url_for('static', filename='img/esp.png') }}" id="esp" onclick="idioma('es','{{ g.locale }}')">
@@ -667,7 +667,7 @@
 				</p>
 				<p><h5>{{_('Nodos Aislados:')}}</h5></p>
 				<p>
-				{% for x in informe["cbx cbx-roleslouvain"]['lista'] %}
+				{% for x in informe["cbx cbx-roleskcliq"]['lista'] %}
 						{{x}} |
 				{% endfor %}
 				</p>
@@ -723,7 +723,7 @@
 				</p>
 				<p><h5>{{_('Nodos Aislados:')}}</h5></p>
 				<p>
-				{% for x in informe["cbx cbx-roleslouvain"]['lista'] %}
+				{% for x in informe["cbx cbx-rolesgirvan"]['lista'] %}
 						{{x}} |
 				{% endfor %}
 				</p>
@@ -779,7 +779,7 @@
 				</p>
 				<p><h5>{{_('Nodos Aislados:')}}</h5></p>
 				<p>
-				{% for x in informe["cbx cbx-roleslouvain"]['lista'] %}
+				{% for x in informe["cbx cbx-rolesgreedy"]['lista'] %}
 						{{x}} |
 				{% endfor %}
 				</p>

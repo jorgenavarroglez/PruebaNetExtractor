@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-30 12:15+0100\n"
-"PO-Revision-Date: 2020-01-30 12:16+0100\n"
+"POT-Creation-Date: 2020-02-05 17:27+0100\n"
+"PO-Revision-Date: 2020-02-05 17:27+0100\n"
 "Last-Translator: \n"
 "Language: en_GB\n"
 "Language-Team: \n"
@@ -19,102 +19,107 @@ msgstr ""
 "Generated-By: Babel 2.7.0\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: src/Controlador.py:84
+#: src/Controlador.py:92
 msgid "La ruta indicada no contiene un fichero epub"
 msgstr "The selected file is not an epub"
 
-#: src/Controlador.py:105
+#: src/Controlador.py:113
 msgid "Diccionario creado con éxito"
 msgstr "Dictionary was successfully created"
 
-#: src/Modelo/Modelo.py:778
+#: src/Modelo/Modelo.py:741
 msgid "Histograma de grado"
 msgstr "Degree histogram"
 
-#: src/Modelo/Modelo.py:779 src/Modelo/Modelo.py:804
+#: src/Modelo/Modelo.py:742 src/Modelo/Modelo.py:767
 msgid "N nodos"
 msgstr "N nodes"
 
-#: src/Modelo/Modelo.py:780 src/templates/visinforme.html:241
+#: src/Modelo/Modelo.py:743 src/templates/visinforme.html:241
 #: src/templates/visinforme.html:264
 msgid "Grado"
 msgstr "Degree"
 
-#: src/Modelo/Modelo.py:803
+#: src/Modelo/Modelo.py:766
 msgid "Histograma de Interacciones"
 msgstr "Interactions histogram"
 
-#: src/Modelo/Modelo.py:805
+#: src/Modelo/Modelo.py:768
 msgid "Interacciones"
 msgstr "Interactions"
 
 #: src/templates/about.html:2 src/templates/delpers.html:2
 #: src/templates/delrefpers.html:2 src/templates/dictaut.html:2
-#: src/templates/dictpelicula.html:2 src/templates/home.html:2
-#: src/templates/impdict.html:2 src/templates/index.html:2
-#: src/templates/informe.html:2 src/templates/joinpers.html:2
-#: src/templates/moddict.html:2 src/templates/modetnia.html:2
-#: src/templates/modidpers.html:2 src/templates/modsexo.html:2
-#: src/templates/newpers.html:2 src/templates/newrefpers.html:2
-#: src/templates/obtdict.html:2 src/templates/params.html:2
-#: src/templates/paramsPeliculas.html:2 src/templates/red.html:2
-#: src/templates/seleccion.html:2 src/templates/visinforme.html:2
+#: src/templates/dictpelicula.html:2 src/templates/formatoIncorrecto.html:2
+#: src/templates/home.html:2 src/templates/impdict.html:2
+#: src/templates/index.html:2 src/templates/informe.html:2
+#: src/templates/joinpers.html:2 src/templates/moddict.html:2
+#: src/templates/modetnia.html:2 src/templates/modidpers.html:2
+#: src/templates/modsexo.html:2 src/templates/newpers.html:2
+#: src/templates/newrefpers.html:2 src/templates/obtdict.html:2
+#: src/templates/params.html:2 src/templates/paramsPeliculas.html:2
+#: src/templates/red.html:2 src/templates/seleccion.html:2
+#: src/templates/visinforme.html:2
 msgid "es"
 msgstr "en"
 
 #: src/templates/about.html:18 src/templates/delpers.html:18
 #: src/templates/delrefpers.html:18 src/templates/dictaut.html:18
-#: src/templates/dictpelicula.html:18 src/templates/home.html:18
-#: src/templates/impdict.html:18 src/templates/index.html:18
-#: src/templates/informe.html:18 src/templates/joinpers.html:18
-#: src/templates/moddict.html:18 src/templates/modetnia.html:18
-#: src/templates/modidpers.html:18 src/templates/modsexo.html:18
-#: src/templates/newpers.html:18 src/templates/newrefpers.html:18
-#: src/templates/obtdict.html:18 src/templates/params.html:18
-#: src/templates/paramsPeliculas.html:18 src/templates/red.html:18
-#: src/templates/seleccion.html:18 src/templates/visinforme.html:29
+#: src/templates/dictpelicula.html:18 src/templates/formatoIncorrecto.html:18
+#: src/templates/home.html:18 src/templates/impdict.html:18
+#: src/templates/index.html:18 src/templates/informe.html:18
+#: src/templates/joinpers.html:18 src/templates/moddict.html:18
+#: src/templates/modetnia.html:18 src/templates/modidpers.html:18
+#: src/templates/modsexo.html:18 src/templates/newpers.html:18
+#: src/templates/newrefpers.html:18 src/templates/obtdict.html:18
+#: src/templates/params.html:18 src/templates/paramsPeliculas.html:18
+#: src/templates/red.html:18 src/templates/seleccion.html:18
+#: src/templates/visinforme.html:29
 msgid "Inicio"
 msgstr "Home"
 
 #: src/templates/about.html:21 src/templates/delpers.html:21
 #: src/templates/delrefpers.html:21 src/templates/dictaut.html:21
-#: src/templates/dictpelicula.html:21 src/templates/home.html:21
-#: src/templates/impdict.html:21 src/templates/index.html:21
-#: src/templates/informe.html:21 src/templates/joinpers.html:21
-#: src/templates/moddict.html:21 src/templates/modetnia.html:21
-#: src/templates/modidpers.html:21 src/templates/modsexo.html:21
-#: src/templates/newpers.html:21 src/templates/newrefpers.html:21
-#: src/templates/obtdict.html:21 src/templates/params.html:21
-#: src/templates/paramsPeliculas.html:21 src/templates/red.html:21
-#: src/templates/seleccion.html:21 src/templates/visinforme.html:32
+#: src/templates/dictpelicula.html:21 src/templates/formatoIncorrecto.html:21
+#: src/templates/home.html:21 src/templates/impdict.html:21
+#: src/templates/index.html:21 src/templates/informe.html:21
+#: src/templates/joinpers.html:21 src/templates/moddict.html:21
+#: src/templates/modetnia.html:21 src/templates/modidpers.html:21
+#: src/templates/modsexo.html:21 src/templates/newpers.html:21
+#: src/templates/newrefpers.html:21 src/templates/obtdict.html:21
+#: src/templates/params.html:21 src/templates/paramsPeliculas.html:21
+#: src/templates/red.html:21 src/templates/seleccion.html:21
+#: src/templates/visinforme.html:32
 msgid "Repositorio"
 msgstr "Repository"
 
 #: src/templates/about.html:24 src/templates/delpers.html:24
 #: src/templates/delrefpers.html:24 src/templates/dictaut.html:24
-#: src/templates/dictpelicula.html:24 src/templates/home.html:24
-#: src/templates/impdict.html:24 src/templates/index.html:24
-#: src/templates/informe.html:24 src/templates/joinpers.html:24
-#: src/templates/moddict.html:24 src/templates/modetnia.html:24
-#: src/templates/modidpers.html:24 src/templates/modsexo.html:24
-#: src/templates/newpers.html:24 src/templates/newrefpers.html:24
-#: src/templates/obtdict.html:24 src/templates/params.html:24
-#: src/templates/paramsPeliculas.html:24 src/templates/red.html:24
-#: src/templates/seleccion.html:24 src/templates/visinforme.html:35
+#: src/templates/dictpelicula.html:24 src/templates/formatoIncorrecto.html:24
+#: src/templates/home.html:24 src/templates/impdict.html:24
+#: src/templates/index.html:24 src/templates/informe.html:24
+#: src/templates/joinpers.html:24 src/templates/moddict.html:24
+#: src/templates/modetnia.html:24 src/templates/modidpers.html:24
+#: src/templates/modsexo.html:24 src/templates/newpers.html:24
+#: src/templates/newrefpers.html:24 src/templates/obtdict.html:24
+#: src/templates/params.html:24 src/templates/paramsPeliculas.html:24
+#: src/templates/red.html:24 src/templates/seleccion.html:24
+#: src/templates/visinforme.html:35
 msgid "Acerca De"
 msgstr "About"
 
 #: src/templates/about.html:27 src/templates/delpers.html:27
 #: src/templates/delrefpers.html:27 src/templates/dictaut.html:27
-#: src/templates/dictpelicula.html:27 src/templates/home.html:27
-#: src/templates/impdict.html:27 src/templates/index.html:27
-#: src/templates/informe.html:27 src/templates/joinpers.html:27
-#: src/templates/moddict.html:27 src/templates/modetnia.html:27
-#: src/templates/modidpers.html:27 src/templates/modsexo.html:27
-#: src/templates/newpers.html:27 src/templates/newrefpers.html:27
-#: src/templates/obtdict.html:27 src/templates/params.html:27
-#: src/templates/paramsPeliculas.html:27 src/templates/red.html:27
-#: src/templates/seleccion.html:27 src/templates/visinforme.html:38
+#: src/templates/dictpelicula.html:27 src/templates/formatoIncorrecto.html:27
+#: src/templates/home.html:27 src/templates/impdict.html:27
+#: src/templates/index.html:27 src/templates/informe.html:27
+#: src/templates/joinpers.html:27 src/templates/moddict.html:27
+#: src/templates/modetnia.html:27 src/templates/modidpers.html:27
+#: src/templates/modsexo.html:27 src/templates/newpers.html:27
+#: src/templates/newrefpers.html:27 src/templates/obtdict.html:27
+#: src/templates/params.html:27 src/templates/paramsPeliculas.html:27
+#: src/templates/red.html:27 src/templates/seleccion.html:27
+#: src/templates/visinforme.html:38
 msgid "Wiki"
 msgstr "Wiki"
 
@@ -141,15 +146,14 @@ msgstr "Who integrates the Project?"
 #: src/templates/about.html:50
 msgid ""
 "El proyecto de NetExtractor fue iniciado por el alumno del grado de Ingeniería "
-"Informática Luis Miguel Cabrejas, tutorizado por D. Jose Manuel Galán -info de "
-"jose manuel- y D. Luis Rodrigo Izquierdo -info de luis-; y ha sido continuado "
-"por el alumno de Ingeniería Informática Jorge Navarro, tutorizado por D. Jose "
-"Manuel Galán y Dña. Virginia Ahedo -info de virginia-."
+"Informática Luis Miguel Cabrejas, tutorizado por D. Jose Manuel Galán y D. Luis "
+"Rodrigo Izquierdo; y ha sido continuado por el alumno de Ingeniería Informática "
+"Jorge Navarro, tutorizado por D. Jose Manuel Galán y Dña. Virginia Ahedo."
 msgstr ""
 "The NetExtractor project was initiated by the student of the degree of Computer "
-"Engineering Luis Miguel Cabrejas, tutored by Dr. Jose Manuel Galán and Dr. Luis "
+"Engineering Luis Miguel Cabrejas, tutored by Mr. Jose Manuel Galán and Mr. Luis "
 "Rodrigo Izquierdo; and has been continued by the student of Computer Engineering "
-"Jorge Navarro, tutored by Dr. Jose Manuel Galán and Mrs. Virginia Ahedo."
+"Jorge Navarro, tutored by Mr. Jose Manuel Galán and Ms. Virginia Ahedo."
 
 #: src/templates/about.html:52
 msgid "Agradecimientos"
@@ -158,12 +162,12 @@ msgstr "Acknowledgment"
 #: src/templates/about.html:53
 msgid ""
 "A los alumnos del grado de Ingeniería Informática Alicia Olivares y Yi Peng Ji "
-"por su colaboración en la extracción de características de la red para la "
-"generación del informe en el apartado de \"Detección de roles\"."
+"por el algoritmo de obtención del gráfico implementado en este proyecto en la "
+"sección \"Detección de roles\"."
 msgstr ""
 "To students of the degree of Computer Engineering Alicia Olivares and Yi Peng Ji "
-"for their collaboration in extracting characteristics from the network for the "
-"generation of the report in the section \"Role Detection\"."
+"by the algorithm of obtaining the graph implemented in this project in the "
+"section \"Role Detection\"."
 
 #: src/templates/about.html:55
 msgid "¿Qué herramientas se han empleado?"
@@ -171,7 +175,7 @@ msgstr "What tools have been used?"
 
 #: src/templates/delpers.html:38
 msgid "Marque los personajes a eliminar."
-msgstr "Check the characters to delete"
+msgstr "Check the characters to delete."
 
 #: src/templates/delpers.html:39 src/templates/delrefpers.html:44
 msgid "Eliminar"
@@ -250,7 +254,7 @@ msgstr "Selected characters were deleted"
 
 #: src/templates/delrefpers.html:43
 msgid "Marque las referencias de personajes a eliminar."
-msgstr "Check the characters references to delete"
+msgstr "Check the characters references to delete."
 
 #: src/templates/delrefpers.html:67
 msgid "Marque para eliminar referencia"
@@ -276,9 +280,8 @@ msgstr "Obtain Dictionary"
 msgid "Vaciar Diccionario"
 msgstr "Clear Dictionary"
 
-#: src/templates/dictaut.html:59 src/templates/dictpelicula.html:49
-#: src/templates/impdict.html:38 src/templates/moddict.html:69
-#: src/templates/obtdict.html:38
+#: src/templates/dictaut.html:59 src/templates/impdict.html:38
+#: src/templates/moddict.html:69 src/templates/obtdict.html:38
 msgid "Siguiente"
 msgstr "Next"
 
@@ -290,8 +293,7 @@ msgstr "Dictionary was created successfully. To advance press next."
 msgid "Diccionario borrado correctamente"
 msgstr "Dictionary was successfully deleted"
 
-#: src/templates/dictaut.html:106 src/templates/dictpelicula.html:71
-#: src/templates/obtdict.html:71
+#: src/templates/dictaut.html:106 src/templates/obtdict.html:71
 msgid "No se ha creado ningún diccionario"
 msgstr "There is no dictionary created"
 
@@ -307,19 +309,48 @@ msgstr "Url from imsdb.com/scripts/*"
 msgid "Obtener"
 msgstr "Obtain"
 
-#: src/templates/dictpelicula.html:79 src/templates/obtdict.html:79
+#: src/templates/dictpelicula.html:70 src/templates/obtdict.html:79
 msgid "Introduzca una url"
 msgstr "Enter a url"
 
-#: src/templates/dictpelicula.html:85 src/templates/obtdict.html:85
-msgid ""
-"Personajes que aparecen en la página introducidos. Para avanzar pulsa siguiente."
-msgstr ""
-"Characters that appear on the page have been introduced. To advance press next."
-
-#: src/templates/dictpelicula.html:87
+#: src/templates/dictpelicula.html:79
 msgid "Introduzca una url perteneciente a https://www.imsdb.com/scripts/*"
 msgstr "Enter Url from https://www.imsdb.com/scripts/*"
+
+#: src/templates/formatoIncorrecto.html:40
+msgid "El formato introducido es incorrecto."
+msgstr "The entered format is incorrect."
+
+#: src/templates/formatoIncorrecto.html:41
+msgid ""
+"Asegúrese de que el formato sigue las especificaciones indicadas en la wiki de "
+"la aplicación. Usted puede acceder a estas especificaciones simplemente clicando "
+"el siguiente enlace:"
+msgstr ""
+"Make sure that the format follows the specifications indicated on the "
+"application wiki. You can access these specifications by simply clicking on the "
+"following link:"
+
+#: src/templates/formatoIncorrecto.html:41
+msgid "Formatos de guion"
+msgstr "Script Formats"
+
+#: src/templates/formatoIncorrecto.html:42
+msgid ""
+"Probablemente el guion introducido no tiene un formate de escena válido, las "
+"escenas de los guiones deben contener \"EXT\" o \"INT\" en negrita para ser "
+"consideradas como tal."
+msgstr ""
+"Probably the script entered does not have a valid scene form, the scenes in the "
+"movie script must contain \"EXT\" or \"INT\" in bold to be considered as such."
+
+#: src/templates/formatoIncorrecto.html:43
+msgid "Disculpe las molestias."
+msgstr "Sorry for the inconvenience."
+
+#: src/templates/formatoIncorrecto.html:47
+msgid "Introducir nuevo guion"
+msgstr "Introduce new script"
 
 #: src/templates/home.html:43
 msgid "¡Bienvenido a NetExtractor!"
@@ -864,6 +895,12 @@ msgstr "There is no character with the introduced ID"
 msgid "Url perteneciente a *.fandom.com/wiki/Category:Characters"
 msgstr "Url from *.fandom.com/wiki/Category:Characters"
 
+#: src/templates/obtdict.html:85
+msgid ""
+"Personajes que aparecen en la página introducidos. Para avanzar pulsa siguiente."
+msgstr ""
+"Characters that appear on the page have been introduced. To advance press next."
+
 #: src/templates/obtdict.html:88
 msgid "Introduzca una url perteneciente a *.fandom.com/wiki/Category:Characters"
 msgstr "Enter a url from *.fandom.com/wiki/Category:Characters"
@@ -1397,3 +1434,25 @@ msgstr "Please enter value in:"
 
 #~ msgid "Introduzca la nueva id"
 #~ msgstr "Enter the new id"
+
+#~ msgid ""
+#~ "El proyecto de NetExtractor fue iniciado por el alumno del grado de "
+#~ "Ingeniería Informática Luis Miguel Cabrejas, tutorizado por D. Jose Manuel "
+#~ "Galán -info de jose manuel- y D. Luis Rodrigo Izquierdo -info de luis-; y ha "
+#~ "sido continuado por el alumno de Ingeniería Informática Jorge Navarro, "
+#~ "tutorizado por D. Jose Manuel Galán y Dña. Virginia Ahedo -info de virginia-."
+#~ msgstr ""
+#~ "The NetExtractor project was initiated by the student of the degree of "
+#~ "Computer Engineering Luis Miguel Cabrejas, tutored by Dr. Jose Manuel Galán "
+#~ "and Dr. Luis Rodrigo Izquierdo; and has been continued by the student of "
+#~ "Computer Engineering Jorge Navarro, tutored by Dr. Jose Manuel Galán and Mrs. "
+#~ "Virginia Ahedo."
+
+#~ msgid ""
+#~ "A los alumnos del grado de Ingeniería Informática Alicia Olivares y Yi Peng "
+#~ "Ji por su colaboración en la extracción de características de la red para la "
+#~ "generación del informe en el apartado de \"Detección de roles\"."
+#~ msgstr ""
+#~ "To students of the degree of Computer Engineering Alicia Olivares and Yi Peng "
+#~ "Ji for their collaboration in extracting characteristics from the network for "
+#~ "the generation of the report in the section \"Role Detection\"."

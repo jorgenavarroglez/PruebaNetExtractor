@@ -4,6 +4,8 @@ from src.Lexers import CreaDict as cd
 from src.Lexers import PosPersonajes as pp
 from src.LecturaFicheros import Lectorcsv
 from src.LecturaFicheros import LecturaEpub
+from src.Guiones import CrearDiccionario as cdguion
+from src.PredictorEtniaSexo import EthneaGenni as eg
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -12,12 +14,13 @@ import numpy as np
 import networkx as nx
 import urllib
 import json
+import random
 from bs4 import BeautifulSoup
 import zipfile
 from threading import Thread
 import os
-import time
 import secrets
+import time
 from flask_babel import gettext
 from community import community_louvain
 
@@ -41,17 +44,20 @@ class Modelo:
         self.__texto = list()
         #comprobar longitud
         self.personajes= dict()
-        self.prueba=dict()
         self.__fincaps = list()
         self.__G = None
         self.__Gnoatt = None
         self.urlPelicula = ""
         self.diccionarioApariciones = dict()
         self.cambio = 0
+        self.formato = 0
      
         
-    def cambiarPantallas(self, boolean):
-        self.cambio = boolean
+    def cambiarPantallas(self, cambiopantalla):
+        self.cambio = cambiopantalla
+
+    def getFormato(self):
+        return self.formato
     
     def devolverCambio(self):
         return self.cambio
@@ -71,6 +77,18 @@ class Modelo:
         d.start()
         d.join()
         
+    def scrapeWikiPelicula(self,url):
+        """
+        Método para obtener un diccionario de personajes haciendo web scraping
+    
+        Args:
+            url: url donde hacer web scraping
+        """
+        self.urlPelicula = url
+        crearDiccionario = cdguion.CrearDiccionario(self)
+        self.formato = crearDiccionario.obtenerPersPelicula(self.urlPelicula)
+        return self.formato
+    
     def hayPersonajes(self):
         if (len(self.personajes.items())>0):
             return 1
@@ -115,7 +133,7 @@ class Modelo:
         #diccionarioAp = dict()
 
         listapar = list()
-        prueba = list()
+        temp = list()
         contador = 0
         web = urllib.request.urlopen(self.urlPelicula)
         html = BeautifulSoup(web.read(), "html.parser")
@@ -139,81 +157,27 @@ class Modelo:
                             if (not contador == 0):
                                 if (not contador in listapar):
                                     listapar.append(contador)
-                            #self.personajes[l].lennombres[n]=len(listapar)
+                                #self.personajes[l].lennombres[n]=len(listapar)
                                 if(aux == 0):
                                     self.diccionarioApariciones[i] = listapar
                                     aux+=1
                                 else:
-                                    prueba = self.diccionarioApariciones.get(i)
+                                    temp = self.diccionarioApariciones.get(i)
                                     for x in listapar:
-                                        if(not x in prueba):
-                                            prueba.append(x)
-                                    self.diccionarioApariciones[i] = prueba
+                                        if(not x in temp):
+                                            temp.append(x)
+                                    self.diccionarioApariciones[i] = temp
                             #diccionarioAp[l] = len(listapar)
                 self.personajes[i].lennombres[n] = len(listapar)
                 self.personajes[i].sumNumApariciones(len(listapar))
         return self.diccionarioApariciones
 
-    def normalize(self,s):
-        replacements = (
-            ("á", "a"),
-            ("é", "e"),
-            ("í", "i"),
-            ("ó", "o"),
-            ("ú", "u"),
-            ("#", ""),
-            (" ", "+"),
-            ("&", "%26"),
-            ("ø","o"),
-            ("ä", "a"),
-            ("ë", "e"),
-            ("ï", "i"),
-            ("ö", "o"),
-            ("ü", "u"),
-            ("à", "a"),
-            ("è", "e"),
-            ("ì", "i"),
-            ("ò", "o"),
-            ("ù", "u")
-            
-        )
-        for a, b in replacements:
-            s = s.replace(a, b).replace(a.upper(), b.upper())
-        return s
-
-    def separaNombres(self, nombre):
-        name = nombre.split(maxsplit=1)
-        if len(name) == 1:
-            firstname = name[0]
-            lastname = name[0]
-        else:
-            firstname = name[0]
-            lastname = name[1]
-        return self.normalize(firstname), self.normalize(lastname)
-
-    def scrapeEtniaSexo(self, nombre):
-        """
-        Método para obtener un diccionario de personajes haciendo web scraping
-    
-        Args:
-            url: url donde hacer web scraping
-        """
-        firstname, lastname = self.separaNombres(nombre)
-        url = 'http://abel.lis.illinois.edu/cgi-bin/ethnea/search.py?Fname='+firstname+'&Lname='+lastname+'&format=json'
-        web = urllib.request.urlopen(url)
-        html = BeautifulSoup(web.read(), "html.parser")
-        jsonCosas = str(html)
-        ethnia = eval(jsonCosas)['Ethnea']
-        sexo = eval(jsonCosas)['Genni']
-        first = eval(jsonCosas)['First']
-        last = eval(jsonCosas)['Last']
-        return ethnia,sexo
-
     def obtenerEthnea(self):
         etnia = None
         sexo = None
+        ethneagenni = eg.EthneaGenni()
         for i in self.personajes.keys():
-            etnia, sexo = self.scrapeEtniaSexo(i)
+            etnia, sexo = ethneagenni.obtenerEtniaSexo(i)
             self.personajes[i].setEtnia(etnia)
             self.personajes[i].setSexo(sexo)
             self.personajes[i].crearDictSE()
@@ -262,6 +226,9 @@ class Modelo:
     def cambiarSexo(self, sexo, pers):
         self.personajes[pers].setSexo(sexo)
         self.personajes[pers].crearDictSE()
+
+    def borrarDictPersonajes(self):
+        self.personajes = dict()
 
     def anadirPersonaje(self, idpers, pers):
         """
@@ -528,7 +495,7 @@ class Modelo:
     def elementosComunes(lista, lista1):
         return list(set(lista).intersection(lista1))
 
-    def obtenerEnlaces(self, apar):
+    def obtenerRed(self, apar):
         self.__G = nx.Graph()
         lista = list()
         aux = 0
@@ -578,31 +545,7 @@ class Modelo:
         html = BeautifulSoup(web.read(), "html.parser")
         for pers in html.find_all("a", {"class": "category-page__member-link"}):
             pn = pers.get('title')
-            self.anadirPersonaje(pn,pn)
-            
-    def scrapeWikiPelicula(self,url):
-        """
-        Método para obtener un diccionario de personajes haciendo web scraping
-    
-        Args:
-            url: url donde hacer web scraping
-        """
-        self.urlPelicula = url
-        lista = list()
-        web = urllib.request.urlopen(url)
-        html = BeautifulSoup(web.read(), "html.parser")
-        for pers in html.find_all("b"):
-            if(not len(pers) == 0):
-                print(pers)
-                pn = pers.contents[0]
-                pn = str(pn)
-                pn = pn.strip()
-                if (not '<' in pn and not '>' in pn and not 'EXT.' in pn and not 'INT.' in pn and not 'INT ' in pn and not 'EXT ' in pn and not '.' in pn and not ':' in pn and not ';' in pn and not '"' in pn and not '!' in pn and not '?' in pn and not ',' in pn and len(pn)<30 and not 'Genres' in pn and not 'Writers' in pn and not '_' in pn):
-                    if (not pn in lista):
-                        if(not pn == ''):
-                            lista.append(pn)
-                            self.anadirPersonaje(pn,pn)
-        return lista		
+            self.anadirPersonaje(pn,pn)		
 	
     def importDict(self, fichero):
         """
@@ -1153,14 +1096,15 @@ class Modelo:
         """
         print('com girvan')
         l = list()
-        resul,mod,npart = self.girvan_newman(self.__G.copy())
+        d = nx.algorithms.community.girvan_newman(self.__G)
+        lista = list(tuple(sorted(c) for c in next(d)))
         pos=nx.kamada_kawai_layout(self.__G)
         f = plt.figure(figsize=(12,12))
         nx.draw(self.__G,pos,with_labels=True)
-        for c in nx.connected_components(resul):
-            l.append(c)
+        for x in lista:
+            l.append(x)
             col = '#'+secrets.token_hex(3)
-            nx.draw_networkx_nodes(self.__G,pos,nodelist=list(c),node_color=col)
+            nx.draw_networkx_nodes(self.__G,pos,nodelist=list(x),node_color=col)
         f.savefig(os.path.join(self.dir,'girnew.png'), format="PNG")
         return l
         
@@ -1296,7 +1240,10 @@ class Modelo:
     def rolesGirvan(self):
         print('roles girvan')
         dictroles = dict()
-        resul,mod,npart = self.girvan_newman(self.__G.copy())
+        d = nx.algorithms.community.girvan_newman(self.__G)
+        particiones = list(tuple(sorted(c) for c in next(d)))
+        print('particiones obtenidas')
+        resul = self.devuelveComunidadesSeparadas(particiones, self.__G.copy())
         dictroles = self.roles(resul,'rolesgirvan.png')
         print('roles obtenidos')
         return dictroles
@@ -1375,7 +1322,8 @@ class Modelo:
             else:
                 lista.append(peso[0])
         return pi, lista
-    
+    '''
+    DEMASIADO COSTE COMPUTACIONAL
     def modularidad(self,grafo, particion):
         """
         Método para calcular la modularidad
@@ -1424,6 +1372,7 @@ class Modelo:
         mejormod = modu
         mejor = grafo.copy()
         while(nx.number_of_edges(grafo)>0):
+            print("Calculando...")
             btwn = list(nx.edge_betweenness_centrality(grafo).items())
             mini = -1
             for i in btwn:
@@ -1446,3 +1395,4 @@ class Modelo:
                     mejormod=modu
                     mejor = grafo.copy()
         return mejor,mod,npart
+        '''
