@@ -181,7 +181,7 @@ class Modelo:
             self.personajes[i].setEtnia(etnia)
             self.personajes[i].setSexo(sexo)
             self.personajes[i].crearDictSE()
-            #time.sleep(1)
+            time.sleep(1)
 
     def getDictParsear(self):
         """
