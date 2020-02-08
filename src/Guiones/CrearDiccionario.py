@@ -13,7 +13,7 @@ class CrearDiccionario:
     def __init__(self, modusuario):
         self.mod = modusuario
     
-    def obtenerPersPelicula():
+    def obtenerPersPelicula(self, url):
         lista = list()
         formato = 0
         web = urllib.request.urlopen(url)
@@ -27,6 +27,7 @@ class CrearDiccionario:
                     if (not pn in lista):
                         if(not pn == ''):
                             lista.append(pn)
+                            self.mod.anadirPersonaje(pn,pn)
                 
                 if ('EXT. ' in pn or 'INT. ' in pn or 'INT ' in pn or 'EXT ' in pn):
                     pers = pn.split(' ')
