@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from tst import testUnitarios
+#from tst import testUnitarios
 from src import Controlador
 import unittest
+import os
 
 #runner = unittest.TextTestRunner()
 #result = runner.run(unittest.makeSuite(testUnitarios.TestUnitarios))
