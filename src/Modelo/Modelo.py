@@ -54,12 +54,30 @@ class Modelo:
      
         
     def cambiarPantallas(self, cambiopantalla):
+        """
+        Método para detectar cambio de pantalla para las dos opciones, película y novela
+
+        Args:
+            cambiopantalla - Int
+        """
         self.cambio = cambiopantalla
 
     def getFormato(self):
+        """
+        Método para obtener si el formato es correcto o no, un 1 significa que si y un 0 significa que no se cumple el formato.
+
+        Return:
+            formato - Int
+        """
         return self.formato
     
     def devolverCambio(self):
+        """
+        Método que devuelve el cambio de pantallas para poder avanzar en pantallas pertenecientes a películas o a novelas.
+
+        Return:
+            cambio - Int
+        """
         return self.cambio
     
     def crearDict(self):
@@ -97,7 +115,7 @@ class Modelo:
         
     def obtenerPosPers(self):
         """
-        Método para obtener las posiciones de los personajes
+        Método para obtener las posiciones de los personajes en caso de que se introduzca una novela
         
         Args:
             
@@ -130,6 +148,12 @@ class Modelo:
                 self.personajes[i].sumNumApariciones(apar)
 
     def obtenerNumApariciones(self):
+        """
+        Método para obtener las posiciones de los personajes en caso de que se introduzca un guion
+        
+        Args:
+            
+        """ 
         #diccionarioAp = dict()
 
         listapar = list()
@@ -387,19 +411,10 @@ class Modelo:
         Args:
             
         """
-        d = Thread(target=self.obtenerPosPers)
-        d.start()
-        d.join()
-        self.juntarPosiciones()
-        
-    def prepararRedPeliculas(self):
-        """
-        Método que obtiene las posiciones de los personajes y las junta
-    
-        Args:
-            
-        """
-        d = Thread(target=self.obtenerNumApariciones)
+        if(self.cambio == 1):
+            d = Thread(target=self.obtenerPosPers)
+        else:
+            d = Thread(target=self.obtenerNumApariciones)
         d.start()
         d.join()
         self.juntarPosiciones()
@@ -493,9 +508,21 @@ class Modelo:
         self.anadirAtributos()
     
     def elementosComunes(lista, lista1):
+        """
+        Método que obtiene los elementos comunes de dos listas
+    
+        Return:
+            lista con los elementos comunes
+        """
         return list(set(lista).intersection(lista1))
 
     def obtenerRed(self, apar):
+        """
+        Método para generar un grafo a partir de las relaciones de los personajes en guiones de películas
+    
+        Args:
+            apar: numero minimo de apariciones
+        """
         self.__G = nx.Graph()
         lista = list()
         aux = 0
@@ -520,6 +547,12 @@ class Modelo:
         self.anadirAtributos()
     
     def anadirAtributos(self):
+        """
+        Método que añade ciertos atributos al nodo
+    
+        Args:
+            
+        """
         dictionary = dict()
         for i in self.__G.nodes:
             dictionary[i]=self.personajes[i].getDiccionario()
@@ -1007,6 +1040,15 @@ class Modelo:
         return pr
 
     def ordenarFrozen(self, partition):
+        """
+        Método para ordenar el resultado de louvain de una forma genérica y que sea igual para todos los algoritmos
+    
+        Args:
+            partition: resultado de la ejecución de louvain
+        
+        Return:
+            particiones: lista que contiene las particiones de las comunidades
+        """
         lista = list(partition.keys())
         lista2 = lista.copy()
         particiones = list()
@@ -1030,6 +1072,12 @@ class Modelo:
 
 
     def louvain(self):
+        """
+        Método que ejecuta el algoritmo de louvain y guarda la imagen de las comunidades generadas
+    
+        Return:
+            lista con las particiones.
+        """
         print('Com louvain')
         l = list()
         pos=nx.kamada_kawai_layout(self.__G)
@@ -1204,6 +1252,12 @@ class Modelo:
         return roles
 
     def rolesLouvain(self):
+        """
+        Método que ejecuta el algoritmo de Louvain para la detección de roles
+    
+        Return:
+            diccionario con los roles generados
+        """
         print('roles louvain')
         dictroles = dict()
         partition = community_louvain.best_partition(self.__G)
@@ -1216,6 +1270,12 @@ class Modelo:
         return dictroles
     
     def rolesGreedy(self):
+        """
+        Método que ejecuta el algoritmo de Clausset-Newman-Moore para la detección de roles
+    
+        Return:
+            diccionario con los roles generados
+        """
         print('roles greedy')
         dictroles = dict()
         particiones = list(nx.algorithms.community.greedy_modularity_communities(self.__G))
@@ -1227,6 +1287,12 @@ class Modelo:
         return dictroles
     
     def roleskclique(self, k):
+        """
+        Método que ejecuta el algoritmo de K-clique para la detección de roles
+    
+        Return:
+            diccionario con los roles generados
+        """
         print('roles kcliq')
         dictroles = dict()
         particiones = list(nx.algorithms.community.k_clique_communities(self.__G, int(k)))
@@ -1238,6 +1304,12 @@ class Modelo:
         return dictroles
     
     def rolesGirvan(self):
+        """
+        Método que ejecuta el algoritmo de Girvan-Newman para la detección de roles
+    
+        Return:
+            diccionario con los roles generados
+        """
         print('roles girvan')
         dictroles = dict()
         d = nx.algorithms.community.girvan_newman(self.__G)
@@ -1249,6 +1321,16 @@ class Modelo:
         return dictroles
 
     def devuelveComunidadesSeparadas(self, resultado, grafo):
+        """
+        Método para generar un grafo a partir de las relaciones de los personajes en guiones de películas
+    
+        Args:
+            resultado: lista con las particiones generadas en la detección de comunidades
+            grafo: el grafo que tenemos creado
+        
+        Return:
+            un grafo con todas las comunidades separadas unas de otras sin enlaces.
+        """
         lista = list()
         resul = grafo.copy()
         contador = len(resultado)

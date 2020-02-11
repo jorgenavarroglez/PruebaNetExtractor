@@ -18,9 +18,21 @@ class Personaje:
         self.__dictSexEt = dict()
 
     def getDiccionario(self):
+        """
+        Método para obtener el diccionario de atributos de los nodos
+    
+        Return:
+            diccionario con los atributos
+        """
         return self.__dictSexEt
 
     def crearDictSE(self):
+        """
+        Método que crea el diccionario con los valores de etnia y sexo de cada personaje
+
+        Args:
+            
+        """
         self.__dictSexEt['Etnia'] = self.__etnia
         self.__dictSexEt['Sexo'] = self.__sexo
 

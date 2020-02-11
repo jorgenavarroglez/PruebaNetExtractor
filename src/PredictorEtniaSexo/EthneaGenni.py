@@ -30,17 +30,37 @@ class EthneaGenni:
             ("è", "e"),
             ("ì", "i"),
             ("ò", "o"),
-            ("ù", "u")
+            ("ù", "u"),
+            ("ñ", "n"),
+            ("½", "")
             
         )
     
     def normalize(self,s):
+        """
+        Metodo para eliminar acentos y algunos caracteres especiales en la lectura de la página
         
+        Args:
+            s: string que se quiere normalizar
+
+        Return:
+            el string normalizado
+        """
         for a, b in self.replacements:
             s = s.replace(a, b).replace(a.upper(), b.upper())
         return s
 
     def separaNombres(self, nombre):
+        """
+        Metodo para separar un único string con nombre y apellido en dos strings individuales
+        
+        Args:
+            nombre: string para separar en dos
+
+        Return:
+            firstname: el nombre
+            lastname: el apellido
+        """
         name = nombre.split(maxsplit=1)
         if len(name) == 1:
             firstname = name[0]

@@ -14,6 +14,15 @@ class CrearDiccionario:
         self.mod = modusuario
     
     def obtenerPersPelicula(self, url):
+        """
+        Método para crear un diccionario de personajes para un guion a partir de una url introducida por el usuario
+        
+        Args:
+            url: string con la url introducida
+
+        Return:
+            formato: int que contiene 1 si la estructura del guion es correcta y 0 si no lo es
+        """
         lista = list()
         formato = 0
         web = urllib.request.urlopen(url)
