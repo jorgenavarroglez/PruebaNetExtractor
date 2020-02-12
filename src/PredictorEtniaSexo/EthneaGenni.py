@@ -4,10 +4,7 @@ from bs4 import BeautifulSoup
 
 class EthneaGenni:
     """
-    Clase que crea un diccionario de manera automática
-    
-    Args:
-        modusuario: instancia de la clase modelo
+    Clase que predice el sexo y etnia del personaje.
     """
     
     def __init__(self):

@@ -108,6 +108,12 @@ class Modelo:
         return self.formato
     
     def hayPersonajes(self):
+        """
+        Método para comporbar si hay personajes en el diccionario.
+    
+        Return:
+            0 si no hay y 1 si hay
+        """
         if (len(self.personajes.items())>0):
             return 1
         else:
@@ -197,6 +203,12 @@ class Modelo:
         return self.diccionarioApariciones
 
     def obtenerEthnea(self):
+        """
+        Método para obtener etnia y sexo del personaje
+    
+        Args:
+            
+        """
         etnia = None
         sexo = None
         ethneagenni = eg.EthneaGenni()
@@ -244,14 +256,34 @@ class Modelo:
         self.personajes = dict()
 
     def cambiarEtnia(self, etnia, pers):
+        """
+        Método para cambiar la etnia de un personaje.
+    
+        Args:
+            etnia: string
+            pers: string
+        """
         self.personajes[pers].setEtnia(etnia)
         self.personajes[pers].crearDictSE()
 
     def cambiarSexo(self, sexo, pers):
+        """
+        Método para cambiar el sexo de un personaje.
+    
+        Args:
+            sexo: string
+            pers: string
+        """
         self.personajes[pers].setSexo(sexo)
         self.personajes[pers].crearDictSE()
 
     def borrarDictPersonajes(self):
+        """
+        Método para borrar el diccionario.
+    
+        Args:
+        
+        """
         self.personajes = dict()
 
     def anadirPersonaje(self, idpers, pers):
